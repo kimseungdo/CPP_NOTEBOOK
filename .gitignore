@@ -1,0 +1,10 @@
+
+.vscode/
+
+Opencv_CPP/CMakeFiles/
+
+Opencv_CPP/Makefile
+
+Opencv_CPP/cmake_install.cmake
+
+Opencv_CPP/CMakeCache.txt

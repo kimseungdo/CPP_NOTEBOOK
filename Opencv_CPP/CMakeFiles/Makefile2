@@ -53,10 +53,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\cpp_projet\Opencv_CPP
+CMAKE_SOURCE_DIR = E:\CPP_NOTEBOOK\Opencv_CPP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\cpp_projet\Opencv_CPP
+CMAKE_BINARY_DIR = E:\CPP_NOTEBOOK\Opencv_CPP
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -73,7 +73,7 @@ clean: CMakeFiles/Opencv_CPP.dir/clean
 CMakeFiles/Opencv_CPP.dir/all:
 	$(MAKE) -f CMakeFiles\Opencv_CPP.dir\build.make CMakeFiles/Opencv_CPP.dir/depend
 	$(MAKE) -f CMakeFiles\Opencv_CPP.dir\build.make CMakeFiles/Opencv_CPP.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\cpp_projet\Opencv_CPP\CMakeFiles --progress-num=1,2 "Built target Opencv_CPP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=E:\CPP_NOTEBOOK\Opencv_CPP\CMakeFiles --progress-num=1,2 "Built target Opencv_CPP"
 .PHONY : CMakeFiles/Opencv_CPP.dir/all
 
 # Include target in all.
@@ -83,9 +83,9 @@ all: CMakeFiles/Opencv_CPP.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Opencv_CPP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\cpp_projet\Opencv_CPP\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\CPP_NOTEBOOK\Opencv_CPP\CMakeFiles 2
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Opencv_CPP.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\cpp_projet\Opencv_CPP\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\CPP_NOTEBOOK\Opencv_CPP\CMakeFiles 0
 .PHONY : CMakeFiles/Opencv_CPP.dir/rule
 
 # Convenience name for target.

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/cpp_projet/Opencv_CPP/main.cpp" "D:/cpp_projet/Opencv_CPP/CMakeFiles/Opencv_CPP.dir/main.cpp.obj"
+  "E:/CPP_NOTEBOOK/Opencv_CPP/main.cpp" "E:/CPP_NOTEBOOK/Opencv_CPP/CMakeFiles/Opencv_CPP.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

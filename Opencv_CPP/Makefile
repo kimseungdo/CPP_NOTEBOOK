@@ -47,10 +47,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\cpp_projet\Opencv_CPP
+CMAKE_SOURCE_DIR = E:\CPP_NOTEBOOK\Opencv_CPP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\cpp_projet\Opencv_CPP
+CMAKE_BINARY_DIR = E:\CPP_NOTEBOOK\Opencv_CPP
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\cpp_projet\Opencv_CPP\CMakeFiles D:\cpp_projet\Opencv_CPP\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\CPP_NOTEBOOK\Opencv_CPP\CMakeFiles E:\CPP_NOTEBOOK\Opencv_CPP\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\cpp_projet\Opencv_CPP\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\CPP_NOTEBOOK\Opencv_CPP\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
