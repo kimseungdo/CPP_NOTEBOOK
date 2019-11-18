@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <climits>
 int c=0; int d=100;
 
 int main(void){
