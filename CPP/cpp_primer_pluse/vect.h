@@ -19,7 +19,7 @@ namespace VECTOR{
             void reset(double n1, double n2, Mode from = RECT);
             ~Vector();
             double xval() const{return x;} double yval() const{return y;}
-            double magval() const{return mag;} double ang() {return ang;}
+            double magval() const{return mag;} double angval() const{return ang;}
             void polar_mode(); void rect_mode();
 
             Vector operator+(const Vector &b);
@@ -27,7 +27,7 @@ namespace VECTOR{
             Vector operator-();
             Vector operator*(double n);
 
-            friend Vector operator*(double n, const Vector &a);
+            friend Vector operator*(const double n, const Vector &a);
             friend std::ostream & operator<<(std::ostream&os, const Vector & v);
     };//end class Vector
 }

@@ -9,7 +9,7 @@ atan2 = ?åå?ùºÎØ∏ÌÑ∞Í∞? 2Í∞?(b, a)
 namespace VECTOR{
     const double Rad_to_deg = 45.0 / atan(1.0);
 
-    void Vector::set_x() { x = mag*cos(ang); }
+    void Vector::set_x() { x = mag*cos( (ang)); }
     void Vector::set_y() { y = mag*sin(ang); }
     void Vector::set_mag() { mag = sqrt(x*x + y*y); }
     void Vector::set_ang() { if(x==0.0 && y==0.0) ang = 0.0;
@@ -59,11 +59,11 @@ namespace VECTOR{
     void Vector::polar_mode(){ mode = POL; }
     void Vector::rect_mode(){ mode = RECT; }
 
-    Vector Vector::operator+(const Vector &b){ return Vector(x+b.x, y+b.y); }
-    Vector Vector::operator-(const Vector &b){ return Vector(x-b.x, y-b.y); }
-    Vector Vector::operator-(){ return Vector(-x, -y); }
-    Vector Vector::operator*(double n){ return Vector(n*x, n*y); }
-    Vector operator*(double n, const Vector&a){ return a*n; }
+    Vector Vector::operator+(const Vector &b) { return Vector(x+b.x, y+b.y); }
+    Vector Vector::operator-(const Vector &b) { return Vector(x-b.x, y-b.y); }
+    Vector Vector::operator-() { return Vector(-x, -y); }
+    Vector Vector::operator*(double n) { return Vector(n*x, n*y); }
+    Vector operator*(const double n, const Vector &a) { return n*a; }
 
     std::ostream & operator << (std:: ostream & os, const Vector & v){
         if(v.mode == Vector::RECT)
