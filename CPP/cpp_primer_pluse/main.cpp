@@ -1,9 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <cstdlib>
-
-using namespace std;
-
 /*
 시퀀스 컨테이너(sequence container)
     vector, deque, list, forwad_list
@@ -16,11 +10,12 @@ void extern_func_test(int n);
 
 void sequence_vector();
 void sequence_list();
+void sequence_forwad_list();
 
 int main(void){
     
-    sequence_vector();
-    //sequence_list();
+    //sequence_vector();
+    sequence_list();
 
     return 0;
 }

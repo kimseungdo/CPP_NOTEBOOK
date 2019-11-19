@@ -122,6 +122,33 @@ main/fast:
 	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+STL_list.obj: STL_list.cpp.obj
+
+.PHONY : STL_list.obj
+
+# target to build an object file
+STL_list.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_list.cpp.obj
+.PHONY : STL_list.cpp.obj
+
+STL_list.i: STL_list.cpp.i
+
+.PHONY : STL_list.i
+
+# target to preprocess a source file
+STL_list.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_list.cpp.i
+.PHONY : STL_list.cpp.i
+
+STL_list.s: STL_list.cpp.s
+
+.PHONY : STL_list.s
+
+# target to generate assembly for a file
+STL_list.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_list.cpp.s
+.PHONY : STL_list.cpp.s
+
 STL_vector.obj: STL_vector.cpp.obj
 
 .PHONY : STL_vector.obj
@@ -212,6 +239,9 @@ help:
 	@echo ... edit_cache
 	@echo ... main
 	@echo ... rebuild_cache
+	@echo ... STL_list.obj
+	@echo ... STL_list.i
+	@echo ... STL_list.s
 	@echo ... STL_vector.obj
 	@echo ... STL_vector.i
 	@echo ... STL_vector.s

@@ -3,6 +3,10 @@
 using namespace std;
 
 /*
+배열같은놈 배열로 접근 가능
+반복자 타입 RandomAccessIterator
+RandomAccessIterator는 BidirectionalIterator를 상속받고 있음
+
 push_back() pop_back()
 */
 
@@ -12,8 +16,8 @@ void extern_func_test(int n){
 
 //벡터는 배열로 받는다
 void print_vector(vector<int>& T){
-    cout<<"출력문"; for(int i=0; i<T.size(); ++i) cout<< T[i] << " "; cout<< endl;
-    cout<<"출력문"; for(const auto& e : T) cout<< e << " "; cout<< endl;
+    cout<<"display vector"; for(int i=0; i<T.size(); ++i) cout<< T[i] << " "; cout<< endl;
+    //cout<<"another display vector"; for(const auto& e : T) cout<< e << " "; cout<< endl;
 }
 
 void sequence_vector(){
@@ -24,8 +28,9 @@ void sequence_vector(){
     *vi.insert(vi.begin(), 15); print_vector(vi);
     *vi.erase(vi.begin()); print_vector(vi);
 
-    vector<int>::iterator left_v = vi.begin();
+    vector<int>::iterator left_v = vi.begin(); //멤버타입으로 정의
     vector<int>::reverse_iterator right_v = vi.rbegin();
 
-    for(; right_v != vi.rend(); right_v++) cout<< *right_v<< " "; cout<<endl;
+    cout<<"reverce vector display : "; for(; right_v != vi.rend(); right_v++) cout<< *right_v<< " "; 
+    cout<<endl<<"vector container"<<endl<<endl;
 }
