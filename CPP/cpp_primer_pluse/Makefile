@@ -122,32 +122,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-c11_stl_vector.obj: c11_stl_vector.cpp.obj
+STL_vector.obj: STL_vector.cpp.obj
 
-.PHONY : c11_stl_vector.obj
+.PHONY : STL_vector.obj
 
 # target to build an object file
-c11_stl_vector.cpp.obj:
-	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/c11_stl_vector.cpp.obj
-.PHONY : c11_stl_vector.cpp.obj
+STL_vector.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_vector.cpp.obj
+.PHONY : STL_vector.cpp.obj
 
-c11_stl_vector.i: c11_stl_vector.cpp.i
+STL_vector.i: STL_vector.cpp.i
 
-.PHONY : c11_stl_vector.i
+.PHONY : STL_vector.i
 
 # target to preprocess a source file
-c11_stl_vector.cpp.i:
-	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/c11_stl_vector.cpp.i
-.PHONY : c11_stl_vector.cpp.i
+STL_vector.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_vector.cpp.i
+.PHONY : STL_vector.cpp.i
 
-c11_stl_vector.s: c11_stl_vector.cpp.s
+STL_vector.s: STL_vector.cpp.s
 
-.PHONY : c11_stl_vector.s
+.PHONY : STL_vector.s
 
 # target to generate assembly for a file
-c11_stl_vector.cpp.s:
-	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/c11_stl_vector.cpp.s
-.PHONY : c11_stl_vector.cpp.s
+STL_vector.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_vector.cpp.s
+.PHONY : STL_vector.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -212,9 +212,9 @@ help:
 	@echo ... edit_cache
 	@echo ... main
 	@echo ... rebuild_cache
-	@echo ... c11_stl_vector.obj
-	@echo ... c11_stl_vector.i
-	@echo ... c11_stl_vector.s
+	@echo ... STL_vector.obj
+	@echo ... STL_vector.i
+	@echo ... STL_vector.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

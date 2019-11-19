@@ -9,17 +9,18 @@ using namespace std;
     vector, deque, list, forwad_list
 연관 컨테이너(associative container)
     set, multiset, map, multimap
-컨테이너 어댑터(adapter container)
+접근(adapter container)
     stack, queue, priority_queue
 */
-void aa(vector<int> &T);
+void extern_func_test(int n);
+
+void sequence_vector();
+void sequence_list();
 
 int main(void){
-    vector<int> vi{1,2,3,4};
-    cout << *vi.begin() << endl;
-
-    for (vector<int>::iterator itr = vi.begin(); itr != vi.end(); ++itr)
-        std::cout << *itr << " ";
     
-    aa(vi);
+    sequence_vector();
+    //sequence_list();
+
+    return 0;
 }
