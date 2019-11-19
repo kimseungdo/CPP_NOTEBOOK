@@ -3,7 +3,8 @@
   
 using namespace cv;  
 using namespace std;  
-  
+/*
+#pragma region 
 int main(int, char**)  {  
 
     VideoCapture cap(0);  
@@ -21,3 +22,6 @@ int main(int, char**)  {
   
     return 0;  
 }  
+#pragma endregion
+*/
+

@@ -8,3 +8,9 @@ Opencv_CPP/Makefile
 Opencv_CPP/cmake_install.cmake
 
 Opencv_CPP/CMakeCache.txt
+
+CPP/cpp_primer_pluse/cmake_install.cmake
+
+CPP/cpp_primer_pluse/CMakeCache.txt
+
+CPP/cpp_primer_pluse/CMakeFiles/
