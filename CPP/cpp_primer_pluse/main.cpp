@@ -1,21 +1,32 @@
 /*
-½ÃÄö½º ÄÁÅ×ÀÌ³Ê(sequence container)
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½(sequence container)
     vector, deque, list, forwad_list
-¿¬°ü ÄÁÅ×ÀÌ³Ê(associative container)
+ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½(associative container)
     set, multiset, map, multimap
-Á¢±Ù(adapter container)
+ï¿½ï¿½ï¿½ï¿½(adapter container)
     stack, queue, priority_queue
 */
+#include <ctime>
+#include <iostream>
+
 void extern_func_test(int n);
 
 void sequence_vector();
 void sequence_list();
-void sequence_forwad_list();
+void sequence_deque();
 
 int main(void){
+    clock_t start, end;
+    start = clock();
+
     
     //sequence_vector();
-    sequence_list();
+    //sequence_list();
+    sequence_deque();
+    
 
+    end = clock();
+    double result = double (end - start)/CLOCKS_PER_SEC;
+    std::cout << "time out : " << result << std::endl; 
     return 0;
 }
