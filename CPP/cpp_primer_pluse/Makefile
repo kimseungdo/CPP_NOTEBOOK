@@ -122,6 +122,33 @@ main/fast:
 	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+STL_dqueue.obj: STL_dqueue.cpp.obj
+
+.PHONY : STL_dqueue.obj
+
+# target to build an object file
+STL_dqueue.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_dqueue.cpp.obj
+.PHONY : STL_dqueue.cpp.obj
+
+STL_dqueue.i: STL_dqueue.cpp.i
+
+.PHONY : STL_dqueue.i
+
+# target to preprocess a source file
+STL_dqueue.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_dqueue.cpp.i
+.PHONY : STL_dqueue.cpp.i
+
+STL_dqueue.s: STL_dqueue.cpp.s
+
+.PHONY : STL_dqueue.s
+
+# target to generate assembly for a file
+STL_dqueue.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_dqueue.cpp.s
+.PHONY : STL_dqueue.cpp.s
+
 STL_list.obj: STL_list.cpp.obj
 
 .PHONY : STL_list.obj
@@ -239,6 +266,9 @@ help:
 	@echo ... edit_cache
 	@echo ... main
 	@echo ... rebuild_cache
+	@echo ... STL_dqueue.obj
+	@echo ... STL_dqueue.i
+	@echo ... STL_dqueue.s
 	@echo ... STL_list.obj
 	@echo ... STL_list.i
 	@echo ... STL_list.s
