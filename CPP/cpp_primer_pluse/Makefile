@@ -176,6 +176,33 @@ STL_list.cpp.s:
 	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_list.cpp.s
 .PHONY : STL_list.cpp.s
 
+STL_set.obj: STL_set.cpp.obj
+
+.PHONY : STL_set.obj
+
+# target to build an object file
+STL_set.cpp.obj:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_set.cpp.obj
+.PHONY : STL_set.cpp.obj
+
+STL_set.i: STL_set.cpp.i
+
+.PHONY : STL_set.i
+
+# target to preprocess a source file
+STL_set.cpp.i:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_set.cpp.i
+.PHONY : STL_set.cpp.i
+
+STL_set.s: STL_set.cpp.s
+
+.PHONY : STL_set.s
+
+# target to generate assembly for a file
+STL_set.cpp.s:
+	$(MAKE) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/STL_set.cpp.s
+.PHONY : STL_set.cpp.s
+
 STL_vector.obj: STL_vector.cpp.obj
 
 .PHONY : STL_vector.obj
@@ -272,6 +299,9 @@ help:
 	@echo ... STL_list.obj
 	@echo ... STL_list.i
 	@echo ... STL_list.s
+	@echo ... STL_set.obj
+	@echo ... STL_set.i
+	@echo ... STL_set.s
 	@echo ... STL_vector.obj
 	@echo ... STL_vector.i
 	@echo ... STL_vector.s
