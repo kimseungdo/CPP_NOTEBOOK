@@ -18,67 +18,54 @@
 border-color: rgb(0, 0, 0);
 </string>
   </property>
-  <widget class="QWidget" name="home_window" native="true">
+  <widget class="QLabel" name="time_label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>256</y>
+     <width>480</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>시간</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="title_label">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>480</width>
-     <height>272</height>
+     <height>16</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
-border-color: rgb(0, 0, 0);
-</string>
+    <string notr="true">background-color: rgb(255, 255, 127);</string>
    </property>
-   <widget class="QLabel" name="time_label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>256</y>
-      <width>480</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 127);</string>
-    </property>
-    <property name="text">
-     <string>시간</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="title_label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>480</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 127);</string>
-    </property>
-    <property name="text">
-     <string>타이틀</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QWidget" name="main_widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>16</y>
-      <width>480</width>
-      <height>240</height>
-     </rect>
-    </property>
+   <property name="text">
+    <string>타이틀</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>16</y>
+     <width>480</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="main_page">
     <widget class="QPushButton" name="info_btn">
      <property name="geometry">
       <rect>
@@ -137,29 +124,10 @@ border-color: rgb(0, 0, 0);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 255, 127);</string>
+      <string notr="true">background-color: rgb(85, 255, 0);</string>
      </property>
      <property name="text">
       <string>기지국 ID</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="main_label_3">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>90</y>
-       <width>75</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 255, 127);</string>
-     </property>
-     <property name="text">
-      <string>Version</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -175,10 +143,29 @@ border-color: rgb(0, 0, 0);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 255, 127);</string>
+      <string notr="true">background-color: rgb(85, 255, 0);</string>
      </property>
      <property name="text">
       <string>IP</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="main_label_3">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>90</y>
+       <width>75</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string>Version</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -194,16 +181,16 @@ border-color: rgb(0, 0, 0);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 255, 255);</string>
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
      </property>
      <property name="text">
-      <string>기지국 ID</string>
+      <string>기지국라벨</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="Ip_label">
+    <widget class="QLabel" name="IP_label">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -213,10 +200,10 @@ border-color: rgb(0, 0, 0);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 255, 255);</string>
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
      </property>
      <property name="text">
-      <string>IP</string>
+      <string>IP라벨</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -232,10 +219,10 @@ border-color: rgb(0, 0, 0);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 255, 255);</string>
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
      </property>
      <property name="text">
-      <string>Version</string>
+      <string>버전라벨</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
