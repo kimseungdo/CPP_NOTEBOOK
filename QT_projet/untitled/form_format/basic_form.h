@@ -6,11 +6,16 @@
 class QLabel;
 class QPushButton;
 
+namespace Ui { class basic_form; }
+
 class basic_form : public QWidget{
     Q_OBJECT
 public:
     explicit basic_form(QWidget *parent = 0);
+
 private:
+    Ui::basic_form *basic_ui;
+
     QLabel *test_label;
 
     QPushButton *home_btn; //setGeometry(10, 210, 50, 30);
@@ -21,6 +26,7 @@ private:
 signals:
 
 public slots:
+    void home_btn_click();
 };
 
 #endif // BASIC_FORM_H

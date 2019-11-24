@@ -1,7 +1,11 @@
-#include "basic_form.h"
+#include "form_format/basic_form.h"
+#include "main_window.h"
+
 #include <QLabel>
 #include <QPushButton>
+
 basic_form::basic_form(QWidget *parent) : QWidget(parent){
+
     setFixedSize(480, 272);
     test_label = new QLabel("form_format/basic_form_label", this); test_label->setAlignment(Qt::AlignCenter);
 
@@ -9,4 +13,9 @@ basic_form::basic_form(QWidget *parent) : QWidget(parent){
     before_btn = new QPushButton("이전", this); before_btn->setGeometry(70, 210, 50, 30);
     up_btn = new QPushButton("^", this); up_btn->setGeometry(460, 70, 20, 30);
     down_btn = new QPushButton("v", this); down_btn->setGeometry(460, 170, 20, 30);
+}
+
+void basic_form::home_btn_click(){
+    main_window W;
+    W.show();
 }

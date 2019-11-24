@@ -4,10 +4,13 @@
 #include <QWidget>
 #include "form_format/main_form.h"
 
-class window : public main_form{
+namespace Ui { class main_form; }
+class main_window : public main_form{
     Q_OBJECT
 public:
-    explicit window(main_form *parent = 0);
+    explicit main_window(main_form *parent = 0);
+
+private:
 
 signals:
 
