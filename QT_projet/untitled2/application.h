@@ -2,6 +2,9 @@
 #define APPLICATION_H
 
 #include <QWidget>
+#include "info_window_file/info_window.h"
+#include "spec_window_file/spec_window.h"
+#include "set_window_file/set_window.h"
 
 namespace Ui {
 class application;
@@ -21,6 +24,9 @@ private slots:
 
 private:
     Ui::application *ui;
+    info_window *_info_window;
+    spec_window *_spec_window;
+    set_window *_set_window;
 
 };
 

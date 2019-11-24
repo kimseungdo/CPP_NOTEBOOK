@@ -54,10 +54,12 @@ public:
         time_label = new QLabel(home_window);
         time_label->setObjectName(QStringLiteral("time_label"));
         time_label->setGeometry(QRect(0, 256, 480, 16));
+        time_label->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 127);"));
         time_label->setAlignment(Qt::AlignCenter);
         title_label = new QLabel(home_window);
         title_label->setObjectName(QStringLiteral("title_label"));
         title_label->setGeometry(QRect(0, 0, 480, 16));
+        title_label->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 127);"));
         title_label->setAlignment(Qt::AlignCenter);
         main_widget = new QWidget(home_window);
         main_widget->setObjectName(QStringLiteral("main_widget"));

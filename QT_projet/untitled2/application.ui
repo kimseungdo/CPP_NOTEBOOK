@@ -41,6 +41,9 @@ border-color: rgb(0, 0, 0);
       <height>16</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 127);</string>
+    </property>
     <property name="text">
      <string>시간</string>
     </property>
@@ -56,6 +59,9 @@ border-color: rgb(0, 0, 0);
       <width>480</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 127);</string>
     </property>
     <property name="text">
      <string>타이틀</string>

@@ -24,8 +24,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        application.cpp
+        application.cpp \
+    set_window_file/set_window.cpp \
+    spec_window_file/spec_window.cpp \
+    info_window_file/info_window.cpp
 
-HEADERS  += application.h
+HEADERS  += application.h \
+    set_window_file/set_window.h \
+    spec_window_file/spec_window.h \
+    info_window_file/info_window.h
 
-FORMS    += application.ui
+FORMS    += application.ui \
+    set_window_file/set_window.ui \
+    spec_window_file/spec_window.ui \
+    info_window_file/info_window.ui
