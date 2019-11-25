@@ -19,7 +19,7 @@ private:
 
 signals:
     void Home_clicked();
-    void title_change(QString text);
+    void title_change(QString);
 
 private slots:
     void on_home_btn_clicked(); //집으로들

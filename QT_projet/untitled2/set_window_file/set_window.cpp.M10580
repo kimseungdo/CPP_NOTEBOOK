@@ -21,13 +21,14 @@ void set_window::on_before_btn_clicked(){ //세팅메인에서 메인페이지
 }
 
 void set_window::on_ip_set_btn_clicked(){//ip설정 화면으로
+
     set_ui->stackedWidget->setCurrentIndex(1);
     emit title_change("타이틀/설정/IP");
 }
 
 void set_window::on_time_set_btn_clicked(){//시간설정 화면으
     set_ui->stackedWidget->setCurrentIndex(2);
-    emit title_change("타이틀/설정/시간");
+    emit title_change("타이틀/설정/시");
 }
 void set_window::on_before_btn_2_clicked(){//
     set_ui->stackedWidget->setCurrentIndex(0);
