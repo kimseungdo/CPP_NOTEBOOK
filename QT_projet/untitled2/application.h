@@ -23,6 +23,7 @@ private slots:
     void on_spec_btn_clicked();
     void on_set_btn_clicked();
     void move_to_home();
+    void main_title(const QString &text_label);
 
 private:
     Ui::application *ui;

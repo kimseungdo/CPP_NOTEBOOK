@@ -77,11 +77,11 @@ public:
         ip_set_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         down_btn = new QPushButton(set_main_page);
         down_btn->setObjectName(QStringLiteral("down_btn"));
-        down_btn->setGeometry(QRect(455, 170, 25, 30));
+        down_btn->setGeometry(QRect(455, 170, 26, 30));
         down_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         up_btn = new QPushButton(set_main_page);
         up_btn->setObjectName(QStringLiteral("up_btn"));
-        up_btn->setGeometry(QRect(455, 50, 25, 30));
+        up_btn->setGeometry(QRect(455, 50, 26, 30));
         up_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         time_set_btn = new QPushButton(set_main_page);
         time_set_btn->setObjectName(QStringLiteral("time_set_btn"));
@@ -95,7 +95,7 @@ public:
         ip_set_page->setObjectName(QStringLiteral("ip_set_page"));
         up_btn_2 = new QPushButton(ip_set_page);
         up_btn_2->setObjectName(QStringLiteral("up_btn_2"));
-        up_btn_2->setGeometry(QRect(455, 50, 25, 30));
+        up_btn_2->setGeometry(QRect(455, 50, 26, 30));
         up_btn_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         before_btn_2 = new QPushButton(ip_set_page);
         before_btn_2->setObjectName(QStringLiteral("before_btn_2"));
@@ -103,7 +103,7 @@ public:
         before_btn_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         down_btn_2 = new QPushButton(ip_set_page);
         down_btn_2->setObjectName(QStringLiteral("down_btn_2"));
-        down_btn_2->setGeometry(QRect(455, 170, 25, 30));
+        down_btn_2->setGeometry(QRect(455, 170, 26, 30));
         down_btn_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         ip_set_label_1 = new QLabel(ip_set_page);
         ip_set_label_1->setObjectName(QStringLiteral("ip_set_label_1"));
@@ -143,7 +143,7 @@ public:
         time_set_page->setObjectName(QStringLiteral("time_set_page"));
         up_btn_3 = new QPushButton(time_set_page);
         up_btn_3->setObjectName(QStringLiteral("up_btn_3"));
-        up_btn_3->setGeometry(QRect(455, 50, 25, 30));
+        up_btn_3->setGeometry(QRect(455, 50, 26, 30));
         up_btn_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         before_btn_3 = new QPushButton(time_set_page);
         before_btn_3->setObjectName(QStringLiteral("before_btn_3"));
@@ -151,7 +151,7 @@ public:
         before_btn_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         down_btn_3 = new QPushButton(time_set_page);
         down_btn_3->setObjectName(QStringLiteral("down_btn_3"));
-        down_btn_3->setGeometry(QRect(455, 170, 25, 30));
+        down_btn_3->setGeometry(QRect(455, 170, 26, 30));
         down_btn_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         pushButton_4 = new QPushButton(time_set_page);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));

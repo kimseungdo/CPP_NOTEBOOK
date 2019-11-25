@@ -31,7 +31,9 @@ void set_window::on_time_set_btn_clicked(){//시간설정 화면으
 }
 void set_window::on_before_btn_2_clicked(){//
     set_ui->stackedWidget->setCurrentIndex(0);
+    emit title_change("타이틀/설정");
 }
 void set_window::on_before_btn_3_clicked(){
     set_ui->stackedWidget->setCurrentIndex(0);
+    emit title_change("타이틀/설정");
 }

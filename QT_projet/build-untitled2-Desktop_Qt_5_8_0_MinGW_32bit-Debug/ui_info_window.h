@@ -27,7 +27,7 @@ public:
     QStackedWidget *stackedWidget;
     QWidget *page;
     QWidget *page_2;
-    QLabel *label;
+    QLabel *label_2;
     QPushButton *home_btn;
 
     void setupUi(QWidget *info_window)
@@ -43,9 +43,9 @@ public:
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
-        label = new QLabel(page_2);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(190, 220, 56, 12));
+        label_2 = new QLabel(page_2);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(210, 210, 56, 12));
         stackedWidget->addWidget(page_2);
         home_btn = new QPushButton(info_window);
         home_btn->setObjectName(QStringLiteral("home_btn"));
@@ -60,7 +60,7 @@ public:
     void retranslateUi(QWidget *info_window)
     {
         info_window->setWindowTitle(QApplication::translate("info_window", "Form", Q_NULLPTR));
-        label->setText(QApplication::translate("info_window", "\354\240\225\353\263\264\355\231\224\353\251\264", Q_NULLPTR));
+        label_2->setText(QApplication::translate("info_window", "\354\240\225\353\263\264\355\231\224\353\251\264", Q_NULLPTR));
         home_btn->setText(QApplication::translate("info_window", "\355\231\210", Q_NULLPTR));
     } // retranslateUi
 
