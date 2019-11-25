@@ -14,7 +14,9 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,16 +24,33 @@ QT_BEGIN_NAMESPACE
 class Ui_info_window
 {
 public:
-    QPushButton *pushButton;
+    QStackedWidget *stackedWidget;
+    QWidget *page;
+    QWidget *page_2;
+    QLabel *label;
+    QPushButton *home_btn;
 
     void setupUi(QWidget *info_window)
     {
         if (info_window->objectName().isEmpty())
             info_window->setObjectName(QStringLiteral("info_window"));
         info_window->resize(480, 240);
-        pushButton = new QPushButton(info_window);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(200, 80, 75, 23));
+        stackedWidget = new QStackedWidget(info_window);
+        stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        stackedWidget->setGeometry(QRect(0, 0, 480, 240));
+        page = new QWidget();
+        page->setObjectName(QStringLiteral("page"));
+        stackedWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName(QStringLiteral("page_2"));
+        label = new QLabel(page_2);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(190, 220, 56, 12));
+        stackedWidget->addWidget(page_2);
+        home_btn = new QPushButton(info_window);
+        home_btn->setObjectName(QStringLiteral("home_btn"));
+        home_btn->setGeometry(QRect(5, 205, 45, 30));
+        home_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
 
         retranslateUi(info_window);
 
@@ -41,7 +60,8 @@ public:
     void retranslateUi(QWidget *info_window)
     {
         info_window->setWindowTitle(QApplication::translate("info_window", "Form", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("info_window", "\354\240\225\353\263\264\353\236\221\352\272\240", Q_NULLPTR));
+        label->setText(QApplication::translate("info_window", "\354\240\225\353\263\264\355\231\224\353\251\264", Q_NULLPTR));
+        home_btn->setText(QApplication::translate("info_window", "\355\231\210", Q_NULLPTR));
     } // retranslateUi
 
 };

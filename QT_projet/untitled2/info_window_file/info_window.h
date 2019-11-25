@@ -7,8 +7,7 @@ namespace Ui {
 class info_window;
 }
 
-class info_window : public QWidget
-{
+class info_window : public QWidget{
     Q_OBJECT
 
 public:
@@ -16,7 +15,13 @@ public:
     ~info_window();
 
 private:
-    Ui::info_window *ui;
+    Ui::info_window *info_ui;
+
+signals:
+    void Home_clicked();
+
+private slots:
+    void on_home_btn_clicked();
 };
 
 #endif // INFO_WINDOW_H
