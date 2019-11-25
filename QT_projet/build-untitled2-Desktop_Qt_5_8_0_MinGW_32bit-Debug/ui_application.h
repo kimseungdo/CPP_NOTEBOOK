@@ -16,6 +16,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,18 +24,18 @@ QT_BEGIN_NAMESPACE
 class Ui_application
 {
 public:
-    QWidget *home_window;
     QLabel *time_label;
     QLabel *title_label;
-    QWidget *main_widget;
+    QStackedWidget *stackedWidget;
+    QWidget *main_page;
     QPushButton *info_btn;
     QPushButton *spec_btn;
     QPushButton *set_btn;
     QLabel *main_label_1;
-    QLabel *main_label_3;
     QLabel *main_label_2;
+    QLabel *main_label_3;
     QLabel *Station_label;
-    QLabel *Ip_label;
+    QLabel *IP_label;
     QLabel *Version_label;
 
     void setupUi(QWidget *application)
@@ -45,65 +46,64 @@ public:
         application->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "border-color: rgb(0, 0, 0);\n"
 ""));
-        home_window = new QWidget(application);
-        home_window->setObjectName(QStringLiteral("home_window"));
-        home_window->setGeometry(QRect(0, 0, 480, 272));
-        home_window->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
-"border-color: rgb(0, 0, 0);\n"
-""));
-        time_label = new QLabel(home_window);
+        time_label = new QLabel(application);
         time_label->setObjectName(QStringLiteral("time_label"));
         time_label->setGeometry(QRect(0, 256, 480, 16));
+        time_label->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 127);"));
         time_label->setAlignment(Qt::AlignCenter);
-        title_label = new QLabel(home_window);
+        title_label = new QLabel(application);
         title_label->setObjectName(QStringLiteral("title_label"));
         title_label->setGeometry(QRect(0, 0, 480, 16));
+        title_label->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 127);"));
         title_label->setAlignment(Qt::AlignCenter);
-        main_widget = new QWidget(home_window);
-        main_widget->setObjectName(QStringLiteral("main_widget"));
-        main_widget->setGeometry(QRect(0, 16, 480, 240));
-        info_btn = new QPushButton(main_widget);
+        stackedWidget = new QStackedWidget(application);
+        stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        stackedWidget->setGeometry(QRect(0, 16, 480, 240));
+        main_page = new QWidget();
+        main_page->setObjectName(QStringLiteral("main_page"));
+        info_btn = new QPushButton(main_page);
         info_btn->setObjectName(QStringLiteral("info_btn"));
         info_btn->setGeometry(QRect(50, 150, 100, 50));
         info_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
-        spec_btn = new QPushButton(main_widget);
+        spec_btn = new QPushButton(main_page);
         spec_btn->setObjectName(QStringLiteral("spec_btn"));
         spec_btn->setGeometry(QRect(190, 150, 100, 50));
         spec_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
-        set_btn = new QPushButton(main_widget);
+        set_btn = new QPushButton(main_page);
         set_btn->setObjectName(QStringLiteral("set_btn"));
         set_btn->setGeometry(QRect(330, 150, 100, 50));
         set_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
-        main_label_1 = new QLabel(main_widget);
+        main_label_1 = new QLabel(main_page);
         main_label_1->setObjectName(QStringLiteral("main_label_1"));
         main_label_1->setGeometry(QRect(130, 40, 75, 20));
-        main_label_1->setStyleSheet(QStringLiteral("background-color: rgb(0, 255, 127);"));
+        main_label_1->setStyleSheet(QStringLiteral("background-color: rgb(85, 255, 0);"));
         main_label_1->setAlignment(Qt::AlignCenter);
-        main_label_3 = new QLabel(main_widget);
-        main_label_3->setObjectName(QStringLiteral("main_label_3"));
-        main_label_3->setGeometry(QRect(130, 90, 75, 20));
-        main_label_3->setStyleSheet(QStringLiteral("background-color: rgb(0, 255, 127);"));
-        main_label_3->setAlignment(Qt::AlignCenter);
-        main_label_2 = new QLabel(main_widget);
+        main_label_2 = new QLabel(main_page);
         main_label_2->setObjectName(QStringLiteral("main_label_2"));
         main_label_2->setGeometry(QRect(130, 65, 75, 20));
-        main_label_2->setStyleSheet(QStringLiteral("background-color: rgb(0, 255, 127);"));
+        main_label_2->setStyleSheet(QStringLiteral("background-color: rgb(85, 255, 0);"));
         main_label_2->setAlignment(Qt::AlignCenter);
-        Station_label = new QLabel(main_widget);
+        main_label_3 = new QLabel(main_page);
+        main_label_3->setObjectName(QStringLiteral("main_label_3"));
+        main_label_3->setGeometry(QRect(130, 90, 75, 20));
+        main_label_3->setStyleSheet(QStringLiteral("background-color: rgb(85, 255, 0);"));
+        main_label_3->setAlignment(Qt::AlignCenter);
+        Station_label = new QLabel(main_page);
         Station_label->setObjectName(QStringLiteral("Station_label"));
         Station_label->setGeometry(QRect(220, 40, 150, 20));
-        Station_label->setStyleSheet(QStringLiteral("background-color: rgb(0, 255, 255);"));
+        Station_label->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
         Station_label->setAlignment(Qt::AlignCenter);
-        Ip_label = new QLabel(main_widget);
-        Ip_label->setObjectName(QStringLiteral("Ip_label"));
-        Ip_label->setGeometry(QRect(220, 65, 150, 20));
-        Ip_label->setStyleSheet(QStringLiteral("background-color: rgb(0, 255, 255);"));
-        Ip_label->setAlignment(Qt::AlignCenter);
-        Version_label = new QLabel(main_widget);
+        IP_label = new QLabel(main_page);
+        IP_label->setObjectName(QStringLiteral("IP_label"));
+        IP_label->setGeometry(QRect(220, 65, 150, 20));
+        IP_label->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        IP_label->setAlignment(Qt::AlignCenter);
+        Version_label = new QLabel(main_page);
         Version_label->setObjectName(QStringLiteral("Version_label"));
         Version_label->setGeometry(QRect(220, 90, 150, 20));
-        Version_label->setStyleSheet(QStringLiteral("background-color: rgb(0, 255, 255);"));
+        Version_label->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
         Version_label->setAlignment(Qt::AlignCenter);
+        stackedWidget->addWidget(main_page);
 
         retranslateUi(application);
 
@@ -119,11 +119,11 @@ public:
         spec_btn->setText(QApplication::translate("application", "\354\203\201\354\204\270", Q_NULLPTR));
         set_btn->setText(QApplication::translate("application", "\354\204\244\354\240\225", Q_NULLPTR));
         main_label_1->setText(QApplication::translate("application", "\352\270\260\354\247\200\352\265\255 ID", Q_NULLPTR));
-        main_label_3->setText(QApplication::translate("application", "Version", Q_NULLPTR));
         main_label_2->setText(QApplication::translate("application", "IP", Q_NULLPTR));
-        Station_label->setText(QApplication::translate("application", "\352\270\260\354\247\200\352\265\255 ID", Q_NULLPTR));
-        Ip_label->setText(QApplication::translate("application", "IP", Q_NULLPTR));
-        Version_label->setText(QApplication::translate("application", "Version", Q_NULLPTR));
+        main_label_3->setText(QApplication::translate("application", "Version", Q_NULLPTR));
+        Station_label->setText(QApplication::translate("application", "\352\270\260\354\247\200\352\265\255\353\235\274\353\262\250", Q_NULLPTR));
+        IP_label->setText(QApplication::translate("application", "IP\353\235\274\353\262\250", Q_NULLPTR));
+        Version_label->setText(QApplication::translate("application", "\353\262\204\354\240\204\353\235\274\353\262\250", Q_NULLPTR));
     } // retranslateUi
 
 };
