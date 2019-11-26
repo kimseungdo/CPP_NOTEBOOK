@@ -40,7 +40,7 @@ public:
     QPushButton *slot_btn_9;
     QPushButton *slot_btn_10;
     QPushButton *slot_btn_11;
-    QLabel *label;
+    QLabel *info_window_slot_label;
     QPushButton *home_btn;
 
     void setupUi(QWidget *info_window)
@@ -110,11 +110,11 @@ public:
         slot_btn_11->setObjectName(QStringLiteral("slot_btn_11"));
         slot_btn_11->setGeometry(QRect(350, 160, 71, 41));
         slot_btn_11->setStyleSheet(QStringLiteral("background-color: rgb(170, 170, 255);"));
-        label = new QLabel(page);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(190, 10, 71, 41));
-        label->setStyleSheet(QStringLiteral("background-color: rgb(85, 255, 0);"));
-        label->setAlignment(Qt::AlignCenter);
+        info_window_slot_label = new QLabel(page);
+        info_window_slot_label->setObjectName(QStringLiteral("info_window_slot_label"));
+        info_window_slot_label->setGeometry(QRect(190, 10, 71, 41));
+        info_window_slot_label->setStyleSheet(QStringLiteral("background-color: rgb(85, 255, 0);"));
+        info_window_slot_label->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(page);
         home_btn = new QPushButton(info_window);
         home_btn->setObjectName(QStringLiteral("home_btn"));
@@ -143,7 +143,7 @@ public:
         slot_btn_9->setText(QApplication::translate("info_window", "SLOT 9", Q_NULLPTR));
         slot_btn_10->setText(QApplication::translate("info_window", "SLOT 10", Q_NULLPTR));
         slot_btn_11->setText(QApplication::translate("info_window", "SLOT 11", Q_NULLPTR));
-        label->setText(QApplication::translate("info_window", "Main", Q_NULLPTR));
+        info_window_slot_label->setText(QApplication::translate("info_window", "Main", Q_NULLPTR));
         home_btn->setText(QApplication::translate("info_window", "\355\231\210", Q_NULLPTR));
     } // retranslateUi
 

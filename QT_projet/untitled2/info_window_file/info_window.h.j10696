@@ -16,16 +16,10 @@ public:
 
 private:
     Ui::info_window *info_ui;
-    int slot_counter; //line_clount == 1 only main
-                       //line_clunt > 1 exists other sub slot
-    int window_index;
-    bool sub_flag; // sub1 = true; sub2 = false;
-
-    QVector<bool> info_slots; //슬롯정보를 담을거
-    void init_slot_info_window();
-    void first_slot_info_window();
-    void second_slot_info_window();
-
+    short up_down_counter = 11;
+    int line_count ; //line_clount == 1 only main
+                     //line_clunt > 1 exists other sub slot
+    QVector< QVector<bool> > info_slots; //슬롯정보를 담을겨
 signals:
     void Home_clicked();
 

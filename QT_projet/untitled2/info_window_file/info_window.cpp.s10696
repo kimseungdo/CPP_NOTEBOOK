@@ -1,0 +1,113 @@
+#include "info_window.h"
+#include "ui_info_window.h"
+
+#include <QVector2D>
+
+#include <QVariant>
+
+#include <QFile>
+#include <QString>
+#include <QStringList>
+#include <QDebug>
+#include <QTextStream>
+#include <QIODevice>
+
+//non eabi mcu - cotex m7 m4
+info_window::info_window(QWidget *parent) : QWidget(parent),
+    info_ui(new Ui::info_window){
+    info_ui->setupUi(this); line_count=0;
+
+
+
+
+    QFile file(QApplication::applicationDirPath()+"/info_flag_file.txt");
+    if(!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open the file for reading";
+        qDebug() << QApplication::applicationDirPath();
+        return;
+    }//file read
+
+    while(!file.atEnd()){
+        QString tmp = file.readLine(); line_count++;
+        QStringList tmplist = tmp.split(",");
+
+        tmplist.removeAt(11);
+
+        //temp_info_slots.operator += (QVariant(std::move(tmplist.value(3))).toBool() ) ;
+
+        qDebug()<< tmplist;
+        for(int i=0; i<tmplist.size(); i++){
+            //info_slots.append(*QVariant(tmplist[i]).toBool()); //bool 형변환 대
+            qDebug()<< *tmplist;
+            info_slots.push_back(QVariant(tmplist.value(i)).toBool());
+            //info_slots.append();
+        }
+    }    file.flush(); file.close();
+
+
+
+
+    info_ui->slot_btn_1->setEnabled(info_slots[0]);
+    info_ui->slot_btn_2->setEnabled(info_slots[1]);
+    info_ui->slot_btn_3->setEnabled(info_slots[2]);
+    info_ui->slot_btn_4->setEnabled(info_slots[3]);
+    info_ui->slot_btn_5->setEnabled(info_slots[4]);
+    info_ui->slot_btn_6->setEnabled(info_slots[5]);
+    info_ui->slot_btn_7->setEnabled(info_slots[6]);
+    info_ui->slot_btn_8->setEnabled(info_slots[7]);
+    info_ui->slot_btn_9->setEnabled(info_slots[8]);
+    info_ui->slot_btn_10->setEnabled(info_slots[9]);
+    info_ui->slot_btn_11->setEnabled(info_slots[10]);
+
+
+    if(line_count == 1){
+        info_ui->up_btn->hide();
+        info_ui->down_btn->hide();
+    }
+    else{
+        info_ui->up_btn->show();
+        info_ui->down_btn->show();
+    }
+    //qDeleteAll(temp_info_slots.begin(), temp_info_slots.end());
+}
+
+info_window::~info_window(){
+    delete info_ui;
+}
+
+void info_window::on_home_btn_clicked(){ //집으로
+    info_ui->stackedWidget->setCurrentIndex(0);
+    emit Home_clicked();
+}
+void info_window::on_before_btn_clicked(){ //정보화면 메인에서 집으로
+    info_ui->stackedWidget->setCurrentIndex(0);
+    emit Home_clicked();
+}
+
+void info_window::on_up_btn_clicked(){
+    info_ui->slot_btn_1->setEnabled(info_slots[0+up_down_counter]);
+    info_ui->slot_btn_2->setEnabled(info_slots[1+up_down_counter]);
+    info_ui->slot_btn_3->setEnabled(info_slots[2+up_down_counter]);
+    info_ui->slot_btn_4->setEnabled(info_slots[3+up_down_counter]);
+    info_ui->slot_btn_5->setEnabled(info_slots[4+up_down_counter]);
+    info_ui->slot_btn_6->setEnabled(info_slots[5+up_down_counter]);
+    info_ui->slot_btn_7->setEnabled(info_slots[6+up_down_counter]);
+    info_ui->slot_btn_8->setEnabled(info_slots[7+up_down_counter]);
+    info_ui->slot_btn_9->setEnabled(info_slots[8+up_down_counter]);
+    info_ui->slot_btn_10->setEnabled(info_slots[9+up_down_counter]);
+    info_ui->slot_btn_11->setEnabled(info_slots[10+up_down_counter]);
+}
+
+void info_window::on_down_btn_clicked(){
+    info_ui->slot_btn_1->setEnabled(info_slots[0]);
+    info_ui->slot_btn_2->setEnabled(info_slots[1-up_down_counter]);
+    info_ui->slot_btn_3->setEnabled(info_slots[2-up_down_counter]);
+    info_ui->slot_btn_4->setEnabled(info_slots[3-up_down_counter]);
+    info_ui->slot_btn_5->setEnabled(info_slots[4-up_down_counter]);
+    info_ui->slot_btn_6->setEnabled(info_slots[5-up_down_counter]);
+    info_ui->slot_btn_7->setEnabled(info_slots[6-up_down_counter]);
+    info_ui->slot_btn_8->setEnabled(info_slots[7-up_down_counter]);
+    info_ui->slot_btn_9->setEnabled(info_slots[8-up_down_counter]);
+    info_ui->slot_btn_10->setEnabled(info_slots[9-up_down_counter]);
+    info_ui->slot_btn_11->setEnabled(info_slots[10-up_down_counter]);
+}

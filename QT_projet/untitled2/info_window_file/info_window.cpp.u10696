@@ -14,7 +14,7 @@
 info_window::info_window(QWidget *parent) : QWidget(parent),
     info_ui(new Ui::info_window){
     info_ui->setupUi(this);
-    slot_counter=0; window_index=0; sub_flag = true; // sub1 = true; sub2 = false;
+    slot_counter=0; window_index=0;
 
     QFile file(QApplication::applicationDirPath()+"/info_flag_file.txt");
     if(!file.open(QFile::ReadOnly | QFile::Text)) {
@@ -26,9 +26,7 @@ info_window::info_window(QWidget *parent) : QWidget(parent),
     while(!file.atEnd()){
         QString tmp = file.readLine(); slot_counter++;
         QStringList tmplist = tmp.split(",");
-        if(tmplist.at(0) == "\n"){ //첫번째 요소에 개행이 있으면 연결이 안된것 = sub1이 연결 안된것 마지막까지 연결 되어있다면
 
-        }
         tmplist.removeAt(11);
         qDebug()<< tmplist;
         for(int i=0; i<tmplist.size(); i++)
@@ -37,13 +35,13 @@ info_window::info_window(QWidget *parent) : QWidget(parent),
     }file.flush(); file.close();
     qDebug()<<info_slots.size();
 
-//메인 메인-서브1 메인-서브2 메인-서브1-서브2
-    if(slot_counter == 1){ //1개는 메인만 있는거 메인은 무적권 하나 있어야
+
+    if(slot_counter == 1){ //1개는 메인만 있는거
         init_slot_info_window();//메인이 존재하면 버튼활성화
         info_ui->up_btn->hide();
         info_ui->down_btn->hide();
     }
-    else if(slot_counter == 2){ //2개는 메인 서브1 메인 서브2
+    else if(slot_counter == 2){ //2개는 메인 서브1
         first_slot_info_window();
         init_slot_info_window();
         info_ui->up_btn->show();
@@ -75,49 +73,27 @@ void info_window::on_before_btn_clicked(){ //정보화면 메인에서 집으로
 }
 // 메인 -> 서브1 ->서브2 -> 메인 ~~~~ 메인 -> 서브2 -> 서브1 ->메인
 void info_window::on_up_btn_clicked(){
-    if(slot_counter == 3){ //화면이 3개
-        if(window_index == 0){
-            ++window_index; first_slot_info_window();
-        }
-        else if(window_index == 1){
-            ++window_index; second_slot_info_window();
-        }
-        else{
-            window_index = 0; init_slot_info_window();
-        }
+    if(window_index == 0){
+        ++window_index; first_slot_info_window();
     }
-    else if(slot_counter == 2){ //화면이 2개
-        if(window_index == 0){
-            ++window_index; first_slot_info_window();
-        }
-        else if(window_index == 1){
-            window_index = 0; init_slot_info_window();
-        }
+    else if(window_index == 1){
+        ++window_index; second_slot_info_window();
+    }
+    else{
+        window_index = 0; init_slot_info_window();
     }
 }
 
 void info_window::on_down_btn_clicked(){
-    if(slot_counter == 3){
-        if(window_index == 0){
-            --window_index; second_slot_info_window();
-        }
-        else if(window_index == -1){
-            --window_index; first_slot_info_window();
-        }
-        else{
-            window_index = 0; init_slot_info_window();
-        }
+    if(window_index == 0){
+        --window_index; first_slot_info_window();
     }
-    else if(slot_counter ==2){
-        if(window_index == 0){
-            --window_index; first_slot_info_window();
-        }
-        else if(window_index == -1){
-            window_index = 0; init_slot_info_window();
-        }
+    else if(window_index == -1){
+        --window_index; second_slot_info_window();
     }
-
-
+    else{
+        window_index = 0; init_slot_info_window();
+    }
 }
 
 void info_window::init_slot_info_window(){

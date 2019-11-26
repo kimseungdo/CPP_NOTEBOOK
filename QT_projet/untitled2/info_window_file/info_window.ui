@@ -250,7 +250,7 @@
       <string>SLOT 11</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="info_window_slot_label">
      <property name="geometry">
       <rect>
        <x>190</x>

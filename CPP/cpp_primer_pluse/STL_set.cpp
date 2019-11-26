@@ -6,7 +6,8 @@ class what_todo{
     int priority;
     string todo;
 
-
+    public:
+        
 };
 
 
