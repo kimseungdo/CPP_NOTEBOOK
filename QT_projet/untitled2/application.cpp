@@ -5,7 +5,7 @@
 application::application(QWidget *parent) : QWidget(parent),
     ui(new Ui::application){
     ui->setupUi(this);
-
+    setFixedSize(480, 272);
     ui->stackedWidget->insertWidget(1, &_info_window);
     ui->stackedWidget->insertWidget(2, &_spec_window);
     ui->stackedWidget->insertWidget(3, &_set_window);

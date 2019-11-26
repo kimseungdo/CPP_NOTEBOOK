@@ -2,9 +2,6 @@
 #include "ui_info_window.h"
 
 #include <QVector>
-
-#include <QVariant>
-
 #include <QFile>
 #include <QString>
 #include <QStringList>
@@ -22,39 +19,29 @@ info_window::info_window(QWidget *parent) : QWidget(parent),
         qDebug() << "Could not open the file for reading";
         qDebug() << QApplication::applicationDirPath();
         return;
-    }//file read
+    }
+    //QTextStream in(&file);
+    //QString myText = in.readAll();
+    //qDebug() << myText;
 
     while(!file.atEnd()){
-        QString tmp = file.readLine(); line_count++;
+        QString tmp = file.readLine();
         QStringList tmplist = tmp.split(",");
-        qDebug() << tmplist[10]<< " " << tmplist[11] << line_count;
-        tmplist.removeAt(11);
-        for(int i=0; i<tmplist.size(); i++)
-            info_slots.append(QVariant(tmplist[i]).toBool()); //bool 형변
 
-    }qDebug() << info_slots.size() << " " << line_count;
+        qDebug() << tmplist[0][0];
+        //slot_on_off_switch = (tmplist == "1"? true:false);
 
-    file.flush(); file.close();
-    qDebug() << info_slots.size();
-/*
- *
-    bool info_slots[line_count][10];
+        //info_slots[line_clount][0].append( bool(tmplist[0]) );
 
-    for(int i=0; i<line_count; i++){
-        for(int j=0; j<10; j++){
-            info_slots[line_count][j] = QVariant(tmplist[j]).toBool();
-        }
+        //if(tmplist == "\n") line_clount++;
     }
 
- */
-    if(line_count == 1){
-        info_ui->up_btn->hide();
-        info_ui->down_btn->hide();
-    }
-    else{
-        info_ui->up_btn->show();
-        info_ui->down_btn->show();
-    }
+    qDebug() << info_slots[0][0];
+
+    file.flush();
+    file.close();
+
+
 
 }
 

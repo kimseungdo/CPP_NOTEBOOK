@@ -38,3 +38,5 @@ FORMS    += application.ui \
     set_window_file/set_window.ui \
     spec_window_file/spec_window.ui \
     info_window_file/info_window.ui
+
+DISTFILES +=

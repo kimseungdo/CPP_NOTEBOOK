@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
@@ -24,7 +23,6 @@ QT_BEGIN_NAMESPACE
 class Ui_spec_window
 {
 public:
-    QLabel *label_2;
     QPushButton *home_btn;
     QStackedWidget *stackedWidget;
     QWidget *spec_window_1;
@@ -54,9 +52,6 @@ public:
         if (spec_window->objectName().isEmpty())
             spec_window->setObjectName(QStringLiteral("spec_window"));
         spec_window->resize(480, 240);
-        label_2 = new QLabel(spec_window);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(210, 210, 56, 12));
         home_btn = new QPushButton(spec_window);
         home_btn->setObjectName(QStringLiteral("home_btn"));
         home_btn->setGeometry(QRect(5, 205, 45, 30));
@@ -147,7 +142,6 @@ public:
         s_up_btn_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         stackedWidget->addWidget(spec_window_2);
         stackedWidget->raise();
-        label_2->raise();
         home_btn->raise();
 
         retranslateUi(spec_window);
@@ -158,7 +152,6 @@ public:
     void retranslateUi(QWidget *spec_window)
     {
         spec_window->setWindowTitle(QApplication::translate("spec_window", "Form", Q_NULLPTR));
-        label_2->setText(QApplication::translate("spec_window", "\354\203\201\354\204\270\355\231\224\353\251\2642", Q_NULLPTR));
         home_btn->setText(QApplication::translate("spec_window", "\355\231\210", Q_NULLPTR));
         pushButton->setText(QApplication::translate("spec_window", "\354\240\225\353\245\230\352\270\260\353\245\230", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("spec_window", "\354\240\204\353\240\245\352\264\200\353\245\230", Q_NULLPTR));

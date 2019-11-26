@@ -13,19 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>210</y>
-     <width>56</width>
-     <height>12</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>상세화면2</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="home_btn">
    <property name="geometry">
     <rect>
@@ -361,7 +348,6 @@
    </widget>
   </widget>
   <zorder>stackedWidget</zorder>
-  <zorder>label_2</zorder>
   <zorder>home_btn</zorder>
  </widget>
  <resources/>
