@@ -1,0 +1,114 @@
+#include "info_window.h"
+#include "ui_info_window.h"
+
+
+#include <QVariant>
+#include <QDebug>
+
+#include <QString>
+#include <QStringList>
+
+#include <QFile>
+#include <QTextStream>
+#include <QIODevice>
+
+
+void info_window::info_file_check(){
+    slot_counter=0; window_index=0;
+    sub1_flag = false; sub2_flag = false;
+
+    if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx")){
+        slot_counter++;
+    }
+    else{
+        qDebug()<< "Disconnected MS or File Not Exists";
+
+    }
+
+    if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB1.ntx")){
+        sub1_flag = true; slot_counter++;
+    }
+    else{
+        qDebug()<< "Disconnected SUB1 or File Not Exists";
+
+    }
+    if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB2.ntx")){
+        sub2_flag = true; slot_counter++;
+    }
+    else{
+        qDebug()<< "Disconnected SUB2 or File Not Exists";
+    }
+
+}
+
+void info_window::init_info_window(){
+    if(slot_counter <= 1){
+        info_ui->up_btn->hide();
+        info_ui->down_btn->hide();
+    }
+
+    //main file read
+    QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx");
+    if(!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open the file for reading";
+        return;
+    }//MS file read
+    while(!file.atEnd()){
+        QString tmp = file.readLine();
+        QStringList tmplist = tmp.split(","); tmplist.removeAt(11);//개행 삭제
+
+        for(int i=0; i<tmplist.size(); i++)//메인슬롯 정보저장
+            main_slots.push_back(QVariant(tmplist.value(i)).toBool());
+
+    }file.flush(); file.close();
+    qDebug()<<main_slots.size() << "slot : " << slot_counter << " sub_flag : " ;
+
+    //sub1 file read
+    if(sub1_flag == true){
+        QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB1.ntx");
+        if(!file.open(QFile::ReadOnly | QFile::Text)) {
+            qDebug() << "Could not open the file for reading";
+            return;
+        }//MS file read
+        while(!file.atEnd()){
+            QString tmp = file.readLine();
+            QStringList tmplist = tmp.split(","); tmplist.removeAt(11);//개행 삭제
+
+            for(int i=0; i<tmplist.size(); i++)//sub1슬롯 정보저장
+                sub1_slots.push_back(QVariant(tmplist.value(i)).toBool());
+
+        }file.flush(); file.close();
+        qDebug()<<sub1_slots.size();
+    }
+
+    //sub2 file read
+    if(sub2_flag == true){
+        QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB2.ntx");
+        if(!file.open(QFile::ReadOnly | QFile::Text)) {
+            qDebug() << "Could not open the file for reading";
+            return;
+        }//MS file read
+        while(!file.atEnd()){
+            QString tmp = file.readLine();
+            QStringList tmplist = tmp.split(","); tmplist.removeAt(11);//개행 삭제
+
+            for(int i=0; i<tmplist.size(); i++)//sub2슬롯 정보저장
+                sub2_slots.push_back(QVariant(tmplist.value(i)).toBool());
+
+        }file.flush(); file.close();
+        qDebug()<<sub2_slots.size() << "slot : " << slot_counter << " sub_flag : " ;
+    }
+
+}
+
+void info_window::main_slot_info_window(){
+    info_ui->info_window_slot_label->setText("Main");
+}
+
+void info_window::sub1_slot_info_window(){
+    info_ui->info_window_slot_label->setText("Sub1");
+}
+
+void info_window::sub2_slot_info_window(){
+    info_ui->info_window_slot_label->setText("Sub2");
+}

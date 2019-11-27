@@ -1,0 +1,42 @@
+#ifndef INFO_WINDOW_H
+#define INFO_WINDOW_H
+
+#include <QWidget>
+
+namespace Ui {
+class info_window;
+}
+
+class info_window : public QWidget{
+    Q_OBJECT
+
+public:
+    explicit info_window(QWidget *parent = 0);
+    ~info_window();
+
+private:
+    Ui::info_window *info_ui;
+    int slot_counter; //line_clount == 1 only main
+                       //line_clunt > 1 exists other sub slot
+    int window_index;
+
+    bool sub1_flag; // sub1 = true; sub2 = false;
+    bool sub2_flag;
+
+    QVector<bool> info_slots; //슬롯정보를 담을거
+    void init_slot_window;
+    void init_slot_info_window();
+    void first_slot_info_window();
+    void second_slot_info_window();
+
+signals:
+    void Home_clicked();
+
+private slots:
+    void on_home_btn_clicked();
+    void on_before_btn_clicked();
+    void on_up_btn_clicked();
+    void on_down_btn_clicked();
+};
+
+#endif // INFO_WINDOW_H

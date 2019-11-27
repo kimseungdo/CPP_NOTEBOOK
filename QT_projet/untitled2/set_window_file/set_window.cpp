@@ -14,7 +14,7 @@ set_window::set_window(QWidget *parent) : QWidget(parent),
     set_ui(new Ui::set_window){
     set_ui->setupUi(this);
 
-    QFile file(QApplication::applicationDirPath()+"/main/setup.txt");
+    QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/setup.ntx");
     if(!file.open(QFile::ReadOnly | QFile::Text)) {
         qDebug() << "Could not open the file for reading";
         qDebug() << QApplication::applicationDirPath();
