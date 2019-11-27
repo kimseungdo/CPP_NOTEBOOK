@@ -19,7 +19,7 @@ private:
     int slot_counter; //line_clount == 1 only main
                        //line_clunt > 1 exists other sub slot
     int window_index;
-    bool sub_flag; // sub1 = true; sub2 = false;
+    int sub_flag; // sub1 = true; sub2 = false;
 
     QVector<bool> info_slots; //슬롯정보를 담을거
     void init_slot_info_window();

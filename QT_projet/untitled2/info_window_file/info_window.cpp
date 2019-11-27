@@ -14,9 +14,9 @@
 info_window::info_window(QWidget *parent) : QWidget(parent),
     info_ui(new Ui::info_window){
     info_ui->setupUi(this);
-    slot_counter=0; window_index=0; sub_flag = true; // sub1 = true; sub2 = false;
+    slot_counter=0; window_index=0; sub_flag = 0;//None = 0; sub1 = 1; sub2 = 2; all = 3;
 
-    QFile file(QApplication::applicationDirPath()+"/info_flag_file.txt");
+    QFile file(QApplication::applicationDirPath()+"/slot_info/info_flag_file.txt");
     if(!file.open(QFile::ReadOnly | QFile::Text)) {
         qDebug() << "Could not open the file for reading";
         qDebug() << QApplication::applicationDirPath();
@@ -27,7 +27,7 @@ info_window::info_window(QWidget *parent) : QWidget(parent),
         QString tmp = file.readLine(); slot_counter++;
         QStringList tmplist = tmp.split(",");
         if(tmplist.at(0) == "\n"){ //첫번째 요소에 개행이 있으면 연결이 안된것 = sub1이 연결 안된것 마지막까지 연결 되어있다면
-
+            tmplist.removeAt(11);
         }
         tmplist.removeAt(11);
         qDebug()<< tmplist;
@@ -35,7 +35,7 @@ info_window::info_window(QWidget *parent) : QWidget(parent),
             info_slots.push_back(QVariant(tmplist.value(i)).toBool());
 
     }file.flush(); file.close();
-    qDebug()<<info_slots.size();
+    qDebug()<<info_slots.size() << "slot : " << slot_counter << " sub_flag : " << sub_flag;
 
 //메인 메인-서브1 메인-서브2 메인-서브1-서브2
     if(slot_counter == 1){ //1개는 메인만 있는거 메인은 무적권 하나 있어야

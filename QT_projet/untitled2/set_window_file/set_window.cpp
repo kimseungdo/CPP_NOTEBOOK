@@ -3,9 +3,33 @@
 
 #include "application.h"
 
+#include <QFile>
+#include <QString>
+#include <QStringList>
+#include <QDebug>
+#include <QTextStream>
+#include <QIODevice>
+
 set_window::set_window(QWidget *parent) : QWidget(parent),
     set_ui(new Ui::set_window){
     set_ui->setupUi(this);
+
+    QFile file(QApplication::applicationDirPath()+"/main/setup.txt");
+    if(!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open the file for reading";
+        qDebug() << QApplication::applicationDirPath();
+        return;
+    }//file read
+
+    while(!file.atEnd()){
+        QString tmp = file.readLine();
+        QStringList tmplist = tmp.split(",");
+
+        set_ui->IP_set_label->setText(tmplist[0]);
+        set_ui->Subnet_set_label->setText(tmplist[1]);
+        set_ui->GateWay_set_label->setText(tmplist[2]);
+    }file.flush(); file.close();
+
 }
 
 set_window::~set_window(){ delete set_ui; }

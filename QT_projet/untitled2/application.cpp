@@ -1,11 +1,33 @@
 #include "application.h"
 #include "ui_application.h"
 
+#include <QFile>
+#include <QString>
+#include <QStringList>
+#include <QDebug>
+#include <QTextStream>
+#include <QIODevice>
 
 application::application(QWidget *parent) : QWidget(parent),
     ui(new Ui::application){
-    ui->setupUi(this);
-    setFixedSize(480, 272);
+    ui->setupUi(this); setFixedSize(480, 272);
+
+    QFile file(QApplication::applicationDirPath()+"/main/main.txt");
+    if(!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open the main.txt file for reading";
+        qDebug() << QApplication::applicationDirPath();
+        return;
+    }//file read
+
+    while(!file.atEnd()){
+        QString tmp = file.readLine();
+        QStringList tmplist = tmp.split(",");
+
+        ui->Station_label->setText(tmplist[0]);
+        ui->IP_label->setText(tmplist[1]);
+        ui->Version_label->setText(tmplist[2]);
+    }file.flush(); file.close();
+
     ui->stackedWidget->insertWidget(1, &_info_window);
     ui->stackedWidget->insertWidget(2, &_spec_window);
     ui->stackedWidget->insertWidget(3, &_set_window);
