@@ -36,7 +36,7 @@ application::application(QWidget *parent) : QWidget(parent),
     connect(&_spec_window, SIGNAL(Home_clicked()), this, SLOT(move_to_home()));
     connect(&_set_window, SIGNAL(Home_clicked()), this, SLOT(move_to_home()));
 
-    //connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
+    connect(&_info_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     //connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
 }

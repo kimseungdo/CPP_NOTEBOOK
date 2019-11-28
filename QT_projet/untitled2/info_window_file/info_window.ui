@@ -29,252 +29,512 @@
     <string>홈</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="slot_btn_2">
+  <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>70</y>
-     <width>71</width>
-     <height>41</height>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>240</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 2</string>
-   </property>
+   <widget class="QWidget" name="main_page">
+    <widget class="QPushButton" name="slot_btn_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>70</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_8">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>120</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 8</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_5">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>70</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="main_up_btn">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>50</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>^</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="main_down_btn">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>170</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>v</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_10">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>120</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 10</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_4">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>70</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="info_window_main_label">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>20</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string>Main</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_1">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 1</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>70</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_11">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>170</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 11</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_7">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>120</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 7</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_9">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>120</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 9</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="main_before_btn">
+     <property name="geometry">
+      <rect>
+       <x>55</x>
+       <y>205</y>
+       <width>45</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>이전</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_btn_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>120</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 170, 255);</string>
+     </property>
+     <property name="text">
+      <string>SLOT 6</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="slot_page">
+    <widget class="QPushButton" name="slot_before_btn">
+     <property name="geometry">
+      <rect>
+       <x>55</x>
+       <y>205</y>
+       <width>45</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>이전</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="info_window_slot_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(85, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string>보드 종류</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 1</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>80</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_3">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>80</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_4">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>80</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 4</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_5">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>80</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_6">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>80</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 6</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_12">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>140</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 12</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_9">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>140</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 9</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_8">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>140</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 8</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_11">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>140</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 11</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_7">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 7</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_btn_10">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>140</y>
+       <width>66</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>포트 10</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_up_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>50</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>^</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="slot_down_btn">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>170</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>v</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="slot_board_set_label">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>20</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>보드 종류 라벨</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="port_page"/>
   </widget>
-  <widget class="QPushButton" name="slot_btn_5">
-   <property name="geometry">
-    <rect>
-     <x>350</x>
-     <y>70</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 5</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_9">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>120</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 9</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="info_window_slot_label">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>20</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 255, 0);</string>
-   </property>
-   <property name="text">
-    <string>Main</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_8">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>120</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 8</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_1">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>70</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 1</string>
-   </property>
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_6">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>120</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 6</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_7">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>120</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 7</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="down_btn">
-   <property name="geometry">
-    <rect>
-     <x>455</x>
-     <y>170</y>
-     <width>26</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 170, 0);</string>
-   </property>
-   <property name="text">
-    <string>v</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_4">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>70</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 4</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_11">
-   <property name="geometry">
-    <rect>
-     <x>350</x>
-     <y>170</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 11</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="before_btn">
-   <property name="geometry">
-    <rect>
-     <x>55</x>
-     <y>205</y>
-     <width>45</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 170, 0);</string>
-   </property>
-   <property name="text">
-    <string>이전</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_3">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>70</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="slot_btn_10">
-   <property name="geometry">
-    <rect>
-     <x>350</x>
-     <y>120</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 170, 255);</string>
-   </property>
-   <property name="text">
-    <string>SLOT 10</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="up_btn">
-   <property name="geometry">
-    <rect>
-     <x>455</x>
-     <y>50</y>
-     <width>26</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 170, 0);</string>
-   </property>
-   <property name="text">
-    <string>^</string>
-   </property>
-  </widget>
+  <zorder>stackedWidget</zorder>
+  <zorder>home_btn</zorder>
  </widget>
  <resources/>
  <connections/>

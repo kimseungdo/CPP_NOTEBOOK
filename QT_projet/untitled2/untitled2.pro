@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     info_window_file/info_window_button_func.cpp \
     spec_window_file/spec_window_button_func.cpp \
     application_button_func.cpp \
-    info_window_file/info_window_func.cpp
+    info_window_file/info_window_button_func2.cpp \
+    info_window_file/info_window_main_func.cpp
 
 HEADERS  += application.h \
     set_window_file/set_window.h \

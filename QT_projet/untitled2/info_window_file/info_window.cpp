@@ -12,6 +12,4 @@ info_window::info_window(QWidget *parent) : QWidget(parent),
     main_slot_info_window(main_slots);
 }
 
-info_window::~info_window(){
-    delete info_ui;
-}
+info_window::~info_window(){ delete info_ui; }

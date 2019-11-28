@@ -6,7 +6,7 @@ void info_window::on_home_btn_clicked(){ //집으로
     main_slot_info_window(main_slots);
     emit Home_clicked();
 }
-void info_window::on_before_btn_clicked(){ //정보화면 메인에서 집으로
+void info_window::on_main_before_btn_clicked(){ //정보화면 메인에서 집으로
     main_slot_info_window(main_slots);
     emit Home_clicked();
 }
@@ -29,8 +29,7 @@ main_slot_info_window(main_slots);
 메인 -> 서브1 ->서브2 -> 메인 ~~~~ 메인 -> 서브2 -> 서브1 ->메인
 
 */
-void info_window::on_up_btn_clicked(){
-
+void info_window::on_main_up_btn_clicked(){
     if(window_index == 0 && sub1_flag && sub2_flag){// sub1과 sub2가 둘다 true면
         ++window_index; // index = 1
         sub1_slot_info_window(sub1_slots);
@@ -42,13 +41,13 @@ void info_window::on_up_btn_clicked(){
     else if (window_index == 2 && sub1_flag && sub2_flag){
         window_index = 0; // index = 0
         main_slot_info_window(main_slots);
-    }//2가 없을경우?
+    }
 
 
     else if(sub1_flag || sub2_flag){ //서로 다른값일때
         if(sub1_flag == true){//sub1이 참일때
             if(window_index == 0){
-                ++window_index; // index = 1
+                window_index = 1; // index = 1
                 sub1_slot_info_window(sub1_slots);
             }
             else if(window_index == 1){
@@ -58,19 +57,19 @@ void info_window::on_up_btn_clicked(){
         }
         if(sub2_flag == true){//sub2가 참일때
             if(window_index == 0){
-                ++window_index; // index = 1
+                window_index = 2; // index = 2
                 sub2_slot_info_window(sub2_slots);
             }
-            else if(window_index == 1){
+            else if(window_index == 2){
                 window_index = 0;
                 main_slot_info_window(main_slots);
             }
         }
-    }
+    }//end 서로다른값
 
 }
 
-void info_window::on_down_btn_clicked(){
+void info_window::on_main_down_btn_clicked(){
     if(window_index == 0 && sub1_flag && sub2_flag){
         // sub1과 sub2가 둘다 true면
         window_index = 2; // index = 2
@@ -101,14 +100,14 @@ void info_window::on_down_btn_clicked(){
         }
         if(sub2_flag == true){//sub2가 참일때
             if(window_index == 0){
-                window_index = 1; // index = 1
+                window_index = 2; // index = 1
                 sub2_slot_info_window(sub2_slots);
             }
-            else if(window_index == 1){
+            else if(window_index == 2){
                 window_index = 0;
                 main_slot_info_window(main_slots);
             }
         }
-    }
+    }//end 서로다른 값
 
 }
