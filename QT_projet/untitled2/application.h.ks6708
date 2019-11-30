@@ -1,0 +1,75 @@
+#ifndef APPLICATION_H
+#define APPLICATION_H
+
+#include <QWidget>
+
+#include "info_window_file/info_window.h"
+#include "spec_window_file/spec_window.h"
+#include "set_window_file/set_window.h"
+
+namespace Ui {
+class application;
+}
+
+struct Target_info{
+
+
+};
+
+struct Target_gear{
+
+
+    Target_info Target_INFO[13];
+};
+
+struct Target_port{
+
+    Target_gear Target_GEAR[50];
+};
+
+
+struct Target_slot{
+    int aa = 0;
+
+    bool slot_info[10];
+
+    Target_port Target_PORT[12];
+};
+
+
+struct Target_device{
+    bool main_device;
+    bool sub1_device;
+    bool sub2_device;
+
+    Target_slot Ts[3];
+};
+
+class application : public QWidget{
+    Q_OBJECT
+
+public:
+    explicit application(QWidget *parent = 0);
+    ~application();
+
+private slots:
+    void on_info_btn_clicked();
+    void on_spec_btn_clicked();
+    void on_set_btn_clicked();
+    void move_to_home();
+    void main_title(const QString &text_label);
+
+
+    void read_all_info();
+
+private:
+    Ui::application *ui;
+    info_window _info_window;
+    spec_window _spec_window;
+    set_window _set_window;
+
+    Target_device Td;
+
+};
+
+#endif // APPLICATION_H

@@ -28,6 +28,7 @@ private:
     QVector<bool> sub1_slots;
     QVector<bool> sub2_slots;
 
+
     void info_file_check();
     void init_info_window();
 

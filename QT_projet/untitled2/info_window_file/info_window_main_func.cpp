@@ -36,9 +36,7 @@ void info_window::info_file_check(){
     }
     else{
         qDebug()<< "Disconnected SUB2 or File Not Exists";
-    }
-
-}
+    }}
 
 void info_window::init_info_window(){
     if(slot_counter <= 1){

@@ -1297,7 +1297,8 @@ debug/info_window.o: ../untitled2/info_window_file/info_window.cpp ../untitled2/
 		C:/Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/QStackedWidget \
-		C:/Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstackedwidget.h
+		C:/Qt/Qt5.8.0/5.8/mingw53_32/include/QtWidgets/qstackedwidget.h \
+		C:/Qt/Qt5.8.0/5.8/mingw53_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\info_window.o ..\untitled2\info_window_file\info_window.cpp
 
 debug/info_window_button_func.o: ../untitled2/info_window_file/info_window_button_func.cpp ../untitled2/info_window_file/info_window.h \

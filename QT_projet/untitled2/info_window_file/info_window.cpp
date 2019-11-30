@@ -1,10 +1,13 @@
 #include "info_window.h"
 #include "ui_info_window.h"
 
+#include <QDebug>
 //non eabi mcu - cotex m7 m4
 info_window::info_window(QWidget *parent) : QWidget(parent),
     info_ui(new Ui::info_window){
     info_ui->setupUi(this);
+
+
 
     info_file_check();
     init_info_window();

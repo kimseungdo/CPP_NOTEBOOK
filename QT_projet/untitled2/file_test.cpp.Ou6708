@@ -1,0 +1,91 @@
+#include "file_test.h"
+
+#include <QApplication>
+#include <QFile>
+#include <QString>
+#include <QStringList>
+#include <QDebug>
+#include <QTextStream>
+#include <QIODevice>
+
+void main_read(struct Taget_device Td){
+    QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx");
+    if(!file.open(QFile::ReadOnly | QFile::Text)) { //파일이 없으면
+        Td.main_device = false;
+        qDebug() << "Could not open the main.txt file for reading";
+        qDebug() << QApplication::applicationDirPath();
+        return;
+    }
+
+    else{ //파일이 있으면
+        Td.main_device = true;
+        while(!file.atEnd()){
+            QString tmp = file.readLine();
+            QStringList tmplist = tmp.split(",");\
+
+            for(int i=0; i<10; i++)
+                Td.Ts[0].slot_info[i] = QVariant(tmplist.value(i)).toBool();
+
+        }
+
+        qDebug()<< "메인슬롯 상태 : " << Td.main_device;
+    }file.flush(); file.close();
+}
+
+void sub1_read(struct Taget_device Td){
+
+    QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB1.ntx");
+    if(!file.open(QFile::ReadOnly | QFile::Text)) { //파일이 없으면
+        Td.sub1_device = false;
+        qDebug() << "Could not open the main.txt file for reading";
+        qDebug() << QApplication::applicationDirPath();
+        return;
+    }
+
+    else{ //파일이 있으면
+        Td.sub1_device = true;
+        while(!file.atEnd()){
+            QString tmp = file.readLine();
+            QStringList tmplist = tmp.split(",");\
+
+            for(int i=0; i<10; i++)
+                Td.Ts[1].slot_info[i] = QVariant(tmplist.value(i)).toBool();
+
+        }
+
+        qDebug()<< "메인슬롯 상태 : " << Td.main_device;
+    }file.flush(); file.close();
+
+}
+
+void sub2_read(struct Taget_device Td){
+
+    QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB2.ntx");
+    if(!file.open(QFile::ReadOnly | QFile::Text)) { //파일이 없으면
+        Td.sub2_device = false;
+        qDebug() << "Could not open the main.txt file for reading";
+        qDebug() << QApplication::applicationDirPath();
+        return;
+    }
+
+    else{ //파일이 있으면
+        Td.sub2_device = true;
+        while(!file.atEnd()){
+            QString tmp = file.readLine();
+            QStringList tmplist = tmp.split(",");\
+
+            for(int i=0; i<10; i++)
+                Td.Ts[2].slot_info[i] = QVariant(tmplist.value(i)).toBool();
+
+        }
+
+        qDebug()<< "메인슬롯 상태 : " << Td.main_device;
+    }file.flush(); file.close();
+}
+
+void read_all_info(){
+    struct Target_device Target_DEVICE;
+    main_read(Target_DEVICE);
+    sub1_read(Target_DEVICE);
+    sub2_read(Target_DEVICE);
+}

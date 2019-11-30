@@ -39,6 +39,8 @@ application::application(QWidget *parent) : QWidget(parent),
     connect(&_info_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     //connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
+
+
 }
 
 application::~application(){ delete ui; }
