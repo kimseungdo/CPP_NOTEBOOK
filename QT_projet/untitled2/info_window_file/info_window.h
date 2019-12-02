@@ -2,6 +2,7 @@
 #define INFO_WINDOW_H
 
 #include <QWidget>
+#include "all_system_info.h"
 
 namespace Ui {
 class info_window;
@@ -14,27 +15,19 @@ public:
     explicit info_window(QWidget *parent = 0);
     ~info_window();
 
-private:
-    Ui::info_window *info_ui;
-    int slot_counter; //line_clount == 1 only main
-                       //line_clunt > 1 exists other sub slot
     int window_index;
 
-    bool main_flag;
-    bool sub1_flag; // on/off flag
-    bool sub2_flag; //
-
-    QVector<bool> main_slots; //슬롯정보를 담을거
-    QVector<bool> sub1_slots;
-    QVector<bool> sub2_slots;
-
-
-    void info_file_check();
-    void init_info_window();
+private:
+    Ui::info_window *info_ui;
+    all_system_info _all_sys;
 
     void main_slot_info_window(QVector<bool>& T);
     void sub1_slot_info_window(QVector<bool>& T);
     void sub2_slot_info_window(QVector<bool>& T);
+
+    void set_init_window();
+
+    void read_slot_file();
 
 signals:
     void Home_clicked();
@@ -56,6 +49,7 @@ private slots:
     void on_slot_btn_9_clicked();
     void on_slot_btn_10_clicked();
     void on_slot_btn_11_clicked();
+    void on_slot_before_btn_clicked();
 };
 
 #endif // INFO_WINDOW_H

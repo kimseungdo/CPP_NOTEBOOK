@@ -1,15 +1,24 @@
-#include "info_window.h"
+#include "info_window_file/info_window.h"
 #include "ui_info_window.h"
 
 
 void info_window::on_home_btn_clicked(){ //집으로
-    main_slot_info_window(main_slots);
+    main_slot_info_window(_all_sys.main_slots);
+    info_ui->stackedWidget->setCurrentIndex(0);
     emit Home_clicked();
 }
-void info_window::on_main_before_btn_clicked(){ //정보화면 메인에서 집으로
-    main_slot_info_window(main_slots);
+void info_window::on_main_before_btn_clicked(){ //정보화면에서 집으로
+    main_slot_info_window(_all_sys.main_slots);
+    info_ui->stackedWidget->setCurrentIndex(0);
     emit Home_clicked();
 }
+
+
+void info_window::on_slot_before_btn_clicked(){//슬롯화면에서 정보화면으로
+    info_ui->stackedWidget->setCurrentIndex(0);
+    emit title_change("타이틀/정보");
+}
+
 /*
 if(sub2_flag == true) sub2_slot_info_window(sub2_slots);
 if(sub1_flag == true) sub1_slot_info_window(sub1_slots);
@@ -30,39 +39,39 @@ main_slot_info_window(main_slots);
 
 */
 void info_window::on_main_up_btn_clicked(){
-    if(window_index == 0 && sub1_flag && sub2_flag){// sub1과 sub2가 둘다 true면
+    if(window_index == 0 && _all_sys.sub1_flag && _all_sys.sub2_flag){// sub1과 sub2가 둘다 true면
         ++window_index; // index = 1
-        sub1_slot_info_window(sub1_slots);
+        sub1_slot_info_window(_all_sys.sub1_slots);
     }
-    else if (window_index == 1 && sub1_flag && sub2_flag){
+    else if (window_index == 1 && _all_sys.sub1_flag && _all_sys.sub2_flag){
         ++window_index; // index = 2
-        sub2_slot_info_window(sub2_slots);
+        sub2_slot_info_window(_all_sys.sub2_slots);
     }
-    else if (window_index == 2 && sub1_flag && sub2_flag){
+    else if (window_index == 2 && _all_sys.sub1_flag && _all_sys.sub2_flag){
         window_index = 0; // index = 0
-        main_slot_info_window(main_slots);
+        main_slot_info_window(_all_sys.main_slots);
     }
 
 
-    else if(sub1_flag || sub2_flag){ //서로 다른값일때
-        if(sub1_flag == true){//sub1이 참일때
+    else if(_all_sys.sub1_flag || _all_sys.sub2_flag){ //서로 다른값일때
+        if(_all_sys.sub1_flag == true){//sub1이 참일때
             if(window_index == 0){
                 window_index = 1; // index = 1
-                sub1_slot_info_window(sub1_slots);
+                sub1_slot_info_window(_all_sys.sub1_slots);
             }
             else if(window_index == 1){
                 window_index = 0;
-                main_slot_info_window(main_slots);
+                main_slot_info_window(_all_sys.main_slots);
             }
         }
-        if(sub2_flag == true){//sub2가 참일때
+        if(_all_sys.sub2_flag == true){//sub2가 참일때
             if(window_index == 0){
                 window_index = 2; // index = 2
-                sub2_slot_info_window(sub2_slots);
+                sub2_slot_info_window(_all_sys.sub2_slots);
             }
             else if(window_index == 2){
                 window_index = 0;
-                main_slot_info_window(main_slots);
+                main_slot_info_window(_all_sys.main_slots);
             }
         }
     }//end 서로다른값
@@ -70,42 +79,42 @@ void info_window::on_main_up_btn_clicked(){
 }
 
 void info_window::on_main_down_btn_clicked(){
-    if(window_index == 0 && sub1_flag && sub2_flag){
+    if(window_index == 0 && _all_sys.sub1_flag && _all_sys.sub2_flag){
         // sub1과 sub2가 둘다 true면
         window_index = 2; // index = 2
         //info_ui->info_window_slot_label->setText("Sub2");
-        sub2_slot_info_window(sub2_slots);
+        sub2_slot_info_window(_all_sys.sub2_slots);
     }
-    else if (window_index == 2 && sub1_flag && sub2_flag){
+    else if (window_index == 2 && _all_sys.sub1_flag && _all_sys.sub2_flag){
         --window_index; // index = 1
         //info_ui->info_window_slot_label->setText("Sub1");
-        sub1_slot_info_window(sub1_slots);
+        sub1_slot_info_window(_all_sys.sub1_slots);
     }
-    else if (window_index == 1 && sub1_flag && sub2_flag){
+    else if (window_index == 1 && _all_sys.sub1_flag && _all_sys.sub2_flag){
         window_index = 0; // index = 0
         //info_ui->info_window_slot_label->setText("Main");
-        main_slot_info_window(main_slots);
+        main_slot_info_window(_all_sys.main_slots);
     }
 
-    else if(sub1_flag || sub2_flag){ //서로 다른값일때
-        if(sub1_flag == true){//sub1이 참일때
+    else if(_all_sys.sub1_flag || _all_sys.sub2_flag){ //서로 다른값일때
+        if(_all_sys.sub1_flag == true){//sub1이 참일때
             if(window_index == 0){
                 window_index = 1; // index = 1
-                sub1_slot_info_window(sub1_slots);
+                sub1_slot_info_window(_all_sys.sub1_slots);
             }
             else if(window_index == 1){
                 window_index = 0;
-                main_slot_info_window(main_slots);
+                main_slot_info_window(_all_sys.main_slots);
             }
         }
-        if(sub2_flag == true){//sub2가 참일때
+        if(_all_sys.sub2_flag == true){//sub2가 참일때
             if(window_index == 0){
                 window_index = 2; // index = 1
-                sub2_slot_info_window(sub2_slots);
+                sub2_slot_info_window(_all_sys.sub2_slots);
             }
             else if(window_index == 2){
                 window_index = 0;
-                main_slot_info_window(main_slots);
+                main_slot_info_window(_all_sys.main_slots);
             }
         }
     }//end 서로다른 값

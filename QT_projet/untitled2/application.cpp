@@ -1,6 +1,7 @@
 #include "application.h"
 #include "ui_application.h"
 
+
 #include <QFile>
 #include <QString>
 #include <QStringList>
@@ -12,21 +13,7 @@ application::application(QWidget *parent) : QWidget(parent),
     ui(new Ui::application){
     ui->setupUi(this); setFixedSize(480, 272);
 
-    QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/main.ntx");
-    if(!file.open(QFile::ReadOnly | QFile::Text)) {
-        qDebug() << "Could not open the main.txt file for reading";
-        qDebug() << QApplication::applicationDirPath();
-        return;
-    }//file read
-
-    while(!file.atEnd()){
-        QString tmp = file.readLine();
-        QStringList tmplist = tmp.split(",");
-
-        ui->Station_label->setText(tmplist[0]);
-        ui->IP_label->setText(tmplist[1]);
-        ui->Version_label->setText(tmplist[2]);
-    }file.flush(); file.close();
+    check_all_system();
 
     ui->stackedWidget->insertWidget(1, &_info_window);
     ui->stackedWidget->insertWidget(2, &_spec_window);
@@ -37,9 +24,8 @@ application::application(QWidget *parent) : QWidget(parent),
     connect(&_set_window, SIGNAL(Home_clicked()), this, SLOT(move_to_home()));
 
     connect(&_info_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
-    //connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
-
+    connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
 
 }
 
@@ -53,4 +39,84 @@ void application::move_to_home(){ //집으로
 
 void application::main_title(const QString &text_label){//타이틀변경
     ui->title_label->setText(text_label);
+}
+
+void application::check_all_system(){
+    all_sys.main_flag = false; all_sys.sub1_flag = false, all_sys.sub2_flag = false;
+
+    //main read
+    if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx")){
+        all_sys.main_flag = true;
+
+
+        QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx");
+        if(!file.open(QFile::ReadOnly | QFile::Text)) {
+            qDebug() << "Could not open the file for reading";
+            return;
+        }//MS file read
+        else {
+            all_sys.slot_counter++;
+        }
+        while(!file.atEnd()){
+            QString tmp = file.readLine();
+            QStringList tmplist = tmp.split(","); tmplist.removeAt(11);//개행 삭제
+
+            for(int i=0; i<tmplist.size(); i++)//메인슬롯 정보저장
+                all_sys.main_slots.push_back(QVariant(tmplist.value(i)).toBool());
+
+        }file.flush(); file.close();
+        qDebug()<< "application ms vector : " << all_sys.main_slots;
+    }
+    else{ qDebug()<< "Disconnected MS or File Not Exists"; }
+
+    //sub1 read
+    if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB1.ntx")){
+        all_sys.sub1_flag = true;
+
+
+        QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB1.ntx");
+        if(!file.open(QFile::ReadOnly | QFile::Text)) {
+            qDebug() << "Could not open the file for reading";
+            return;
+        }//sub1 file read
+        else{
+            all_sys.slot_counter++;
+        }
+        while(!file.atEnd()){
+            QString tmp = file.readLine();
+            QStringList tmplist = tmp.split(","); tmplist.removeAt(11);//개행 삭제
+
+            for(int i=0; i<tmplist.size(); i++)//메인슬롯 정보저장
+                all_sys.sub1_slots.push_back(QVariant(tmplist.value(i)).toBool());
+
+        }file.flush(); file.close();
+        qDebug()<< "application sub1 vector : " << all_sys.sub1_slots;
+
+    }
+    else{ qDebug()<< "Disconnected sub1 or File Not Exists"; }
+
+    //sub2 read
+    if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB2.ntx")){
+        all_sys.sub2_flag = true;
+
+        QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB2.ntx");
+        if(!file.open(QFile::ReadOnly | QFile::Text)) {
+            qDebug() << "Could not open the file for reading";
+            return;
+        }//MS file read
+        else{
+            all_sys.slot_counter++;
+        }
+        while(!file.atEnd()){
+            QString tmp = file.readLine();
+            QStringList tmplist = tmp.split(","); tmplist.removeAt(11);//개행 삭제
+
+            for(int i=0; i<tmplist.size(); i++)//메인슬롯 정보저장
+                all_sys.sub2_slots.push_back(QVariant(tmplist.value(i)).toBool());
+
+        }file.flush(); file.close();
+        qDebug()<< "application sub2 vector : " << all_sys.sub2_slots;
+    }
+    else{ qDebug()<< "Disconnected MS or File Not Exists"; }
+
 }

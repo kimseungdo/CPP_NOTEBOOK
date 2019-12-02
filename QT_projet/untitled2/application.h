@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include "all_system_info.h"
+
 #include "info_window_file/info_window.h"
 #include "spec_window_file/spec_window.h"
 #include "set_window_file/set_window.h"
@@ -31,6 +33,9 @@ private:
     spec_window _spec_window;
     set_window _set_window;
 
+    all_system_info all_sys;
+
+    void check_all_system();
 };
 
 #endif // APPLICATION_H

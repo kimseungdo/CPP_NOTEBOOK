@@ -1,18 +1,24 @@
-#include "info_window.h"
+#include "info_window_file/info_window.h"
 #include "ui_info_window.h"
+
 
 #include <QDebug>
 //non eabi mcu - cotex m7 m4
+
 info_window::info_window(QWidget *parent) : QWidget(parent),
     info_ui(new Ui::info_window){
     info_ui->setupUi(this);
 
-
-
-    info_file_check();
-    init_info_window();
-
-    main_slot_info_window(main_slots);
+    set_init_window();
+    read_slot_file();
+    if(_all_sys.slot_counter <= 1){
+        info_ui->main_up_btn->hide();
+        info_ui->main_down_btn->hide();
+    }
+    else{
+        info_ui->main_up_btn->show();
+        info_ui->main_down_btn->show();
+    }
 }
 
 info_window::~info_window(){ delete info_ui; }

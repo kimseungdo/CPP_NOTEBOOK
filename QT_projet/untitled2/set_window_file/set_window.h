@@ -2,6 +2,7 @@
 #define SET_WINDOW_H
 
 #include <QWidget>
+#include "all_system_info.h"
 
 namespace Ui {
 class set_window;
@@ -16,6 +17,7 @@ public:
 
 private:
     Ui::set_window *set_ui;
+    all_system_info _all_sys;
 
 signals:
     void Home_clicked();

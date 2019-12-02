@@ -32,12 +32,14 @@ SOURCES += main.cpp\
     spec_window_file/spec_window_button_func.cpp \
     application_button_func.cpp \
     info_window_file/info_window_button_func2.cpp \
-    info_window_file/info_window_main_func.cpp
+    info_window_file/info_window_main_func.cpp \
+    all_system_info.cpp
 
 HEADERS  += application.h \
     set_window_file/set_window.h \
     spec_window_file/spec_window.h \
-    info_window_file/info_window.h
+    info_window_file/info_window.h \
+    all_system_info.h
 
 FORMS    += application.ui \
     set_window_file/set_window.ui \

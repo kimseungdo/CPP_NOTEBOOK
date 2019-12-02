@@ -38,7 +38,7 @@
      <height>240</height>
     </rect>
    </property>
-   <widget class="QWidget" name="main_page">
+   <widget class="QWidget" name="info_main_page">
     <widget class="QPushButton" name="slot_btn_3">
      <property name="geometry">
       <rect>
@@ -303,25 +303,6 @@
       <string>이전</string>
      </property>
     </widget>
-    <widget class="QLabel" name="info_window_slot_label">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>91</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(85, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>보드 종류</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
     <widget class="QPushButton" name="port_btn_1">
      <property name="geometry">
       <rect>
@@ -513,7 +494,7 @@
     <widget class="QLabel" name="slot_board_set_label">
      <property name="geometry">
       <rect>
-       <x>120</x>
+       <x>20</x>
        <y>20</y>
        <width>131</width>
        <height>41</height>
