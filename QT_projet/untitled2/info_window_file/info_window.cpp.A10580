@@ -1,0 +1,57 @@
+#include "info_window.h"
+#include "ui_info_window.h"
+
+#include <QFile>
+#include <QString>
+#include <QDebug>
+#include <QTextStream>
+#include <QIODevice>
+#include <QMessageBox>
+//non eabi
+info_window::info_window(QWidget *parent) : QWidget(parent),
+    info_ui(new Ui::info_window){
+    info_ui->setupUi(this);
+
+    QFile file("../info_window_file/info_flag_file.txt");
+
+    if(!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open the file for reading";
+        return;
+    }
+    QTextStream in(&file);
+    QString myText = in.readAll();
+    qDebug() << myText;
+
+    file.close();
+
+    /*
+     * 메인에서 슬롯을 읽음
+     * int line_counter == 1 { info_ui->up_btn->hide(); info_ui->down_btn->hide(); }
+     * else { info_ui->up_btn->show(); info_ui->down_btn->show(); }
+     *
+     *
+     * 없으면 setEnabled(false);
+     * 있으면 setEnabled(true);
+     *
+     * 메인슬롯 - 서브슬롯
+     * 서브슬롯이 있으면
+     */
+
+
+    info_ui->slot_btn_1->setEnabled(false);
+
+
+}
+
+info_window::~info_window(){
+    delete info_ui;
+}
+
+void info_window::on_home_btn_clicked(){ //집으로
+    info_ui->stackedWidget->setCurrentIndex(0);
+    emit Home_clicked();
+}
+void info_window::on_before_btn_clicked(){ //정보화면 메인에서 집으로
+    info_ui->stackedWidget->setCurrentIndex(0);
+    emit Home_clicked();
+}

@@ -1,0 +1,61 @@
+#include "info_window.h"
+#include "ui_info_window.h"
+
+#include <QVector>
+#include <QFile>
+#include <QString>
+#include <QStringList>
+#include <QDebug>
+#include <QTextStream>
+#include <QIODevice>
+
+//non eabi mcu - cotex m7 m4
+info_window::info_window(QWidget *parent) : QWidget(parent),
+    info_ui(new Ui::info_window){
+    info_ui->setupUi(this);
+
+    QFile file(QApplication::applicationDirPath()+"/info_flag_file.txt");
+    if(!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open the file for reading";
+        qDebug() << QApplication::applicationDirPath();
+        return;
+    }
+    //QTextStream in(&file);
+    //QString myText = in.readAll();
+    //qDebug() << myText;
+
+    while(!file.atEnd()){
+        QString tmp = file.readLine();
+        QStringList tmplist = tmp.split(",");
+
+        qDebug() << tmp;
+        qDebug() << tmplist[0][0] << tmplist[0][1]  << tmplist[0][2];
+        qDebug() << tmplist[0] << tmplist[1]  << tmplist[10];
+        //slot_on_off_switch = (tmplist == "1"? true:false);
+
+        //info_slots[line_clount][0].append( bool(tmplist[0]) );
+
+        //if(tmplist == "\n") line_clount++;
+    }
+
+    qDebug() << info_slots[0][0];
+
+    file.flush();
+    file.close();
+
+
+
+}
+
+info_window::~info_window(){
+    delete info_ui;
+}
+
+void info_window::on_home_btn_clicked(){ //집으로
+    info_ui->stackedWidget->setCurrentIndex(0);
+    emit Home_clicked();
+}
+void info_window::on_before_btn_clicked(){ //정보화면 메인에서 집으로
+    info_ui->stackedWidget->setCurrentIndex(0);
+    emit Home_clicked();
+}

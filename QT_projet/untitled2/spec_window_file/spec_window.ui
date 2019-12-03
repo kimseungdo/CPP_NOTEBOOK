@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>spec_window</class>
+ <widget class="QWidget" name="spec_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="home_btn">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>205</y>
+     <width>45</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 170, 0);</string>
+   </property>
+   <property name="text">
+    <string>홈</string>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="spec_window_1">
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>정류기류</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>20</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>전력관류</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>20</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>냉방기류</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>80</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>온습도류</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>80</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>하론류</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>80</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>화재</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>140</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>인체감지</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_8">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>140</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>침수센서류</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_9">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>140</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>출입문</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="s_down_btn_1">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>170</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>v</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="s_before_btn_1">
+     <property name="geometry">
+      <rect>
+       <x>55</x>
+       <y>205</y>
+       <width>45</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>이전</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="s_up_btn_1">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>50</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>^</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="spec_window_2">
+    <widget class="QPushButton" name="pushButton_10">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>접지</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_11">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>20</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>발동발전기</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_12">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>20</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>배풍기</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_13">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>80</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>BMU</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="s_before_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>55</x>
+       <y>205</y>
+       <width>45</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>이전</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="s_down_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>170</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>v</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="s_up_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>50</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>^</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <zorder>stackedWidget</zorder>
+  <zorder>home_btn</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

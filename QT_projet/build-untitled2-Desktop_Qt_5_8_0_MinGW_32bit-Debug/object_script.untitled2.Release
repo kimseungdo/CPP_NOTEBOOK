@@ -1,0 +1,17 @@
+INPUT(
+./release\main.o
+./release\application.o
+./release\set_window.o
+./release\spec_window.o
+./release\info_window.o
+./release\info_window_button_func.o
+./release\spec_window_button_func.o
+./release\application_button_func.o
+./release\info_window_button_func2.o
+./release\info_window_main_func.o
+./release\global_test.o
+./release\moc_application.o
+./release\moc_set_window.o
+./release\moc_spec_window.o
+./release\moc_info_window.o
+);
