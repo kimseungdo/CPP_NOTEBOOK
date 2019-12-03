@@ -27,14 +27,23 @@ SOURCES += main.cpp\
         application.cpp \
     set_window_file/set_window.cpp \
     spec_window_file/spec_window.cpp \
-    info_window_file/info_window.cpp
+    info_window_file/info_window.cpp \
+    info_window_file/info_window_button_func.cpp \
+    spec_window_file/spec_window_button_func.cpp \
+    application_button_func.cpp \
+    info_window_file/info_window_button_func2.cpp \
+    info_window_file/info_window_main_func.cpp \
+    global_test.cpp
 
 HEADERS  += application.h \
     set_window_file/set_window.h \
     spec_window_file/spec_window.h \
-    info_window_file/info_window.h
+    info_window_file/info_window.h \
+    global_test.h
 
 FORMS    += application.ui \
     set_window_file/set_window.ui \
     spec_window_file/spec_window.ui \
     info_window_file/info_window.ui
+
+DISTFILES +=

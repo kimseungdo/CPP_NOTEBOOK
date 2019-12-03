@@ -1,0 +1,17 @@
+INPUT(
+./debug\main.o
+./debug\application.o
+./debug\set_window.o
+./debug\spec_window.o
+./debug\info_window.o
+./debug\info_window_button_func.o
+./debug\spec_window_button_func.o
+./debug\application_button_func.o
+./debug\info_window_button_func2.o
+./debug\info_window_main_func.o
+./debug\global_test.o
+./debug\moc_application.o
+./debug\moc_set_window.o
+./debug\moc_spec_window.o
+./debug\moc_info_window.o
+);

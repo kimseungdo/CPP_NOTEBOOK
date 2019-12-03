@@ -1,0 +1,21 @@
+#include "info_window.h"
+#include "ui_info_window.h"
+
+
+//non eabi mcu - cotex m7 m4
+info_window::info_window(QWidget *parent) : QWidget(parent),
+    info_ui(new Ui::info_window){
+    info_ui->setupUi(this);
+
+
+    Target_device Td;
+    qDebug()<< "정보화면에서 본 파일 상태" << Td.main_device << Td.sub1_device << Td.sub2_device;
+
+
+    info_file_check();
+    init_info_window();
+
+    main_slot_info_window(main_slots);
+}
+
+info_window::~info_window(){ delete info_ui; }

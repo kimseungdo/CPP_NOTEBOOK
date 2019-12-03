@@ -1,0 +1,17 @@
+#ifndef ALL_SYSTEM_INFO_H
+#define ALL_SYSTEM_INFO_H
+
+#include <QTcore>
+
+class all_system_info{
+public:
+    all_system_info();
+    QVector<QString> slots_id = {"NULL","RS-232", "RS-485", "DI", "DO"};
+
+    Struct A{
+
+    }
+private:
+};
+
+#endif // ALL_SYSTEM_INFO_H
