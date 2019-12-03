@@ -33,6 +33,7 @@ private:
     set_window _set_window;
 
     void set_up_main();
+    void read_all_system_file(QVector<bool>& _MS, QVector<bool>& _SUB1, QVector<bool>& _SUB2);
 };
 
 #endif // APPLICATION_H

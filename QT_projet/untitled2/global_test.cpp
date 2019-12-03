@@ -1,6 +1,9 @@
 #include "global_test.h"
 
-int _slot_counter = 0;
+__int8 _slot_counter = 0;
+
+QVector<QString> slots_label = {"None", "RS-232", "RS-485", "RS-422", "DI", "DO"};
+
 bool _main_flag = false;
 bool _sub1_flag = false;
 bool _sub2_flag = false;
@@ -9,3 +12,8 @@ QVector<bool> _main_slots;
 QVector<bool> _sub1_slots;
 QVector<bool> _sub2_slots;
 
+QVector<QVector<QString>> main_slots_device;
+QVector<QVector<QString>> sub1_slots_device;
+QVector<QVector<QString>> sub2_slots_device;
+
+//QVector<QVector<QString>> _main_slots_port_info

@@ -7,11 +7,8 @@
 #include <QString>
 #include <QStringList>
 
+
 void initial_system(){
-
-    //int _slot_counter = 0;
-    //bool _main_flag = false; bool _sub1_flag = false; bool sub2_flag = false;
-
     //main read
     if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx")){
         _main_flag = true;
@@ -35,7 +32,9 @@ void initial_system(){
         }file.flush(); file.close();
         qDebug()<< "application ms vector : " << _main_slots;
     }
-    else{ qDebug()<< "Disconnected MS or File Not Exists"; }
+    else{ qDebug()<< "Disconnected MS or File Not Exists";
+            main_slots_device.clear();
+    }
 
     //sub1 read
     if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB1.ntx")){
@@ -61,7 +60,9 @@ void initial_system(){
         qDebug()<< "application sub1 vector : " << _sub1_slots;
 
     }
-    else{ qDebug()<< "Disconnected sub1 or File Not Exists"; }
+    else{ qDebug()<< "Disconnected sub1 or File Not Exists";
+            sub1_slots_device.clear();
+    }
 
     //sub2 read
     if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/SUB2.ntx")){
@@ -85,8 +86,10 @@ void initial_system(){
         }file.flush(); file.close();
         qDebug()<< "application sub2 vector : " << _sub2_slots;
     }
-    else{ qDebug()<< "Disconnected MS or File Not Exists"; }
-    qDebug()<< "in main slot counter : " << _slot_counter;
+    else{ qDebug()<< "Disconnected MS or File Not Exists";
+            sub2_slots_device.clear();
+    }
+
 }
 
 int main(int argc, char *argv[]){

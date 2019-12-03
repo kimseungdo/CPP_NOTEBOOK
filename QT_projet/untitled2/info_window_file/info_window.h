@@ -18,6 +18,7 @@ public:
 
 private:
     Ui::info_window *info_ui;
+    void set_up_info_ui();
 
     void main_slot_info_window(QVector<bool>& T);
     void sub1_slot_info_window(QVector<bool>& T);
