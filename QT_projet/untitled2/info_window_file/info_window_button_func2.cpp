@@ -5,7 +5,6 @@
 void info_window::on_slot_btn_1_clicked(){
     if(window_index == 0){//메인
         emit title_change("타이틀/정보/MAIN/SLOT 1");
-        read_slot_file();
         info_ui->stackedWidget->setCurrentIndex(1);
     }
     else if(window_index == 1){

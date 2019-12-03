@@ -9,7 +9,7 @@ INPUT(
 ./release\application_button_func.o
 ./release\info_window_button_func2.o
 ./release\info_window_main_func.o
-./release\all_system_info.o
+./release\global_test.o
 ./release\moc_application.o
 ./release\moc_set_window.o
 ./release\moc_spec_window.o

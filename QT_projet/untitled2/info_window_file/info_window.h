@@ -2,7 +2,6 @@
 #define INFO_WINDOW_H
 
 #include <QWidget>
-#include "all_system_info.h"
 
 namespace Ui {
 class info_window;
@@ -19,15 +18,10 @@ public:
 
 private:
     Ui::info_window *info_ui;
-    all_system_info _all_sys;
 
     void main_slot_info_window(QVector<bool>& T);
     void sub1_slot_info_window(QVector<bool>& T);
     void sub2_slot_info_window(QVector<bool>& T);
-
-    void set_init_window();
-
-    void read_slot_file();
 
 signals:
     void Home_clicked();

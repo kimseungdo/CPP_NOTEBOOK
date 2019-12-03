@@ -9,7 +9,7 @@ INPUT(
 ./debug\application_button_func.o
 ./debug\info_window_button_func2.o
 ./debug\info_window_main_func.o
-./debug\all_system_info.o
+./debug\global_test.o
 ./debug\moc_application.o
 ./debug\moc_set_window.o
 ./debug\moc_spec_window.o
