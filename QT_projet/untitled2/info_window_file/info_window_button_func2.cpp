@@ -1,10 +1,13 @@
 #include "info_window_file/info_window.h"
 #include "ui_info_window.h"
 
+#include <QDebug>
+#include "global_test.h"
 
 void info_window::on_slot_btn_1_clicked(){
     if(window_index == 0){//메인
         emit title_change("타이틀/정보/MAIN/SLOT 1");
+        qDebug()<< main_slots_device[0];
         info_ui->stackedWidget->setCurrentIndex(1);
     }
     else if(window_index == 1){

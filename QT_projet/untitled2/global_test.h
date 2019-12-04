@@ -16,7 +16,7 @@ extern QVector<bool> _main_slots; //슬롯정보를 담음
 extern QVector<bool> _sub1_slots;
 extern QVector<bool> _sub2_slots;
 
-extern QVector<QVector<QString>> main_slots_device;
-extern QVector<QVector<QString>> sub1_slots_device;
-extern QVector<QVector<QString>> sub2_slots_device;
+extern QVector<QVector<QVector<QString>>> main_slots_device;
+extern QVector<QVector<QVector<QString>>> sub1_slots_device;
+extern QVector<QVector<QVector<QString>>> sub2_slots_device;
 #endif // GLOBAL_TEST_H

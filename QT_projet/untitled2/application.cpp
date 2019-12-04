@@ -69,28 +69,48 @@ void application::read_all_system_file(QVector<bool>& _MS, QVector<bool>& _SUB1,
         qDebug()<< "메인이요 메인!";
 
         for(int i=0; i<_MS.size(); i++){
-            if(_MS[i] == true){//요놈 인덱스가 있으면?
-                QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/MS"+QString::number(i+1)+".ntx");
-                if(!file.open(QFile::ReadOnly | QFile::Text)) {
-                    qDebug() << "Could not open the file for reading";
-                    return;
-                }
+
+            QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/MS"+QString::number(i+1)+".ntx");
+
+            QVector<QString> tmp_v;
+            QVector<QVector<QString>> tmp_2dv;
+
+            if(_MS[i] == true && file.open(QFile::ReadOnly | QFile::Text)){//요놈 인덱스랑 파일이 있다면?
                 while(!file.atEnd()){
-                    QVector<QString> tmp_v;
                     QString tmp = file.readLine();
                     QStringList tmplist = tmp.split(",");
 
-                    qDebug()<< i+1 <<"번째 슬롯"<<tmplist;
-                    qDebug()<< "마지막: " << tmplist.back() << tmplist.at(tmplist.size()-1).size();
-                    if(tmplist.at(tmplist.size()-1).size() >= 2){
-                        tmplist.back() = tmplist.at(tmplist.size()-1).left(1);
-                        qDebug()<<"쳐 잘라서 원소에 박은거 : " << tmplist.at(tmplist.size()-1);
-                    }
-                    tmp_v.push_back(tmplist);
-                }
-            file.flush(); file.close();
-            }//end if true
+                    if(tmplist.at(tmplist.size()-1).size() >= 2) //맨 마지막 개행이 있을경우
+                        tmplist.back() = tmplist.at(tmplist.size()-1).left(1); //앞에 하나만 저장한다
+
+                    for(int i=0; i<tmplist.size(); i++)//메인슬롯 정보저장
+                        tmp_v.push_back(tmplist.value(i));
+
+                    //qDebug()<< "쳐넣은 벡퉈" << tmp_v;
+
+                    tmp_2dv.push_back(tmp_v);
+                    tmp_v.clear();
+                }file.flush(); file.close(); //end file read while
+
+
+                main_slots_device.push_back(tmp_2dv);
+                tmp_2dv.clear();
+
+            }//end if
+            else{//둘중 하나가 빠가났다면?
+                qDebug() << "Could not open the file MS"<< i+1 <<"for reading";
+                tmp_v.push_back(QString("0"));
+                tmp_2dv.push_back(tmp_v);
+                main_slots_device.push_back(tmp_2dv);
+
+                tmp_v.clear(); tmp_2dv.clear();
+
+            }//end else
+            qDebug()<< "MS" << i+1 << "전체 " <<main_slots_device[i][0];
         }//end for
+
+
+
     }//end if
 
     if(_sub1_flag == true && _SUB1.size() > 0){
