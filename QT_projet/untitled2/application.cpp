@@ -106,7 +106,7 @@ void application::read_all_system_file(QVector<bool>& _MS, QVector<bool>& _SUB1,
                 tmp_v.clear(); tmp_2dv.clear();
 
             }//end else
-            qDebug()<< "MS" << i+1 << "전체 " <<main_slots_device[i][0];
+            //qDebug()<< "MS" << i+1 << "전체 " <<main_slots_device[i][0];
         }//end for
 
 

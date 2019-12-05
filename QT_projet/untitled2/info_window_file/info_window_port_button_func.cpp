@@ -1,0 +1,95 @@
+#include "info_window_file/info_window.h"
+#include "ui_info_window.h"
+
+#include <QDebug>
+#include "global_test.h"
+/*
+ *
+ *
+ *
+ */
+void info_window::on_port_btn_1_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 1");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("1");
+
+    info_ui->stackedWidget->setCurrentIndex(2);
+
+}
+
+void info_window::on_port_btn_2_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 2");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("2");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_3_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 3");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("3");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_4_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 4");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("4");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_5_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 5");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("5");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_6_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 6");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("6");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_7_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 7");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("7");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_8_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 8");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("8");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_9_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 9");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("9");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_10_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 10");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("10");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_11_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 11");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("11");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}
+
+void info_window::on_port_btn_12_clicked(){
+    emit title_change("타이틀/정보/MAIN/SLOT 1/PORT 12");
+    info_ui->port_board_set_label->setText(info_ui->slot_board_set_label->text());
+    info_ui->port_number_set_label->setText("12");
+    info_ui->stackedWidget->setCurrentIndex(2);
+}

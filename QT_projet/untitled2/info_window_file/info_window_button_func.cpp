@@ -20,6 +20,13 @@ void info_window::on_slot_before_btn_clicked(){//슬롯화면에서 정보화면
     emit title_change("타이틀/정보");
 }
 
+void info_window::on_port_before_btn_clicked(){//포트화면에서 슬롯화면으로
+    set_12port_info_window();
+    info_ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+
 /*
 if(sub2_flag == true) sub2_slot_info_window(sub2_slots);
 if(sub1_flag == true) sub1_slot_info_window(sub1_slots);

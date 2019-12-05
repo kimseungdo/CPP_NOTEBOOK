@@ -30,7 +30,7 @@ void initial_system(){
                 _main_slots.push_back(QVariant(tmplist.value(i)).toBool());
 
         }file.flush(); file.close();
-        qDebug()<< "application ms vector : " << _main_slots;
+        //qDebug()<< "application ms vector : " << _main_slots;
     }
     else{ qDebug()<< "Disconnected MS or File Not Exists";
             main_slots_device.clear();
@@ -57,7 +57,7 @@ void initial_system(){
                 _sub1_slots.push_back(QVariant(tmplist.value(i)).toBool());
 
         }file.flush(); file.close();
-        qDebug()<< "application sub1 vector : " << _sub1_slots;
+        //qDebug()<< "application sub1 vector : " << _sub1_slots;
 
     }
     else{ qDebug()<< "Disconnected sub1 or File Not Exists";
@@ -84,9 +84,9 @@ void initial_system(){
                 _sub2_slots.push_back(QVariant(tmplist.value(i)).toBool());
 
         }file.flush(); file.close();
-        qDebug()<< "application sub2 vector : " << _sub2_slots;
+        //qDebug()<< "application sub2 vector : " << _sub2_slots;
     }
-    else{ qDebug()<< "Disconnected MS or File Not Exists";
+    else{ qDebug()<< "Disconnected sub2 or File Not Exists";
             sub2_slots_device.clear();
     }
 

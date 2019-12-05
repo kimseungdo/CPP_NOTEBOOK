@@ -54,6 +54,9 @@
      <property name="text">
       <string>SLOT 3</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="slot_btn_8">
      <property name="geometry">
@@ -70,6 +73,9 @@
      <property name="text">
       <string>SLOT 8</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="slot_btn_5">
      <property name="geometry">
@@ -86,6 +92,9 @@
      <property name="text">
       <string>SLOT 5</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="main_up_btn">
      <property name="geometry">
@@ -134,6 +143,9 @@
      <property name="text">
       <string>SLOT 10</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="slot_btn_4">
      <property name="geometry">
@@ -150,6 +162,9 @@
      <property name="text">
       <string>SLOT 4</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QLabel" name="info_window_main_label">
      <property name="geometry">
@@ -188,6 +203,9 @@
      <property name="checkable">
       <bool>false</bool>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="slot_btn_2">
      <property name="geometry">
@@ -204,6 +222,9 @@
      <property name="text">
       <string>SLOT 2</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="slot_btn_11">
      <property name="geometry">
@@ -220,6 +241,9 @@
      <property name="text">
       <string>SLOT 11</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="slot_btn_7">
      <property name="geometry">
@@ -236,6 +260,9 @@
      <property name="text">
       <string>SLOT 7</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="slot_btn_9">
      <property name="geometry">
@@ -252,6 +279,9 @@
      <property name="text">
       <string>SLOT 9</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="main_before_btn">
      <property name="geometry">
@@ -284,6 +314,9 @@
      <property name="text">
       <string>SLOT 6</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">slot_btn_group</string>
+     </attribute>
     </widget>
    </widget>
    <widget class="QWidget" name="slot_page">
@@ -304,6 +337,9 @@
      </property>
     </widget>
     <widget class="QPushButton" name="port_btn_1">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -315,6 +351,9 @@
      <property name="text">
       <string>포트 1</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_2">
      <property name="geometry">
@@ -328,6 +367,9 @@
      <property name="text">
       <string>포트 2</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_3">
      <property name="geometry">
@@ -341,6 +383,9 @@
      <property name="text">
       <string>포트 3</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_4">
      <property name="geometry">
@@ -354,6 +399,9 @@
      <property name="text">
       <string>포트 4</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_5">
      <property name="geometry">
@@ -367,6 +415,9 @@
      <property name="text">
       <string>포트 5</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_6">
      <property name="geometry">
@@ -380,6 +431,9 @@
      <property name="text">
       <string>포트 6</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_12">
      <property name="geometry">
@@ -393,6 +447,9 @@
      <property name="text">
       <string>포트 12</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_9">
      <property name="geometry">
@@ -406,6 +463,9 @@
      <property name="text">
       <string>포트 9</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_8">
      <property name="geometry">
@@ -419,6 +479,9 @@
      <property name="text">
       <string>포트 8</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_11">
      <property name="geometry">
@@ -432,6 +495,9 @@
      <property name="text">
       <string>포트 11</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_7">
      <property name="geometry">
@@ -445,6 +511,9 @@
      <property name="text">
       <string>포트 7</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="port_btn_10">
      <property name="geometry">
@@ -458,8 +527,11 @@
      <property name="text">
       <string>포트 10</string>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">port_btn_group</string>
+     </attribute>
     </widget>
-    <widget class="QPushButton" name="slot_up_btn_2">
+    <widget class="QPushButton" name="slot_up_btn">
      <property name="geometry">
       <rect>
        <x>455</x>
@@ -512,11 +584,192 @@ background-color: rgb(170, 255, 255);</string>
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="port_page"/>
+   <widget class="QWidget" name="port_page">
+    <widget class="QLabel" name="port_board_set_label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>보드 종류 라벨</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="port_device_id_label_1">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비 ID</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="port_device_id_label_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>110</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비 ID</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="port_device_id_label_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>150</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비 ID</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="port_device_name_label_1">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>70</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비명</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="port_device_name_label_2">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>110</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비명</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="port_device_name_label_3">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>150</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비명</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="port_before_btn">
+     <property name="geometry">
+      <rect>
+       <x>55</x>
+       <y>205</y>
+       <width>45</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>이전</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="port_number_set_label">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>20</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>포트 #</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <zorder>stackedWidget</zorder>
   <zorder>home_btn</zorder>
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="port_btn_group"/>
+  <buttongroup name="slot_btn_group"/>
+ </buttongroups>
 </ui>
