@@ -69,8 +69,8 @@ public:
     QLabel *port_device_name_label_3;
     QPushButton *port_before_btn;
     QLabel *port_number_set_label;
-    QButtonGroup *port_btn_group;
     QButtonGroup *slot_btn_group;
+    QButtonGroup *port_btn_group;
 
     void setupUi(QWidget *info_window)
     {

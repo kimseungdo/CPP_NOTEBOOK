@@ -66,6 +66,10 @@ void info_window::set_0port_info_window(){ // None
 }
 
 void info_window::set_3port_info_window(){ //232 485
+    info_ui->port_btn_1->setVisible(true);
+    info_ui->port_btn_2->setVisible(true);
+    info_ui->port_btn_3->setVisible(true);
+
     info_ui->port_btn_4->setVisible(false);
     info_ui->port_btn_5->setVisible(false);
     info_ui->port_btn_6->setVisible(false);
@@ -78,6 +82,11 @@ void info_window::set_3port_info_window(){ //232 485
 
 }
 void info_window::set_4port_info_window(){ //422
+    info_ui->port_btn_1->setVisible(true);
+    info_ui->port_btn_2->setVisible(true);
+    info_ui->port_btn_3->setVisible(true);
+    info_ui->port_btn_4->setVisible(true);
+
     info_ui->port_btn_5->setVisible(false);
     info_ui->port_btn_6->setVisible(false);
     info_ui->port_btn_7->setVisible(false);
@@ -86,7 +95,6 @@ void info_window::set_4port_info_window(){ //422
     info_ui->port_btn_10->setVisible(false);
     info_ui->port_btn_11->setVisible(false);
     info_ui->port_btn_12->setVisible(false);
-
 }
 
 void info_window::set_12port_info_window(){ //DI DO

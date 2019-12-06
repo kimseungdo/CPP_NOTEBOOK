@@ -2,7 +2,6 @@
 #include "ui_info_window.h"
 #include "global_test.h"
 
-
 void info_window::on_home_btn_clicked(){ //집으로
     main_slot_info_window(_main_slots);
     info_ui->stackedWidget->setCurrentIndex(0);
@@ -14,7 +13,6 @@ void info_window::on_main_before_btn_clicked(){ //정보화면에서 집으로
     emit Home_clicked();
 }
 
-
 void info_window::on_slot_before_btn_clicked(){//슬롯화면에서 정보화면으로
     info_ui->stackedWidget->setCurrentIndex(0);
     emit title_change("타이틀/정보");
@@ -23,6 +21,11 @@ void info_window::on_slot_before_btn_clicked(){//슬롯화면에서 정보화면
 void info_window::on_port_before_btn_clicked(){//포트화면에서 슬롯화면으로
     set_12port_info_window();
     info_ui->stackedWidget->setCurrentIndex(1);
+    //0 0 ~ 232 485 3 ~ 422 4 ~ di do 5
+    if(info_ui->slot_board_set_label->text() == "None") set_0port_info_window();
+    if(info_ui->slot_board_set_label->text() == "RS-232" or "RS-485") set_3port_info_window();
+    if(info_ui->slot_board_set_label->text() == "RS-422") set_4port_info_window();
+    if(info_ui->slot_board_set_label->text() == "DI" or "DO") set_12port_info_window();
 
 }
 

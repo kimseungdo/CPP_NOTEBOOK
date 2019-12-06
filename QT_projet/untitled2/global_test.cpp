@@ -1,9 +1,12 @@
 #include "global_test.h"
-
+#include <QHash>
 __int8 _slot_counter = 0;
 
 QVector<QString> slots_label = {"None", "RS-232", "RS-485", "RS-422", "DI", "DO"};
-// 3 3 4 12 12
+// 포트 사이즈 3 3 4 12 12
+QHash<QString, QString> device_code_name;
+//<key, T>
+
 bool _main_flag = false;
 bool _sub1_flag = false;
 bool _sub2_flag = false;

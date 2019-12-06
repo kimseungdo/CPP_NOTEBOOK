@@ -769,7 +769,7 @@ background-color: rgb(170, 255, 255);</string>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="port_btn_group"/>
   <buttongroup name="slot_btn_group"/>
+  <buttongroup name="port_btn_group"/>
  </buttongroups>
 </ui>
