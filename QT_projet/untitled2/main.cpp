@@ -312,7 +312,7 @@ void init_device_code_name(){
     // RF 리더류
     device_code_name ["RF Reader/Controller"] = "621";
     device_code_name ["RF Reader"] = "622";
-}//   값       ~~~~~~~~~키
+}//                      "값"  =  "키"
 
 int main(int argc, char *argv[]){
     QApplication a(argc, argv);
@@ -320,11 +320,6 @@ int main(int argc, char *argv[]){
     initial_system();
     init_device_code_name();
 
-    /*
-    foreach(QString key, device_code_name){
-        qDebug()<< device_code_name.value();
-    }
-    */
 
     qDebug()<< "키값 출력" << device_code_name.key("622");
     qDebug()<< "값 출력" << device_code_name.value("RF Reader");

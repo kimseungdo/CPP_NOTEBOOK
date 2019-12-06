@@ -19,13 +19,14 @@ void info_window::on_slot_before_btn_clicked(){//슬롯화면에서 정보화면
 }
 
 void info_window::on_port_before_btn_clicked(){//포트화면에서 슬롯화면으로
-    set_12port_info_window();
     info_ui->stackedWidget->setCurrentIndex(1);
     //0 0 ~ 232 485 3 ~ 422 4 ~ di do 5
     if(info_ui->slot_board_set_label->text() == "None") set_0port_info_window();
-    if(info_ui->slot_board_set_label->text() == "RS-232" or "RS-485") set_3port_info_window();
-    if(info_ui->slot_board_set_label->text() == "RS-422") set_4port_info_window();
-    if(info_ui->slot_board_set_label->text() == "DI" or "DO") set_12port_info_window();
+    else if(info_ui->slot_board_set_label->text() == "RS-232") set_3port_info_window();
+    else if(info_ui->slot_board_set_label->text() == "RS-485") set_3port_info_window();
+    else if(info_ui->slot_board_set_label->text() == "RS-422") set_4port_info_window();
+    else if(info_ui->slot_board_set_label->text() == "DI") set_12port_info_window();
+    else if(info_ui->slot_board_set_label->text() == "DO") set_12port_info_window();
 
 }
 
