@@ -16,9 +16,9 @@ application::application(QWidget *parent) : QWidget(parent),
 
     set_up_main();
     read_all_system_file(_main_slots, _sub1_slots, _sub2_slots);
-    qDebug()<< "MS size" << _main_slots.size();
-    qDebug()<< "SUB1 size" << _sub1_slots.size();
-    qDebug()<< "SUB2 size" << _sub2_slots.size();
+    //qDebug()<< "MS size" << _main_slots.size();
+    //qDebug()<< "SUB1 size" << _sub1_slots.size();
+    //qDebug()<< "SUB2 size" << _sub2_slots.size();
 
     ui->stackedWidget->insertWidget(1, &_info_window);
     ui->stackedWidget->insertWidget(2, &_spec_window);

@@ -210,8 +210,8 @@ int main(int argc, char *argv[]){
     init_device_code_name();
 
 
-    qDebug()<< "키값 출력" << device_code_name.key("622"); //장비출력
-    qDebug()<< "값 출력" << device_code_name.value("RF Reader"); //번호출력
+    //qDebug()<< "키값 출력" << device_code_name.key("622"); //장비출력
+    //qDebug()<< "값 출력" << device_code_name.value("RF Reader"); //번호출력
 
     application w;
     w.show();

@@ -11,11 +11,15 @@ void info_window::on_main_before_btn_clicked(){ //정보화면에서 집으로
     main_slot_info_window(_main_slots);
     info_ui->stackedWidget->setCurrentIndex(0);
     emit Home_clicked();
+
+    tmp_vec.clear(); aa=6;
 }
 
 void info_window::on_slot_before_btn_clicked(){//슬롯화면에서 정보화면으로
     info_ui->stackedWidget->setCurrentIndex(0);
     emit title_change("타이틀/정보");
+
+    tmp_vec.clear(); aa=6;
 }
 
 void info_window::on_port_before_btn_clicked(){//포트화면에서 슬롯화면으로
@@ -29,8 +33,7 @@ void info_window::on_port_before_btn_clicked(){//포트화면에서 슬롯화면
     else if(info_ui->slot_board_set_label->text() == "DI") set_12port_info_window();
     else if(info_ui->slot_board_set_label->text() == "DO") set_12port_info_window();
 
-    tmp_hash.clear();
-    tmp_vec.clear();
+    tmp_vec.clear(); aa=6;
 
 }
 
