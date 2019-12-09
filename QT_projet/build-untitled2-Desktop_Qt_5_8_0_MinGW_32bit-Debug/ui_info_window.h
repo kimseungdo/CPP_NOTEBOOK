@@ -69,8 +69,10 @@ public:
     QLabel *port_device_name_label_3;
     QPushButton *port_before_btn;
     QLabel *port_number_set_label;
-    QButtonGroup *slot_btn_group;
+    QPushButton *port_down_btn;
+    QPushButton *port_up_btn;
     QButtonGroup *port_btn_group;
+    QButtonGroup *slot_btn_group;
 
     void setupUi(QWidget *info_window)
     {
@@ -262,19 +264,19 @@ public:
         port_device_id_label_3->setAlignment(Qt::AlignCenter);
         port_device_name_label_1 = new QLabel(port_page);
         port_device_name_label_1->setObjectName(QStringLiteral("port_device_name_label_1"));
-        port_device_name_label_1->setGeometry(QRect(150, 70, 141, 31));
+        port_device_name_label_1->setGeometry(QRect(150, 70, 161, 31));
         port_device_name_label_1->setStyleSheet(QLatin1String("\n"
 "background-color: rgb(170, 255, 255);"));
         port_device_name_label_1->setAlignment(Qt::AlignCenter);
         port_device_name_label_2 = new QLabel(port_page);
         port_device_name_label_2->setObjectName(QStringLiteral("port_device_name_label_2"));
-        port_device_name_label_2->setGeometry(QRect(150, 110, 141, 31));
+        port_device_name_label_2->setGeometry(QRect(150, 110, 161, 31));
         port_device_name_label_2->setStyleSheet(QLatin1String("\n"
 "background-color: rgb(170, 255, 255);"));
         port_device_name_label_2->setAlignment(Qt::AlignCenter);
         port_device_name_label_3 = new QLabel(port_page);
         port_device_name_label_3->setObjectName(QStringLiteral("port_device_name_label_3"));
-        port_device_name_label_3->setGeometry(QRect(150, 150, 141, 31));
+        port_device_name_label_3->setGeometry(QRect(150, 150, 161, 31));
         port_device_name_label_3->setStyleSheet(QLatin1String("\n"
 "background-color: rgb(170, 255, 255);"));
         port_device_name_label_3->setAlignment(Qt::AlignCenter);
@@ -284,10 +286,18 @@ public:
         port_before_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         port_number_set_label = new QLabel(port_page);
         port_number_set_label->setObjectName(QStringLiteral("port_number_set_label"));
-        port_number_set_label->setGeometry(QRect(200, 20, 51, 41));
+        port_number_set_label->setGeometry(QRect(210, 20, 51, 41));
         port_number_set_label->setStyleSheet(QLatin1String("\n"
 "background-color: rgb(170, 255, 255);"));
         port_number_set_label->setAlignment(Qt::AlignCenter);
+        port_down_btn = new QPushButton(port_page);
+        port_down_btn->setObjectName(QStringLiteral("port_down_btn"));
+        port_down_btn->setGeometry(QRect(455, 170, 26, 30));
+        port_down_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        port_up_btn = new QPushButton(port_page);
+        port_up_btn->setObjectName(QStringLiteral("port_up_btn"));
+        port_up_btn->setGeometry(QRect(455, 50, 26, 30));
+        port_up_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         stackedWidget->addWidget(port_page);
         stackedWidget->raise();
         home_btn->raise();
@@ -341,6 +351,8 @@ public:
         port_device_name_label_3->setText(QApplication::translate("info_window", "\354\236\245\353\271\204\353\252\205", Q_NULLPTR));
         port_before_btn->setText(QApplication::translate("info_window", "\354\235\264\354\240\204", Q_NULLPTR));
         port_number_set_label->setText(QApplication::translate("info_window", "\355\217\254\355\212\270 #", Q_NULLPTR));
+        port_down_btn->setText(QApplication::translate("info_window", "v", Q_NULLPTR));
+        port_up_btn->setText(QApplication::translate("info_window", "^", Q_NULLPTR));
     } // retranslateUi
 
 };

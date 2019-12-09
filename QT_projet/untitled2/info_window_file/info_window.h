@@ -14,11 +14,14 @@ public:
     explicit info_window(QWidget *parent = 0);
     ~info_window();
 
-    int window_index;
-    int slot_index;
-    __int8 d;
+    __int8 window_index;
+    __int8 slot_index;
+    __int8 port_index;
+
 private:
     Ui::info_window *info_ui;
+    QHash<QString, QString> tmp_hash;
+    QVector<QString> tmp_vec;
     void set_up_info_ui();
 
 
@@ -32,6 +35,9 @@ private:
     void set_3port_info_window();
     void set_4port_info_window();
     void set_12port_info_window();
+
+    void tmp_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI);
+    void shift_port_device_window(QVector<QString>& T);
 
 signals:
     void Home_clicked();
@@ -70,6 +76,8 @@ private slots:
     void on_port_btn_10_clicked();
     void on_port_btn_11_clicked();
     void on_port_btn_12_clicked();
+    void on_port_up_btn_clicked();
+    void on_port_down_btn_clicked();
 };
 
 #endif // INFO_WINDOW_H

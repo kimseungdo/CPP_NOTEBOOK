@@ -76,4 +76,3 @@ void info_window::onGroupButtonClicked(int id){
     qDebug() << senderSignalIndex();
 }*/
 
-

@@ -7,11 +7,11 @@
 #include "global_test.h"
 
 void info_window::on_slot_btn_1_clicked(){
-
+    slot_index = 0;
     if(window_index == 0){
-        emit title_change("타이틀/정보/MAIN/SLOT 1");
-        qDebug()<< main_slots_device[0];
-        switch (QVariant(main_slots_device[0][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -79,10 +79,11 @@ void info_window::on_slot_btn_1_clicked(){
 }
 
 void info_window::on_slot_btn_2_clicked(){
+    slot_index = 1;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 2");
-        qDebug()<< main_slots_device[1];
-        switch (QVariant(main_slots_device[1][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -150,10 +151,11 @@ void info_window::on_slot_btn_2_clicked(){
 }
 
 void info_window::on_slot_btn_3_clicked(){
+    slot_index = 2;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 3");
-        qDebug()<< main_slots_device[2];
-        switch (QVariant(main_slots_device[2][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -221,10 +223,11 @@ void info_window::on_slot_btn_3_clicked(){
 }
 
 void info_window::on_slot_btn_4_clicked(){
+    slot_index = 3;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 4");
-        qDebug()<< main_slots_device[3];
-        switch (QVariant(main_slots_device[3][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -292,10 +295,11 @@ void info_window::on_slot_btn_4_clicked(){
 }
 
 void info_window::on_slot_btn_5_clicked(){
+    slot_index = 4;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 5");
-        qDebug()<< main_slots_device[4];
-        switch (QVariant(main_slots_device[4][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -361,10 +365,11 @@ void info_window::on_slot_btn_5_clicked(){
 }
 
 void info_window::on_slot_btn_6_clicked(){
+    slot_index = 5;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 6");
-        qDebug()<< main_slots_device[5];
-        switch (QVariant(main_slots_device[5][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -430,10 +435,11 @@ void info_window::on_slot_btn_6_clicked(){
 }
 
 void info_window::on_slot_btn_7_clicked(){
+    slot_index = 6;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 7");
-        qDebug()<< main_slots_device[6];
-        switch (QVariant(main_slots_device[6][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -499,10 +505,11 @@ void info_window::on_slot_btn_7_clicked(){
 }
 
 void info_window::on_slot_btn_8_clicked(){
+    slot_index = 7;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 8");
-        qDebug()<< main_slots_device[7];
-        switch (QVariant(main_slots_device[7][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -568,10 +575,11 @@ void info_window::on_slot_btn_8_clicked(){
 }
 
 void info_window::on_slot_btn_9_clicked(){
+    slot_index = 8;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 9");
-        qDebug()<< main_slots_device[8];
-        switch (QVariant(main_slots_device[8][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -637,10 +645,11 @@ void info_window::on_slot_btn_9_clicked(){
 }
 
 void info_window::on_slot_btn_10_clicked(){
+    slot_index = 9;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 10");
-        qDebug()<< main_slots_device[9];
-        switch (QVariant(main_slots_device[9][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
@@ -706,10 +715,11 @@ void info_window::on_slot_btn_10_clicked(){
 }
 
 void info_window::on_slot_btn_11_clicked(){
+    slot_index = 10;
     if(window_index == 0){//메인
-        emit title_change("타이틀/정보/MAIN/SLOT 11");
-        qDebug()<< main_slots_device[10];
-        switch (QVariant(main_slots_device[10][0][0]).toInt() ){
+        emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index+1).toString());
+        //qDebug()<< main_slots_device[slot_index];
+        switch (QVariant(main_slots_device[slot_index][0][0]).toInt() ){
             case 0:
                 info_ui->slot_board_set_label->setText(slots_label[0]);
                 set_0port_info_window();
