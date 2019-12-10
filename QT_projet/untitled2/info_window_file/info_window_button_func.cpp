@@ -6,6 +6,8 @@ void info_window::on_home_btn_clicked(){ //집으로
     main_slot_info_window(_main_slots);
     info_ui->stackedWidget->setCurrentIndex(0);
     emit Home_clicked();
+
+    tmp_vec.clear(); aa=6;
 }
 void info_window::on_main_before_btn_clicked(){ //정보화면에서 집으로
     main_slot_info_window(_main_slots);

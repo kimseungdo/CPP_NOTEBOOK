@@ -6,7 +6,7 @@
 #include "global_test.h"
 
 void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI){
-    port_window_index = 1; //첫화면 인덱스 표시
+    port_window_index = 0; //첫화면 인덱스 표시
     switch (window_index){
         case 0:
             emit title_change("타이틀/정보/MAIN/SLOT "+ QVariant(slot_index +1).toString() +"/PORT "+ QVariant(PI+1).toString() );
@@ -17,10 +17,6 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
         case 2:
             emit title_change("타이틀/정보/SUB2/SLOT "+ QVariant(slot_index +1).toString() +"/PORT "+ QVariant(PI+1).toString() );
         break;
-
-        case 3: break;
-        case 4: break;
-
         default:
         break;
     }
@@ -46,9 +42,10 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
 
             info_ui->port_device_id_label_2->hide();        info_ui->port_device_name_label_2->hide();
             info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
-       break;
+        break;
 
-       case 3: break;
+       case 3:
+        break;
 
        case 4: //포트가 2개 12show 3hide
            info_ui->port_up_btn->hide();
@@ -64,7 +61,8 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
         break;
 
 
-        case 5: break;
+        case 5:
+        break;
 
         case 6: //포트가 3개
             info_ui->port_up_btn->hide();
@@ -97,7 +95,7 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
 }
 
 void info_window::on_port_up_btn_clicked(){ // 0-5 6-11 12-17 18-23 0-5 bool?
-
+    port_window_index++;
 
     qDebug()<< "페이지 인덱스 : "<< QVariant(port_window_index).toInt()
             <<"페이지 수 : " << QVariant(cut_per_page).toInt()
@@ -109,7 +107,7 @@ void info_window::on_port_up_btn_clicked(){ // 0-5 6-11 12-17 18-23 0-5 bool?
     info_ui->port_device_id_label_2->show();        info_ui->port_device_name_label_2->show();
     info_ui->port_device_id_label_3->show();        info_ui->port_device_name_label_3->show();
 
-    if(port_window_index == cut_per_page){
+    if(port_window_index <= cut_per_page){
         port_window_index = 0;
         switch(QVariant(last_page).toInt()) { //마지막 페이지에//크거나 같다면 페이지의 마지막이니 마지막 원소 개소를 파악
 
@@ -129,36 +127,33 @@ void info_window::on_port_up_btn_clicked(){ // 0-5 6-11 12-17 18-23 0-5 bool?
             case 2: //장비가 1개있을때
                 qDebug()<< "장비가 1개";
                 //info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
+                info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
+
                 info_ui->port_device_id_label_2->hide();        info_ui->port_device_name_label_2->hide();
                 info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
 
-                info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
-
-
-           break;
+            break;
 
            case 4: //장비가 2개 있을때 12show 3hide
                 qDebug()<< "장비가 2개";
                //info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
                //info_ui->port_device_id_label_2->show();        info_ui->port_device_name_label_2->show();
-               info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
 
                info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
                info_ui->port_device_id_label_2->setText(tmp_vec[aa+2]); info_ui->port_device_name_label_2->setText(tmp_vec[aa+3]);
 
-
-            break;
+               info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
 
             case 5:
             break;
 
+            break;
 
             default:
             break;
         } aa = 0;
     }//end if
     else {  //포트 인덱스가 총 페이지 수보다 작다면
-        port_window_index++;
         info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
         info_ui->port_device_id_label_2->setText(tmp_vec[aa+2]); info_ui->port_device_name_label_2->setText(tmp_vec[aa+3]);
         info_ui->port_device_id_label_3->setText(tmp_vec[aa+4]); info_ui->port_device_name_label_3->setText(tmp_vec[aa+5]);
