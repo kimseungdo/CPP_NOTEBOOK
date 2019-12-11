@@ -31,9 +31,10 @@ SOURCES += main.cpp\
     info_window_file/info_window_button_func.cpp \
     spec_window_file/spec_window_button_func.cpp \
     application_button_func.cpp \
-    info_window_file/info_window_button_func2.cpp \
     info_window_file/info_window_main_func.cpp \
-    global_test.cpp
+    global_test.cpp \
+    info_window_file/info_window_slot_button_func.cpp \
+    info_window_file/info_window_port_button_func.cpp
 
 HEADERS  += application.h \
     set_window_file/set_window.h \
