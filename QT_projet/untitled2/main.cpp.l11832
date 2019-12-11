@@ -115,9 +115,7 @@ void init_device_code_name(){
    //error qDebug()<< aaaa.key("power".key("4"));
    //error qDebug()<< aaaa.key("전력관련류");
     qDebug()<< aaaa.value("전력관련류").value("power");
-    qDebug()<< aaaa.key(aaaa.value("power")); // ""
-    qDebug()<< aaaa.value(aaaa.value("power").key("4")); // QHash()
-    // error qDebug()<< aaaa.key(aaaa.key("4"));
+    qDebug()<< aaaa.key(aaaa.value("power"));
     // 정류기류 case?
     device_code_name ["동아CRS 1800"] = "010";
     device_code_name ["동아CRS 1800N"] = "102";

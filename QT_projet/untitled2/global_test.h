@@ -2,13 +2,14 @@
 #define GLOBAL_TEST_H
 
 #include <QVector>
-
+#include <QHash>
 extern __int8 _slot_counter; //line_clount == 1 only main
                   //line_clunt > 1 exists other sub slot
 
 extern QVector<QString> slots_label;
 extern QHash<QString, QString> device_code_name;
 
+extern QHash<QString, QHash<QString, QString>> aaaa;
 
 extern bool _main_flag;
 extern bool _sub1_flag; // on/off flag

@@ -15,7 +15,7 @@ application::application(QWidget *parent) : QWidget(parent),
     ui->setupUi(this); setFixedSize(480, 272);
 
     set_up_main();
-    read_all_system_file(_main_slots, _sub1_slots, _sub2_slots);
+    //read_all_system_file(_main_slots, _sub1_slots, _sub2_slots);
     //qDebug()<< "MS size" << _main_slots.size();
     //qDebug()<< "SUB1 size" << _sub1_slots.size();
     //qDebug()<< "SUB2 size" << _sub2_slots.size();
@@ -29,7 +29,7 @@ application::application(QWidget *parent) : QWidget(parent),
     connect(&_set_window, SIGNAL(Home_clicked()), this, SLOT(move_to_home()));
 
     connect(&_info_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
-    connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
+    connect(&_spec_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
 
 }

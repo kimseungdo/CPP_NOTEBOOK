@@ -99,25 +99,17 @@ void init_device_code_name(){
     device_code_name ["상전 전송망(네오)"] = "4";
     device_code_name ["UPS"] = "31";
 
-    aaaa["전력관련류"]["power"] = "4";
+    aaaa["UPS"]["power"] = "4";
 
-    qDebug()<< aaaa.value("전력관련류").key("4"); // power
+    qDebug()<< aaaa.value("UPS").key("4"); // power
     qDebug()<< aaaa.value("power").key("4"); // ""
-    qDebug()<< aaaa.value("전력관련류").value("power"); // 4
-    qDebug()<< aaaa["전력관련류"]["power"]; //4
+    qDebug()<< aaaa.value("UPS").value("power"); // 4
+    qDebug()<< aaaa["UPS"]["power"]; //4
     qDebug()<< aaaa.value("power"); // QHash()
-    qDebug()<< aaaa.value("전력관련류"); // QHash(("power", "4"))
+    qDebug()<< aaaa.value("UPS"); // QHash(("power", "4"))
 
    // error qDebug()<< aaaa.key("4");
-    qDebug()<< aaaa.value("4").key("power"); // ""
-    qDebug()<< aaaa.values(); // (QHash(("power", "4")))
-   //error qDebug()<< aaaa.key(value("power"));
-   //error qDebug()<< aaaa.key("power".key("4"));
-   //error qDebug()<< aaaa.key("전력관련류");
-    qDebug()<< aaaa.value("전력관련류").value("power");
-    qDebug()<< aaaa.key(aaaa.value("power")); // ""
-    qDebug()<< aaaa.value(aaaa.value("power").key("4")); // QHash()
-    // error qDebug()<< aaaa.key(aaaa.key("4"));
+
     // 정류기류 case?
     device_code_name ["동아CRS 1800"] = "010";
     device_code_name ["동아CRS 1800N"] = "102";
