@@ -15,7 +15,7 @@ info_window::info_window(QWidget *parent) : QWidget(parent),
     window_index = 0;
     info_ui->slot_down_btn->hide();
     info_ui->slot_up_btn->hide();
-
+info_ui->label->setText(" "+QVariant(aa).toString());
     if(_slot_counter <= 1){
         info_ui->main_up_btn->hide();
         info_ui->main_down_btn->hide();

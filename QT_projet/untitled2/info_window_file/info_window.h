@@ -19,7 +19,9 @@ public:
     __int8 port_index;
 
     __int8 port_window_index; __int8 cut_per_page; __int8 last_page;
-    int aa = 6;
+    bool aa_calc_bool = true;
+    int aa = 0;
+
 private:
     Ui::info_window *info_ui;
     QVector<QString> tmp_vec;

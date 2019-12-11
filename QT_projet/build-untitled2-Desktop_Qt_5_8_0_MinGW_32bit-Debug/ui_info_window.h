@@ -71,8 +71,9 @@ public:
     QLabel *port_number_set_label;
     QPushButton *port_down_btn;
     QPushButton *port_up_btn;
-    QButtonGroup *port_btn_group;
+    QLabel *label;
     QButtonGroup *slot_btn_group;
+    QButtonGroup *port_btn_group;
 
     void setupUi(QWidget *info_window)
     {
@@ -298,6 +299,9 @@ public:
         port_up_btn->setObjectName(QStringLiteral("port_up_btn"));
         port_up_btn->setGeometry(QRect(455, 50, 26, 30));
         port_up_btn->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        label = new QLabel(port_page);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(130, 200, 261, 21));
         stackedWidget->addWidget(port_page);
         stackedWidget->raise();
         home_btn->raise();
@@ -353,6 +357,7 @@ public:
         port_number_set_label->setText(QApplication::translate("info_window", "\355\217\254\355\212\270 #", Q_NULLPTR));
         port_down_btn->setText(QApplication::translate("info_window", "v", Q_NULLPTR));
         port_up_btn->setText(QApplication::translate("info_window", "^", Q_NULLPTR));
+        label->setText(QApplication::translate("info_window", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 
 };

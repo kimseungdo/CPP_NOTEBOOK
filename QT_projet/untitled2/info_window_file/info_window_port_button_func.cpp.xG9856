@@ -98,24 +98,27 @@ void info_window::on_port_up_btn_clicked(){
     info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
     info_ui->port_device_id_label_2->show();        info_ui->port_device_name_label_2->show();
     info_ui->port_device_id_label_3->show();        info_ui->port_device_name_label_3->show();
-    qDebug()<< "up " << aa;
-
+    qDebug()<< aa;
     if(aa_calc_bool == true) aa+=6;
     else{//한번 0번인덱스로 돌아갔으면 출력하고 연산기능 재개
         info_ui->port_device_id_label_1->setText(tmp_vec[0]); info_ui->port_device_name_label_1->setText(tmp_vec[1]);
         info_ui->port_device_id_label_2->setText(tmp_vec[2]); info_ui->port_device_name_label_2->setText(tmp_vec[3]);
         info_ui->port_device_id_label_3->setText(tmp_vec[4]); info_ui->port_device_name_label_3->setText(tmp_vec[5]);
-        aa = 0; aa_calc_bool = true; info_ui->label->setText(" "+QVariant(aa).toString());
+        aa_calc_bool = true;
     }
+
     if(aa < cut_per_page*6){
         info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
         info_ui->port_device_id_label_2->setText(tmp_vec[aa+2]); info_ui->port_device_name_label_2->setText(tmp_vec[aa+3]);
         info_ui->port_device_id_label_3->setText(tmp_vec[aa+4]); info_ui->port_device_name_label_3->setText(tmp_vec[aa+5]);
         info_ui->label->setText(" "+QVariant(aa).toString());
     }
-    else{// if(aa >= cut_per_page*6 ){//마지막까지 도달했다면 마지막 페이지 표시
+    if(aa <= cut_per_page*6 ){//마지막까지 도달했다면 마지막 페이지 표시
+
+        aa_calc_bool = false;
         switch(QVariant(last_page).toInt()) {
             case 0: //장비가 3개 다있을때
+                qDebug()<< "장비가 3개";
 
                 info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
                 info_ui->port_device_id_label_2->setText(tmp_vec[aa+2]); info_ui->port_device_name_label_2->setText(tmp_vec[aa+3]);
@@ -124,6 +127,7 @@ void info_window::on_port_up_btn_clicked(){
             break;
 
             case 2: //장비가 1개있을때
+                qDebug()<< "장비가 1개";
                 //info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
                 info_ui->port_device_id_label_2->hide();        info_ui->port_device_name_label_2->hide();
                 info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
@@ -133,6 +137,7 @@ void info_window::on_port_up_btn_clicked(){
            break;
 
            case 4: //장비가 2개 있을때 12show 3hide
+                qDebug()<< "장비가 2개";
                //info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
                //info_ui->port_device_id_label_2->show();        info_ui->port_device_name_label_2->show();
                info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
@@ -147,8 +152,10 @@ void info_window::on_port_up_btn_clicked(){
 
             default:
             break;
-        }aa = 0; aa_calc_bool = false;
+        }aa = 0;
     }
+
+
 
 
 }
@@ -157,45 +164,35 @@ void info_window::on_port_down_btn_clicked(){ // ~~~~~ 18-23 12-17 6-11 0-5 18-2
     info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
     info_ui->port_device_id_label_2->show();        info_ui->port_device_name_label_2->show();
     info_ui->port_device_id_label_3->show();        info_ui->port_device_name_label_3->show();
-    qDebug()<< "down " << aa;
 
-    if(aa_calc_bool == true) aa-=6;
-    else{//최고 인덱스로 돌아갔으면 출력하고 연산재개
-        //aa = 0;
-        aa-=6;
-        info_ui->port_device_id_label_1->setText(tmp_vec[0]); info_ui->port_device_name_label_1->setText(tmp_vec[1]);
-        info_ui->port_device_id_label_2->setText(tmp_vec[2]); info_ui->port_device_name_label_2->setText(tmp_vec[3]);
-        info_ui->port_device_id_label_3->setText(tmp_vec[4]); info_ui->port_device_name_label_3->setText(tmp_vec[5]);
-
-        aa_calc_bool = true; info_ui->label->setText(" "+QVariant(aa).toString());
-    }
-    if(aa < 0){//음수까지 도달했다면 맨 뒷페이지를 표시해야함
-        aa = cut_per_page*6; aa_calc_bool = false;
+    if(aa < 0){//음수이면 끝페이지 다시 맨 뒤로가서 마지막 페이지를 표시함
+        aa = cut_per_page*6;
         switch(QVariant(last_page).toInt()) {
             case 0: //장비가 3개 다있을때
+                qDebug()<< "장비가 3개";
+
                 info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
                 info_ui->port_device_id_label_2->setText(tmp_vec[aa+2]); info_ui->port_device_name_label_2->setText(tmp_vec[aa+3]);
                 info_ui->port_device_id_label_3->setText(tmp_vec[aa+4]); info_ui->port_device_name_label_3->setText(tmp_vec[aa+5]);
-                info_ui->label->setText(" "+QVariant(aa).toString());
             break;
 
             case 2: //장비가 1개있을때
+                qDebug()<< "장비가 1개";
                 //info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
                 info_ui->port_device_id_label_2->hide();        info_ui->port_device_name_label_2->hide();
                 info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
 
                 info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
-                info_ui->label->setText(" "+QVariant(aa).toString());
            break;
 
            case 4: //장비가 2개 있을때 12show 3hide
+                qDebug()<< "장비가 2개";
                //info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
                //info_ui->port_device_id_label_2->show();        info_ui->port_device_name_label_2->show();
                info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
 
                info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
                info_ui->port_device_id_label_2->setText(tmp_vec[aa+2]); info_ui->port_device_name_label_2->setText(tmp_vec[aa+3]);
-               info_ui->label->setText(" "+QVariant(aa).toString());
             break;
 
             case 5:
@@ -203,22 +200,15 @@ void info_window::on_port_down_btn_clicked(){ // ~~~~~ 18-23 12-17 6-11 0-5 18-2
 
             default:
             break;
-        }; //end switch
+        }aa = 0;
     }
-
-    if (aa > 0 && aa < cut_per_page*6){// 양수이면 기타 페이지가 존재
+    else if(aa >= 0){//양수이면 출력하고 깎아내린다
         info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
         info_ui->port_device_id_label_2->setText(tmp_vec[aa+2]); info_ui->port_device_name_label_2->setText(tmp_vec[aa+3]);
         info_ui->port_device_id_label_3->setText(tmp_vec[aa+4]); info_ui->port_device_name_label_3->setText(tmp_vec[aa+5]);
-        info_ui->label->setText(" "+QVariant(aa).toString());
+        aa -= 6;
     }
-
-    else if(aa == 0){
-        info_ui->port_device_id_label_1->setText(tmp_vec[aa]); info_ui->port_device_name_label_1->setText(tmp_vec[aa+1]);
-        info_ui->port_device_id_label_2->setText(tmp_vec[aa+2]); info_ui->port_device_name_label_2->setText(tmp_vec[aa+3]);
-        info_ui->port_device_id_label_3->setText(tmp_vec[aa+4]); info_ui->port_device_name_label_3->setText(tmp_vec[aa+5]);
-        info_ui->label->setText(" "+QVariant(aa).toString());
-    }
+    info_ui->label->setText(" "+QVariant(aa).toString());
 
 }
 

@@ -793,6 +793,19 @@ background-color: rgb(170, 255, 255);</string>
       <string>^</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>200</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <zorder>stackedWidget</zorder>
@@ -801,7 +814,7 @@ background-color: rgb(170, 255, 255);</string>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="port_btn_group"/>
   <buttongroup name="slot_btn_group"/>
+  <buttongroup name="port_btn_group"/>
  </buttongroups>
 </ui>
