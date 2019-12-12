@@ -31,7 +31,8 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
 
     for(int i=3; i<T[slot_index][PI].size(); i+=15){
         tmp_vec.push_back(T[slot_index][PI][i]);
-        tmp_vec.push_back(device_code_name.key(T[slot_index][PI][i+1]));
+        //tmp_vec.push_back(device_code_name.key(T[slot_index][PI][i+1]));
+        tmp_vec.push_back(device_code_name.key(T[slot_index][PI][i+1]).at(1));
     }qDebug()<< tmp_vec; cut_per_page = tmp_vec.size()/6; last_page = tmp_vec.size()%6;
 
     switch(tmp_vec.size()) {

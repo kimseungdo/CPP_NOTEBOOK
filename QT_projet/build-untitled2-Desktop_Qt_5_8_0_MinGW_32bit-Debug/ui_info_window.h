@@ -72,8 +72,8 @@ public:
     QPushButton *port_down_btn;
     QPushButton *port_up_btn;
     QLabel *label;
-    QButtonGroup *port_btn_group;
     QButtonGroup *slot_btn_group;
+    QButtonGroup *port_btn_group;
 
     void setupUi(QWidget *info_window)
     {
