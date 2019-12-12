@@ -11,6 +11,7 @@
 void init_device_code_name(){
     QTime t;
     t.start();
+// 장비id, 장비코드, 장비정보 n개 나열, 메인경로, 슬롯경로, 포트경로
 // 대분류(QString), 장비명(QString), 변수개수(QString) = 장비코드(QString)
 // 1-정류기류 전부 변수 10개
     device_code_name [{"정류기류", "동아CRS 1800", "10"}] = "010";
@@ -108,13 +109,14 @@ void init_device_code_name(){
 
     device_code_name [{"RF 리더류", "RF Reader/Controller", "10"}] = "621";
     device_code_name [{"RF 리더류", "RF Reader", "10"}] = "622";
-
+/*
     qDebug()<< device_code_name.key("201");             //QVector("냉방기류", "가변용량 냉방기")
     qDebug()<< device_code_name.key("201").at(0);       // "냉방기류"
     qDebug()<< device_code_name.key("201").at(1);       // "가변용량 냉방기"
-
+*/
     qDebug()<< t.elapsed();
-, "10"}
+
+}
 
 int main(int argc, char *argv[]){
     QApplication a(argc, argv);
@@ -125,4 +127,4 @@ int main(int argc, char *argv[]){
     w.show();
 
     return a.exec();
-, "10"}
+}

@@ -17,8 +17,6 @@ public:
 
 private:
     Ui::spec_window *spec_ui;
-// 장비id, 장비코드, 장비정보 n개 나열, 메인경로, 슬롯경로, 포트경로
-// 대분류(QString), 장비명(QString), 변수개수(QString) = 장비코드(QString)
 
     QVector<QString> recti_list;    //정류기류
     QVector<QString> power_list;    //전력
@@ -28,15 +26,9 @@ private:
     QVector<QString> haron_list;    //하론류
     QVector<QString> fire_list;     //화재류
 
-    QVector<QString> human_list;    //인체
-    QVector<QString> submerg_list;  //침수
-    QVector<QString> gate_list;     //출입문
-
-    QVector<QString> ground_list;   //접지
-    QVector<QString> generate_list;  //발전기
-    QVector<QString> exhaust_list;   //배풍
-
-    QVector<QString> bmu_list;      //BMU
+    QVector<QString> huma_list;     //인체
+    QVector<QString> subm_list;     //침수
+    QVector<QString> gate_list;
 
 signals:
     void Home_clicked();

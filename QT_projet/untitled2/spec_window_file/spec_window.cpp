@@ -4,6 +4,8 @@
 spec_window::spec_window(QWidget *parent) : QWidget(parent),
     spec_ui(new Ui::spec_window){
     spec_ui->setupUi(this);
+
+
 }
 
 spec_window::~spec_window(){ delete spec_ui; }

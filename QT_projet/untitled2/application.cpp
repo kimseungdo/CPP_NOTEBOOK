@@ -150,8 +150,6 @@ void application::initial_system(){
 
 void application::read_all_system_file(QVector<bool>& _MS, QVector<bool>& _SUB1, QVector<bool>& _SUB2){
     if(_main_flag == true && _MS.size() > 0){//메인이 있고 사이즈가 읽혔다면
-        qDebug()<< "메인이요 메인!";
-
         for(int i=0; i<_MS.size(); i++){
 
             QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/MS"+QString::number(i+1)+".ntx");
