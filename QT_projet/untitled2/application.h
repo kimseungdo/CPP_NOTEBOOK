@@ -2,7 +2,7 @@
 #define APPLICATION_H
 
 #include <QWidget>
-
+#include <QTimer>
 
 #include "info_window_file/info_window.h"
 #include "spec_window_file/spec_window.h"
@@ -25,12 +25,15 @@ private slots:
     void on_set_btn_clicked();
     void move_to_home();
     void main_title(const QString &text_label);
+    void onTimer();
 
 private:
     Ui::application *ui;
     info_window _info_window;
     spec_window _spec_window;
     set_window _set_window;
+
+    QTimer *timer;
 
     void set_up_main();
     void initial_system();

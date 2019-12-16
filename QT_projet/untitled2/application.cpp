@@ -2,6 +2,7 @@
 #include "ui_application.h"
 #include "global_test.h"
 
+#include <QTime>
 #include <QFile>
 #include <QString>
 #include <QStringList>
@@ -17,9 +18,10 @@ application::application(QWidget *parent) : QWidget(parent),
     set_up_main();
     initial_system();
     read_all_system_file(_main_slots, _sub1_slots, _sub2_slots);
-    //qDebug()<< "MS size" << _main_slots.size();
-    //qDebug()<< "SUB1 size" << _sub1_slots.size();
-    //qDebug()<< "SUB2 size" << _sub2_slots.size();
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(onTimer()));
+    timer->start(1000);
 
     ui->stackedWidget->insertWidget(1, &_info_window);
     ui->stackedWidget->insertWidget(2, &_spec_window);
@@ -32,10 +34,16 @@ application::application(QWidget *parent) : QWidget(parent),
     connect(&_info_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     connect(&_spec_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
-
 }
 
-application::~application(){ delete ui; }
+application::~application(){
+    delete ui;
+    if(timer->isActive())
+        timer->stop();
+}
+void application::onTimer(){
+    ui->time_label->setText(QTime::currentTime().toString());
+}
 
 //signal function
 void application::move_to_home(){ //집으로

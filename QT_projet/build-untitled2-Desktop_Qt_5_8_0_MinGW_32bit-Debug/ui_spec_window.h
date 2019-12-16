@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
@@ -46,6 +47,22 @@ public:
     QPushButton *s_before_btn_2;
     QPushButton *s_down_btn_2;
     QPushButton *s_up_btn_2;
+    QWidget *spec_window_3;
+    QPushButton *s_up_btn_3;
+    QPushButton *s_down_btn_3;
+    QPushButton *s_before_btn_3;
+    QLabel *spec_id_1;
+    QLabel *spec_id_2;
+    QLabel *spec_id_3;
+    QLabel *spec_id_4;
+    QLabel *spec_d_name_1;
+    QLabel *spec_d_name_2;
+    QLabel *spec_d_name_3;
+    QLabel *spec_d_name_4;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
 
     void setupUi(QWidget *spec_window)
     {
@@ -141,6 +158,78 @@ public:
         s_up_btn_2->setGeometry(QRect(455, 50, 26, 30));
         s_up_btn_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
         stackedWidget->addWidget(spec_window_2);
+        spec_window_3 = new QWidget();
+        spec_window_3->setObjectName(QStringLiteral("spec_window_3"));
+        s_up_btn_3 = new QPushButton(spec_window_3);
+        s_up_btn_3->setObjectName(QStringLiteral("s_up_btn_3"));
+        s_up_btn_3->setGeometry(QRect(455, 50, 26, 30));
+        s_up_btn_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        s_down_btn_3 = new QPushButton(spec_window_3);
+        s_down_btn_3->setObjectName(QStringLiteral("s_down_btn_3"));
+        s_down_btn_3->setGeometry(QRect(455, 170, 26, 30));
+        s_down_btn_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        s_before_btn_3 = new QPushButton(spec_window_3);
+        s_before_btn_3->setObjectName(QStringLiteral("s_before_btn_3"));
+        s_before_btn_3->setGeometry(QRect(55, 205, 45, 30));
+        s_before_btn_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        spec_id_1 = new QLabel(spec_window_3);
+        spec_id_1->setObjectName(QStringLiteral("spec_id_1"));
+        spec_id_1->setGeometry(QRect(50, 20, 81, 31));
+        spec_id_1->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        spec_id_1->setAlignment(Qt::AlignCenter);
+        spec_id_1->setTextInteractionFlags(Qt::NoTextInteraction);
+        spec_id_2 = new QLabel(spec_window_3);
+        spec_id_2->setObjectName(QStringLiteral("spec_id_2"));
+        spec_id_2->setGeometry(QRect(50, 65, 81, 31));
+        spec_id_2->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        spec_id_2->setAlignment(Qt::AlignCenter);
+        spec_id_3 = new QLabel(spec_window_3);
+        spec_id_3->setObjectName(QStringLiteral("spec_id_3"));
+        spec_id_3->setGeometry(QRect(50, 110, 81, 31));
+        spec_id_3->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        spec_id_3->setAlignment(Qt::AlignCenter);
+        spec_id_4 = new QLabel(spec_window_3);
+        spec_id_4->setObjectName(QStringLiteral("spec_id_4"));
+        spec_id_4->setGeometry(QRect(50, 155, 81, 31));
+        spec_id_4->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        spec_id_4->setAlignment(Qt::AlignCenter);
+        spec_d_name_1 = new QLabel(spec_window_3);
+        spec_d_name_1->setObjectName(QStringLiteral("spec_d_name_1"));
+        spec_d_name_1->setGeometry(QRect(140, 20, 141, 31));
+        spec_d_name_1->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        spec_d_name_1->setAlignment(Qt::AlignCenter);
+        spec_d_name_2 = new QLabel(spec_window_3);
+        spec_d_name_2->setObjectName(QStringLiteral("spec_d_name_2"));
+        spec_d_name_2->setGeometry(QRect(140, 65, 141, 31));
+        spec_d_name_2->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        spec_d_name_2->setAlignment(Qt::AlignCenter);
+        spec_d_name_3 = new QLabel(spec_window_3);
+        spec_d_name_3->setObjectName(QStringLiteral("spec_d_name_3"));
+        spec_d_name_3->setGeometry(QRect(140, 110, 141, 31));
+        spec_d_name_3->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        spec_d_name_3->setAlignment(Qt::AlignCenter);
+        spec_d_name_4 = new QLabel(spec_window_3);
+        spec_d_name_4->setObjectName(QStringLiteral("spec_d_name_4"));
+        spec_d_name_4->setGeometry(QRect(140, 155, 141, 31));
+        spec_d_name_4->setStyleSheet(QStringLiteral("background-color: rgb(170, 255, 255);"));
+        spec_d_name_4->setAlignment(Qt::AlignCenter);
+        pushButton = new QPushButton(spec_window_3);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(290, 20, 41, 31));
+        pushButton->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        pushButton_2 = new QPushButton(spec_window_3);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(290, 65, 41, 31));
+        pushButton_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        pushButton_3 = new QPushButton(spec_window_3);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(290, 155, 41, 31));
+        pushButton_3->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        pushButton_4 = new QPushButton(spec_window_3);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(290, 110, 41, 31));
+        pushButton_4->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
+        stackedWidget->addWidget(spec_window_3);
         stackedWidget->raise();
         home_btn->raise();
 
@@ -172,6 +261,21 @@ public:
         s_before_btn_2->setText(QApplication::translate("spec_window", "\354\235\264\354\240\204", Q_NULLPTR));
         s_down_btn_2->setText(QApplication::translate("spec_window", "v", Q_NULLPTR));
         s_up_btn_2->setText(QApplication::translate("spec_window", "^", Q_NULLPTR));
+        s_up_btn_3->setText(QApplication::translate("spec_window", "^", Q_NULLPTR));
+        s_down_btn_3->setText(QApplication::translate("spec_window", "v", Q_NULLPTR));
+        s_before_btn_3->setText(QApplication::translate("spec_window", "\354\235\264\354\240\204", Q_NULLPTR));
+        spec_id_1->setText(QApplication::translate("spec_window", "\354\236\245\353\271\204 ID", Q_NULLPTR));
+        spec_id_2->setText(QApplication::translate("spec_window", "\354\236\245\353\271\204 ID", Q_NULLPTR));
+        spec_id_3->setText(QApplication::translate("spec_window", "\354\236\245\353\271\204 ID", Q_NULLPTR));
+        spec_id_4->setText(QApplication::translate("spec_window", "\354\236\245\353\271\204 ID", Q_NULLPTR));
+        spec_d_name_1->setText(QApplication::translate("spec_window", "Device Label", Q_NULLPTR));
+        spec_d_name_2->setText(QApplication::translate("spec_window", "Device Label", Q_NULLPTR));
+        spec_d_name_3->setText(QApplication::translate("spec_window", "Device Label", Q_NULLPTR));
+        spec_d_name_4->setText(QApplication::translate("spec_window", "Device Label", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("spec_window", ">", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("spec_window", ">", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("spec_window", ">", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("spec_window", ">", Q_NULLPTR));
     } // retranslateUi
 
 };
