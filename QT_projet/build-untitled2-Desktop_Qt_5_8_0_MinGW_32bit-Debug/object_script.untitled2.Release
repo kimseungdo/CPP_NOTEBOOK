@@ -1,7 +1,6 @@
 INPUT(
 ./release\main.o
 ./release\application.o
-./release\set_window.o
 ./release\spec_window.o
 ./release\info_window.o
 ./release\info_window_button_func.o
@@ -12,7 +11,6 @@ INPUT(
 ./release\info_window_slot_button_func.o
 ./release\info_window_port_button_func.o
 ./release\moc_application.o
-./release\moc_set_window.o
 ./release\moc_spec_window.o
 ./release\moc_info_window.o
 );

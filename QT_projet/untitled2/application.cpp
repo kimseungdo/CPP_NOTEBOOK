@@ -2,13 +2,14 @@
 #include "ui_application.h"
 #include "global_test.h"
 
-#include <QTime>
+#include <QDateTime>
 #include <QFile>
 #include <QString>
 #include <QStringList>
 #include <QDebug>
 #include <QTextStream>
 #include <QIODevice>
+
 
 
 application::application(QWidget *parent) : QWidget(parent),
@@ -19,30 +20,39 @@ application::application(QWidget *parent) : QWidget(parent),
     initial_system();
     read_all_system_file(_main_slots, _sub1_slots, _sub2_slots);
 
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(onTimer()));
-    timer->start(1000);
+    timer = new QTimer(this); thread_tic = new QTimer(this);
+
+    connect(timer, SIGNAL(timeout()), this, SLOT(onTimer())); timer->start(1000);
+
+    connect(thread_tic, SIGNAL(timeout()), this, SLOT(read_all_system_per_3tic())); thread_tic->start(3000);
+
 
     ui->stackedWidget->insertWidget(1, &_info_window);
     ui->stackedWidget->insertWidget(2, &_spec_window);
-    ui->stackedWidget->insertWidget(3, &_set_window);
 
     connect(&_info_window, SIGNAL(Home_clicked()), this, SLOT(move_to_home()));
     connect(&_spec_window, SIGNAL(Home_clicked()), this, SLOT(move_to_home()));
-    connect(&_set_window, SIGNAL(Home_clicked()), this, SLOT(move_to_home()));
 
     connect(&_info_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     connect(&_spec_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
-    connect(&_set_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
 }
 
 application::~application(){
     delete ui;
     if(timer->isActive())
         timer->stop();
+    if(thread_tic->isActive()){
+        thread_tic->stop();
+    }
 }
 void application::onTimer(){
-    ui->time_label->setText(QTime::currentTime().toString());
+    ui->time_label->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss ddd"));
+}
+
+void application::read_all_system_per_3tic(){
+    set_up_main();
+    initial_system();
+    read_all_system_file(_main_slots, _sub1_slots, _sub2_slots);
 }
 
 //signal function
@@ -75,6 +85,8 @@ void application::set_up_main(){
 
 void application::initial_system(){
     //main read
+    _slot_counter = 0;
+    _main_slots.clear(); _sub1_slots.clear(); _sub2_slots.clear();
     if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx")){
         _main_flag = true;
 
@@ -157,6 +169,7 @@ void application::initial_system(){
 }
 
 void application::read_all_system_file(QVector<bool>& _MS, QVector<bool>& _SUB1, QVector<bool>& _SUB2){
+
     if(_main_flag == true && _MS.size() > 0){//메인이 있고 사이즈가 읽혔다면
         for(int i=0; i<_MS.size(); i++){
 
@@ -187,7 +200,7 @@ void application::read_all_system_file(QVector<bool>& _MS, QVector<bool>& _SUB1,
                 tmp_2dv.clear();
 
             }//end if
-            else{//둘중 하나가 빠가났다면?
+            else{//파일이 없거나 빠가나면
                 qDebug() << "Could not open the file MS"<< i+1 <<"for reading";
                 tmp_v.push_back(QString("0"));
                 tmp_2dv.push_back(tmp_v);

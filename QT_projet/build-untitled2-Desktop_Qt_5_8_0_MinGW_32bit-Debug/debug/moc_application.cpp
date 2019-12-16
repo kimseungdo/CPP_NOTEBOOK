@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_application_t {
-    QByteArrayData data[9];
-    char stringdata0[115];
+    QByteArrayData data[10];
+    char stringdata0[140];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,13 +39,14 @@ QT_MOC_LITERAL(4, 53, 18), // "on_set_btn_clicked"
 QT_MOC_LITERAL(5, 72, 12), // "move_to_home"
 QT_MOC_LITERAL(6, 85, 10), // "main_title"
 QT_MOC_LITERAL(7, 96, 10), // "text_label"
-QT_MOC_LITERAL(8, 107, 7) // "onTimer"
+QT_MOC_LITERAL(8, 107, 7), // "onTimer"
+QT_MOC_LITERAL(9, 115, 24) // "read_all_system_per_3tic"
 
     },
     "application\0on_info_btn_clicked\0\0"
     "on_spec_btn_clicked\0on_set_btn_clicked\0"
     "move_to_home\0main_title\0text_label\0"
-    "onTimer"
+    "onTimer\0read_all_system_per_3tic"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +56,7 @@ static const uint qt_meta_data_application[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -63,12 +64,13 @@ static const uint qt_meta_data_application[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   44,    2, 0x08 /* Private */,
-       3,    0,   45,    2, 0x08 /* Private */,
-       4,    0,   46,    2, 0x08 /* Private */,
-       5,    0,   47,    2, 0x08 /* Private */,
-       6,    1,   48,    2, 0x08 /* Private */,
-       8,    0,   51,    2, 0x08 /* Private */,
+       1,    0,   49,    2, 0x08 /* Private */,
+       3,    0,   50,    2, 0x08 /* Private */,
+       4,    0,   51,    2, 0x08 /* Private */,
+       5,    0,   52,    2, 0x08 /* Private */,
+       6,    1,   53,    2, 0x08 /* Private */,
+       8,    0,   56,    2, 0x08 /* Private */,
+       9,    0,   57,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -76,6 +78,7 @@ static const uint qt_meta_data_application[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -93,6 +96,7 @@ void application::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 3: _t->move_to_home(); break;
         case 4: _t->main_title((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 5: _t->onTimer(); break;
+        case 6: _t->read_all_system_per_3tic(); break;
         default: ;
         }
     }
@@ -123,13 +127,13 @@ int application::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }
