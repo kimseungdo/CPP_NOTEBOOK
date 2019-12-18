@@ -4,26 +4,16 @@
 
 //#include <QButtonGroup>
 #include <QDebug>
-
+#include <QTimer>
 //non eabi mcu - cotex m7 m4
 
 info_window::info_window(QWidget *parent) : QWidget(parent),
     info_ui(new Ui::info_window){
     info_ui->setupUi(this);
 
-    set_up_info_ui();
+
     window_index = 0;
-    info_ui->slot_down_btn->hide();
-    info_ui->slot_up_btn->hide();
-    info_ui->label->setText(" "+QVariant(aa).toString());
-    if(_slot_counter <= 1){
-        info_ui->main_up_btn->hide();
-        info_ui->main_down_btn->hide();
-    }
-    else{
-        info_ui->main_up_btn->show();
-        info_ui->main_down_btn->show();
-    }
+
     /*
     QButtonGroup* group = new QButtonGroup(this);
 
@@ -63,6 +53,20 @@ info_window::info_window(QWidget *parent) : QWidget(parent),
 info_window::~info_window(){ delete info_ui; }
 
 void info_window::set_up_info_ui(){
+
+    info_ui->slot_down_btn->hide();
+    info_ui->slot_up_btn->hide();
+
+    info_ui->label->setText(" "+QVariant(aa).toString());
+    if(_slot_counter <= 1){
+        info_ui->main_up_btn->hide();
+        info_ui->main_down_btn->hide();
+    }
+    else{
+        info_ui->main_up_btn->show();
+        info_ui->main_down_btn->show();
+    }
+
     if(_sub2_flag == true)
         sub2_slot_info_window(_sub2_slots);
     if(_sub1_flag == true)

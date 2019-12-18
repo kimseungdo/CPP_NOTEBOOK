@@ -13,7 +13,7 @@ spec_window::spec_window(QWidget *parent) : QWidget(parent),
 spec_window::~spec_window(){ delete spec_ui; }
 
 void spec_window::device_read(){
-    qDebug()<< main_slots_device;
+    //qDebug()<< main_slots_device;
 
 }
 

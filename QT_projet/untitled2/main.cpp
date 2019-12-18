@@ -2,15 +2,8 @@
 #include "global_test.h"
 
 #include <QApplication>
-#include <QDebug>
-#include <QFile>
-#include <QString>
-#include <QStringList>
-#include <Qtime>
 
 void init_device_code_name(){
-    QTime t;
-    t.start();
 // 장비id, 장비코드, 장비정보 n개 나열, 메인경로, 슬롯경로, 포트경로
 // 대분류(QString), 장비명(QString), 변수개수(QString) = 장비코드(QString)
 // 1-정류기류 전부 변수 10개
@@ -114,8 +107,6 @@ void init_device_code_name(){
     qDebug()<< device_code_name.key("201").at(0);       // "냉방기류"
     qDebug()<< device_code_name.key("201").at(1);       // "가변용량 냉방기"
 */
-    qDebug()<< t.elapsed();
-
 }
 
 int main(int argc, char *argv[]){

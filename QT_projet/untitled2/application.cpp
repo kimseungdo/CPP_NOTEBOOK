@@ -17,15 +17,9 @@ application::application(QWidget *parent) : QWidget(parent),
     ui->setupUi(this); setFixedSize(480, 272);
 
     set_up_main();
+
     initial_system();
     read_all_system_file(_main_slots, _sub1_slots, _sub2_slots);
-
-    timer = new QTimer(this); thread_tic = new QTimer(this);
-
-    connect(timer, SIGNAL(timeout()), this, SLOT(onTimer())); timer->start(1000);
-
-    connect(thread_tic, SIGNAL(timeout()), this, SLOT(read_all_system_per_3tic())); thread_tic->start(3000);
-
 
     ui->stackedWidget->insertWidget(1, &_info_window);
     ui->stackedWidget->insertWidget(2, &_spec_window);
@@ -35,22 +29,28 @@ application::application(QWidget *parent) : QWidget(parent),
 
     connect(&_info_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
     connect(&_spec_window, SIGNAL(title_change(QString)), this, SLOT(main_title(const QString)) );
+
+    timer = new QTimer(this); timer->setInterval(1000);
+    thread_tic = new QTimer(this); thread_tic->setInterval(3000);
+
+    connect(timer, SIGNAL(timeout()), this, SLOT(onTimer())); timer->start();
+    connect(thread_tic, SIGNAL(timeout()), this, SLOT(read_all_system_per_3tic()));
+    //connect(thread_tic, SIGNAL(timeout()), this,  );
+            thread_tic->start();
+
+
 }
 
 application::~application(){
     delete ui;
-    if(timer->isActive())
-        timer->stop();
-    if(thread_tic->isActive()){
-        thread_tic->stop();
-    }
 }
+
 void application::onTimer(){
     ui->time_label->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss ddd"));
 }
 
 void application::read_all_system_per_3tic(){
-    set_up_main();
+    _slot_counter = 0;
     initial_system();
     read_all_system_file(_main_slots, _sub1_slots, _sub2_slots);
 }
@@ -65,7 +65,21 @@ void application::main_title(const QString &text_label){//타이틀변경
     ui->title_label->setText(text_label);
 }
 
-void application::set_up_main(){
+
+void application::on_info_btn_clicked(){ //정보화면으로
+    qDebug()<< _slot_counter;
+    ui->title_label->setText("타이틀/정보");
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void application::on_spec_btn_clicked(){ //상세화면으로
+    ui->title_label->setText("타이틀/상세");
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+
+void application::set_up_main(){ // 메인화면에 ip주소같은거 띄워줄 셋업
     if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/main.ntx")){
         QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/main.ntx");
         if(!file.open(QFile::ReadOnly | QFile::Text)) {
@@ -83,24 +97,21 @@ void application::set_up_main(){
     }//end file read
 }
 
-void application::initial_system(){
+void application::initial_system(){ // 메인슬롯
     //main read
-    _slot_counter = 0;
     _main_slots.clear(); _sub1_slots.clear(); _sub2_slots.clear();
-    if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx")){
+    if(QFile::exists(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx")){ // 파일이 존재한다면
         _main_flag = true;
-
-
-        QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx");
-        if(!file.open(QFile::ReadOnly | QFile::Text)) {
+        QFile file(QApplication::applicationDirPath()+"/mnt/ramdisk/MS.ntx"); // 파일경로 지정
+        if(!file.open(QFile::ReadOnly | QFile::Text)) { //열리지 않으면 에러
             qDebug() << "Could not open the file for reading";
             return;
         }//MS file read
-        else {
+        else { //열리면 카운터 증가
             _slot_counter++;
         }
-        while(!file.atEnd()){
-            QString tmp = file.readLine();
+        while(!file.atEnd()){ // 파일 읽어서 슬롯마다 bool 타입 데이터 저장
+            QString tmp = file.readLine(); // 줄따리로 읽음
             QStringList tmplist = tmp.split(","); tmplist.removeAt(11);//개행 삭제
 
             for(int i=0; i<tmplist.size(); i++)//메인슬롯 정보저장
@@ -109,8 +120,10 @@ void application::initial_system(){
         }file.flush(); file.close();
         //qDebug()<< "application ms vector : " << _main_slots;
     }
-    else{ qDebug()<< "Disconnected MS or File Not Exists";
-            main_slots_device.clear();
+    else{ // 파일이 존재하지 않으면
+        _main_flag = false;
+        qDebug()<< "Disconnected MS or File Not Exists";
+        main_slots_device.clear();
     }
 
     //sub1 read
@@ -137,8 +150,9 @@ void application::initial_system(){
         //qDebug()<< "application sub1 vector : " << _sub1_slots;
 
     }
-    else{ qDebug()<< "Disconnected sub1 or File Not Exists";
-            sub1_slots_device.clear();
+    else{   _sub1_flag = false;
+        qDebug()<< "Disconnected sub1 or File Not Exists";
+        sub1_slots_device.clear();
     }
 
     //sub2 read
@@ -163,13 +177,14 @@ void application::initial_system(){
         }file.flush(); file.close();
         //qDebug()<< "application sub2 vector : " << _sub2_slots;
     }
-    else{ qDebug()<< "Disconnected sub2 or File Not Exists";
-            sub2_slots_device.clear();
+    else{   _sub2_flag = false;
+        qDebug()<< "Disconnected sub2 or File Not Exists";
+        sub2_slots_device.clear();
     }
 }
 
 void application::read_all_system_file(QVector<bool>& _MS, QVector<bool>& _SUB1, QVector<bool>& _SUB2){
-
+    main_slots_device.clear(); main_slots_device.clear(); main_slots_device.clear();
     if(_main_flag == true && _MS.size() > 0){//메인이 있고 사이즈가 읽혔다면
         for(int i=0; i<_MS.size(); i++){
 

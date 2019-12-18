@@ -1,6 +1,6 @@
 #include "global_test.h"
 
-__int8 _slot_counter = 0;
+short _slot_counter = 0;
 // 포트 사이즈                               3         3         4       12    12
 QVector<QString> slots_label = {"None", "RS-232", "RS-485", "RS-422", "DI", "DO"};
 
@@ -17,12 +17,3 @@ QVector<bool> _sub2_slots;
 QVector<QVector<QVector<QString>>> main_slots_device;
 QVector<QVector<QVector<QString>>> sub1_slots_device;
 QVector<QVector<QVector<QString>>> sub2_slots_device;
-
-//QVector<QVector<QString>> _main_slots_port_info
-/*
- *
- *
- * qhash 2중으로 쓰면 키값 랜덤정렬됨 10새
-장비명에 따라 분류해야하나? ㅅㅂ 너무많은데?
-기본정보 - id/장비명/
-*/
