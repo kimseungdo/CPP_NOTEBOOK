@@ -2,7 +2,7 @@
 #define INFO_WINDOW_H
 
 #include <QWidget>
-
+#include <QTimer>
 namespace Ui {
 class info_window;
 }
@@ -46,6 +46,7 @@ signals:
     void Home_clicked();
     void title_change(QString text);
     //void buttonClicked(int);
+
 
 private slots:
     void on_home_btn_clicked();

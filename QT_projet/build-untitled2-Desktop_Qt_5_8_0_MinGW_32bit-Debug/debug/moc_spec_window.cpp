@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_spec_window_t {
-    QByteArrayData data[25];
-    char stringdata0[495];
+    QByteArrayData data[32];
+    char stringdata0[661];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -55,7 +55,14 @@ QT_MOC_LITERAL(20, 391, 19), // "on_gate_btn_clicked"
 QT_MOC_LITERAL(21, 411, 21), // "on_ground_btn_clicked"
 QT_MOC_LITERAL(22, 433, 19), // "on_gene_btn_clicked"
 QT_MOC_LITERAL(23, 453, 22), // "on_exhaust_btn_clicked"
-QT_MOC_LITERAL(24, 476, 18) // "on_bmu_btn_clicked"
+QT_MOC_LITERAL(24, 476, 18), // "on_bmu_btn_clicked"
+QT_MOC_LITERAL(25, 495, 25), // "on_s_before_btn_3_clicked"
+QT_MOC_LITERAL(26, 521, 21), // "on_s_up_btn_3_clicked"
+QT_MOC_LITERAL(27, 543, 23), // "on_s_down_btn_3_clicked"
+QT_MOC_LITERAL(28, 567, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(29, 589, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(30, 613, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(31, 637, 23) // "on_pushButton_3_clicked"
 
     },
     "spec_window\0Home_clicked\0\0title_change\0"
@@ -71,7 +78,11 @@ QT_MOC_LITERAL(24, 476, 18) // "on_bmu_btn_clicked"
     "on_fire_btn_clicked\0on_human_btn_clicked\0"
     "on_flood_btn_clicked\0on_gate_btn_clicked\0"
     "on_ground_btn_clicked\0on_gene_btn_clicked\0"
-    "on_exhaust_btn_clicked\0on_bmu_btn_clicked"
+    "on_exhaust_btn_clicked\0on_bmu_btn_clicked\0"
+    "on_s_before_btn_3_clicked\0"
+    "on_s_up_btn_3_clicked\0on_s_down_btn_3_clicked\0"
+    "on_pushButton_clicked\0on_pushButton_2_clicked\0"
+    "on_pushButton_4_clicked\0on_pushButton_3_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -81,7 +92,7 @@ static const uint qt_meta_data_spec_window[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      22,   14, // methods
+      29,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -89,36 +100,50 @@ static const uint qt_meta_data_spec_window[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  124,    2, 0x06 /* Public */,
-       3,    1,  125,    2, 0x06 /* Public */,
+       1,    0,  159,    2, 0x06 /* Public */,
+       3,    1,  160,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,  128,    2, 0x08 /* Private */,
-       6,    0,  129,    2, 0x08 /* Private */,
-       7,    0,  130,    2, 0x08 /* Private */,
-       8,    0,  131,    2, 0x08 /* Private */,
-       9,    0,  132,    2, 0x08 /* Private */,
-      10,    0,  133,    2, 0x08 /* Private */,
-      11,    0,  134,    2, 0x08 /* Private */,
-      12,    0,  135,    2, 0x08 /* Private */,
-      13,    0,  136,    2, 0x08 /* Private */,
-      14,    0,  137,    2, 0x08 /* Private */,
-      15,    0,  138,    2, 0x08 /* Private */,
-      16,    0,  139,    2, 0x08 /* Private */,
-      17,    0,  140,    2, 0x08 /* Private */,
-      18,    0,  141,    2, 0x08 /* Private */,
-      19,    0,  142,    2, 0x08 /* Private */,
-      20,    0,  143,    2, 0x08 /* Private */,
-      21,    0,  144,    2, 0x08 /* Private */,
-      22,    0,  145,    2, 0x08 /* Private */,
-      23,    0,  146,    2, 0x08 /* Private */,
-      24,    0,  147,    2, 0x08 /* Private */,
+       5,    0,  163,    2, 0x08 /* Private */,
+       6,    0,  164,    2, 0x08 /* Private */,
+       7,    0,  165,    2, 0x08 /* Private */,
+       8,    0,  166,    2, 0x08 /* Private */,
+       9,    0,  167,    2, 0x08 /* Private */,
+      10,    0,  168,    2, 0x08 /* Private */,
+      11,    0,  169,    2, 0x08 /* Private */,
+      12,    0,  170,    2, 0x08 /* Private */,
+      13,    0,  171,    2, 0x08 /* Private */,
+      14,    0,  172,    2, 0x08 /* Private */,
+      15,    0,  173,    2, 0x08 /* Private */,
+      16,    0,  174,    2, 0x08 /* Private */,
+      17,    0,  175,    2, 0x08 /* Private */,
+      18,    0,  176,    2, 0x08 /* Private */,
+      19,    0,  177,    2, 0x08 /* Private */,
+      20,    0,  178,    2, 0x08 /* Private */,
+      21,    0,  179,    2, 0x08 /* Private */,
+      22,    0,  180,    2, 0x08 /* Private */,
+      23,    0,  181,    2, 0x08 /* Private */,
+      24,    0,  182,    2, 0x08 /* Private */,
+      25,    0,  183,    2, 0x08 /* Private */,
+      26,    0,  184,    2, 0x08 /* Private */,
+      27,    0,  185,    2, 0x08 /* Private */,
+      28,    0,  186,    2, 0x08 /* Private */,
+      29,    0,  187,    2, 0x08 /* Private */,
+      30,    0,  188,    2, 0x08 /* Private */,
+      31,    0,  189,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    4,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -171,6 +196,13 @@ void spec_window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 19: _t->on_gene_btn_clicked(); break;
         case 20: _t->on_exhaust_btn_clicked(); break;
         case 21: _t->on_bmu_btn_clicked(); break;
+        case 22: _t->on_s_before_btn_3_clicked(); break;
+        case 23: _t->on_s_up_btn_3_clicked(); break;
+        case 24: _t->on_s_down_btn_3_clicked(); break;
+        case 25: _t->on_pushButton_clicked(); break;
+        case 26: _t->on_pushButton_2_clicked(); break;
+        case 27: _t->on_pushButton_4_clicked(); break;
+        case 28: _t->on_pushButton_3_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -218,13 +250,13 @@ int spec_window::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 22)
+        if (_id < 29)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 22;
+        _id -= 29;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 22)
+        if (_id < 29)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 22;
+        _id -= 29;
     }
     return _id;
 }

@@ -17,9 +17,6 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
             emit title_change("타이틀/정보/SUB2/SLOT "+ QVariant(slot_index +1).toString() +"/PORT "+ QVariant(PI+1).toString() );
         break;
 
-        case 3: break;
-        case 4: break;
-
         default:
         break;
     }
@@ -31,8 +28,9 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
 
     for(int i=3; i<T[slot_index][PI].size(); i+=15){
         tmp_vec.push_back(T[slot_index][PI][i]);
-        tmp_vec.push_back(device_code_name.key(T[slot_index][PI][i+1]));
-    }qDebug()<< tmp_vec; cut_per_page = tmp_vec.size()/6; last_page = tmp_vec.size()%6;
+        tmp_vec.push_back(device_code_name.key(T[slot_index][PI][i+1]).at(1));
+    }qDebug()<< tmp_vec;
+    cut_per_page = tmp_vec.size()/6; last_page = tmp_vec.size()%6;
 
     switch(tmp_vec.size()) {
 
@@ -47,8 +45,6 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
             info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
        break;
 
-       case 3: break;
-
        case 4: //포트가 2개 12show 3hide
            info_ui->port_up_btn->hide();
            info_ui->port_down_btn->hide();
@@ -62,8 +58,6 @@ void info_window::port_setting(QVector<QVector<QVector<QString>>>& T, __int8 &PI
            info_ui->port_device_id_label_3->hide();        info_ui->port_device_name_label_3->hide();
         break;
 
-
-        case 5: break;
 
         case 6: //포트가 3개
             info_ui->port_up_btn->hide();
@@ -98,7 +92,6 @@ void info_window::on_port_up_btn_clicked(){
     info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
     info_ui->port_device_id_label_2->show();        info_ui->port_device_name_label_2->show();
     info_ui->port_device_id_label_3->show();        info_ui->port_device_name_label_3->show();
-    qDebug()<< "up " << aa;
 
     if(aa_calc_bool == true) aa+=6;
     else{//한번 0번인덱스로 돌아갔으면 출력하고 연산기능 재개
@@ -142,9 +135,6 @@ void info_window::on_port_up_btn_clicked(){
                info_ui->label->setText(" "+QVariant(aa).toString());
             break;
 
-            case 5:
-            break;
-
             default:
             break;
         }aa = 0; aa_calc_bool = false;
@@ -157,7 +147,6 @@ void info_window::on_port_down_btn_clicked(){ // ~~~~~ 18-23 12-17 6-11 0-5 18-2
     info_ui->port_device_id_label_1->show();        info_ui->port_device_name_label_1->show();
     info_ui->port_device_id_label_2->show();        info_ui->port_device_name_label_2->show();
     info_ui->port_device_id_label_3->show();        info_ui->port_device_name_label_3->show();
-    qDebug()<< "down " << aa;
 
     if(aa_calc_bool == true) aa-=6;
     else{//최고 인덱스로 돌아갔으면 출력하고 연산재개
@@ -224,7 +213,8 @@ void info_window::on_port_down_btn_clicked(){ // ~~~~~ 18-23 12-17 6-11 0-5 18-2
 
 
 void info_window::on_port_btn_1_clicked(){
-    port_index = 0; port_setting(main_slots_device, port_index);
+    port_index = 0;
+    port_setting(main_slots_device, port_index);
 }
 
 void info_window::on_port_btn_2_clicked(){
