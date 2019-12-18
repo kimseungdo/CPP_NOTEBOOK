@@ -2,11 +2,10 @@
 #define APPLICATION_H
 
 #include <QWidget>
-
+#include <QTimer>
 
 #include "info_window_file/info_window.h"
 #include "spec_window_file/spec_window.h"
-#include "set_window_file/set_window.h"
 
 namespace Ui {
 class application;
@@ -22,17 +21,23 @@ public:
 private slots:
     void on_info_btn_clicked();
     void on_spec_btn_clicked();
-    void on_set_btn_clicked();
-    void move_to_home();
-    void main_title(const QString &text_label);
+    void move_to_home(); // 집가는버튼
+    void main_title(const QString &text_label); // 타이틀 바꿔줌
+
+    void onTimer();
+    void read_all_system_per_3tic();
 
 private:
     Ui::application *ui;
     info_window _info_window;
     spec_window _spec_window;
-    set_window _set_window;
+
+    QTimer *timer;
+    QTimer *thread_tic;
 
     void set_up_main();
+    void initial_system();
+    void read_all_system_file(QVector<bool>& _MS, QVector<bool>& _SUB1, QVector<bool>& _SUB2);
 };
 
 #endif // APPLICATION_H

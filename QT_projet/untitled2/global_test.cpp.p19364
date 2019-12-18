@@ -1,0 +1,12 @@
+#include "global_test.h"
+
+short _slot_counter = 0;
+bool _main_flag = false;
+bool _sub1_flag = false;
+bool _sub2_flag = false;
+
+QVector<bool> _main_slots;
+QVector<bool> _sub1_slots;
+QVector<bool> _sub2_slots;
+
+//QVector<QVector<QString>> _main_slots_port_info
