@@ -3,18 +3,18 @@
   
 using namespace cv;  
 using namespace std;  
-/*
+
 #pragma region 
 int main(int, char**)  {  
 
     VideoCapture cap(0);  
     if (!cap.isOpened())  
-        printf("Ä«¸Ş¶ó¸¦ ¿­¼ö ¾ø½À´Ï´Ù. \n");  
+        printf("ì–´ ì•ˆì—´ë ¸ì–´. \n");  
   
     Mat frame;  
     namedWindow("camera1", 1);  
    
-    for (;;)      {  
+    for (;;) {  
         cap >> frame;  
         imshow("camera1", frame);  
         if (waitKey(20) >= 0) break;  
@@ -23,5 +23,5 @@ int main(int, char**)  {
     return 0;  
 }  
 #pragma endregion
-*/
+
 
