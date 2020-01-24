@@ -1,27 +1,45 @@
 #include "opencv2/opencv.hpp"
-#include <iostream>  
-  
+
+#include <iostream> 
+#include <ctime>
+
+
 using namespace cv;  
 using namespace std;  
-/*
-#pragma region 
-int main(int, char**)  {  
 
-    VideoCapture cap(0);  
+#pragma region 
+
+static void on_trackbar( int, void* ){
+
+}
+int main(int, char**)  {  
+    int nCurtime = 0;
+
+    cv::namedWindow("camera1", 1);
+
+	createTrackbar("low threshold", "camera1", 0, 1000, on_trackbar);
+	createTrackbar("high threshold", "camera1", 0, 1000, on_trackbar);
+
+	setTrackbarPos("low threshold", "camera1", 50);
+	setTrackbarPos("high threshold", "camera1", 150);
+     
+    cv::VideoCapture cap(0);  
     if (!cap.isOpened())  
-        printf("Ä«¸Þ¶ó¸¦ ¿­¼ö ¾ø½À´Ï´Ù. \n");  
-  
-    Mat frame;  
-    namedWindow("camera1", 1);  
-   
-    for (;;)      {  
+        printf("ì–´ ì•ˆì—´ë ¸ì–´. \n");  
+        
+    cv::Mat frame; 
+    int nLow_canny = 50;
+    int nHeigh_canny = 150;
+
+    for(;;){  
         cap >> frame;  
+        
+        cv::putText( frame, "Fps", cv::Point(10, 50), , );
+
         imshow("camera1", frame);  
-        if (waitKey(20) >= 0) break;  
-    }  
+        if ( waitKey(20) >= 0 ) break;  
+    }
   
     return 0;  
 }  
 #pragma endregion
-*/
-

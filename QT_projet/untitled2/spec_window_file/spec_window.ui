@@ -39,7 +39,7 @@
     </rect>
    </property>
    <widget class="QWidget" name="spec_window_1">
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="rectifier_btn">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -55,7 +55,7 @@
       <string>정류기류</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="power_flow_btn">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -71,7 +71,7 @@
       <string>전력관류</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="air_condition_btn">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -87,7 +87,7 @@
       <string>냉방기류</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="temp_btn">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -103,7 +103,7 @@
       <string>온습도류</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="haron_btn">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -119,7 +119,7 @@
       <string>하론류</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="fire_btn">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -135,7 +135,7 @@
       <string>화재</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="human_btn">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -151,7 +151,7 @@
       <string>인체감지</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="flood_btn">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -167,7 +167,7 @@
       <string>침수센서류</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_9">
+    <widget class="QPushButton" name="gate_btn">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -233,7 +233,7 @@
     </widget>
    </widget>
    <widget class="QWidget" name="spec_window_2">
-    <widget class="QPushButton" name="pushButton_10">
+    <widget class="QPushButton" name="ground_btn">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -249,7 +249,7 @@
       <string>접지</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_11">
+    <widget class="QPushButton" name="gene_btn">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -265,7 +265,7 @@
       <string>발동발전기</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_12">
+    <widget class="QPushButton" name="exhaust_btn">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -281,7 +281,7 @@
       <string>배풍기</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_13">
+    <widget class="QPushButton" name="bmu_btn">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -343,6 +343,275 @@
      </property>
      <property name="text">
       <string>^</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="spec_window_3">
+    <widget class="QPushButton" name="s_up_btn_3">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>50</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>^</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="s_down_btn_3">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>170</y>
+       <width>26</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>v</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="s_before_btn_3">
+     <property name="geometry">
+      <rect>
+       <x>55</x>
+       <y>205</y>
+       <width>45</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>이전</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="spec_id_1">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비 ID</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="spec_id_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>65</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비 ID</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="spec_id_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>110</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비 ID</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="spec_id_4">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>155</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>장비 ID</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="spec_d_name_1">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>20</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Device Label</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="spec_d_name_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>65</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Device Label</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="spec_d_name_3">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>110</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Device Label</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="spec_d_name_4">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>155</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(170, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Device Label</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>20</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>65</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>155</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>110</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
      </property>
     </widget>
    </widget>

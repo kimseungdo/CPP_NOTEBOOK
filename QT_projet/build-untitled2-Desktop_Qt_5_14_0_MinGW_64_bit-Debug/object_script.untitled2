@@ -1,0 +1,16 @@
+main.o
+application.o
+spec_window.o
+info_window.o
+info_window_button_func.o
+spec_window_button_func.o
+info_window_main_func.o
+global_test.o
+info_window_slot_button_func.o
+info_window_port_button_func.o
+spec_window2.o
+qrc_d.o
+moc_application.o
+moc_spec_window.o
+moc_info_window.o
+moc_spec_window2.o
