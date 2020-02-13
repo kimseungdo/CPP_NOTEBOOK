@@ -10,7 +10,7 @@
 
 using namespace cv;  
 using namespace std;  
-
+/*
 #pragma region 
 
 void check_ocl_system(){
@@ -18,13 +18,13 @@ void check_ocl_system(){
 		cout << "error : can't not use OpenCL system." << endl;
 	}
 
-	// ÄÁÅØ½ºÆ® »ý¼º
+	// ï¿½ï¿½ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 	ocl::Context context;
 	if (!context.create(ocl::Device::TYPE_GPU)) {
 		cout << "error : Do not create context." << endl;
 	}
 
-	// GPU ÀåÄ¡ Á¤º¸
+	// GPU ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
 	cout << context.ndevices() << " GPU device (s) detected " << endl;
 	for (size_t i = 0; i < context.ndevices(); i++) {
 		ocl::Device device = context.device(i);
@@ -65,8 +65,8 @@ int main(int, char**)  {
 }  
 #pragma endregion
 
-
-#pragma region
+*/
+#pragma region2
 
 pthread_t cam_thread;
 pthread_mutex_t cam_mutex_lock;
@@ -122,11 +122,4 @@ int main(void){
     }
     return 0;
 }
-#pragma endregion
-
-*/
-#include "cv_thread.h"
-
-int main(void){
-
-}
+#pragma endregion2
