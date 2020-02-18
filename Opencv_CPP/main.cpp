@@ -1,17 +1,44 @@
-/*
 #include "opencv2/opencv.hpp"
-
+#include "opencv2/core/ocl.hpp"
 
 #include <iostream> 
 #include <ctime>
+#include <time.h>
 
 #include <pthread.h>
 #include <mutex>
 
 using namespace cv;  
 using namespace std;  
+
+// Scalar color(B,G,R);
+Scalar Blue(255, 0, 0);
+Scalar Green(0, 255, 0);
+Scalar Red(0, 0, 255);
+Scalar White(255, 255, 255);
+Scalar Black(0, 0, 0);
+Scalar Yellow(0, 255, 255);
+
+#define Scalar 
+// wight
+#pragma region // notebook
+string intTOstring(int n){
+    stringstream s;
+    s << n;
+    return s.str();
+}
+
+int main(void){
+    clock_t t_start = clock(), t_end;
+
+    t_end = clock();
+    cout<< "debug time : " << (double)(t_end - t_start)/CLOCKS_PER_SEC << endl;
+    return 0;
+}
+#pragma endregion
+
 /*
-#pragma region 
+#pragma region // ocl Load
 
 void check_ocl_system(){
 	if (!ocl::haveOpenCL()) {
@@ -66,7 +93,9 @@ int main(int, char**)  {
 #pragma endregion
 
 */
-#pragma region2
+
+/*
+#pragma region // use multithread mutex
 
 pthread_t cam_thread;
 pthread_mutex_t cam_mutex_lock;
@@ -122,4 +151,6 @@ int main(void){
     }
     return 0;
 }
-#pragma endregion2
+#pragma endregion
+*/
+
