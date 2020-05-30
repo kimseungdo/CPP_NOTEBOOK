@@ -14,6 +14,7 @@ private:
 	cv::Mat cam_frame;
 	cv::Mat gray_frame;
 	cv::Mat canny_frame;
+
 protected:
 
 
