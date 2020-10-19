@@ -5,7 +5,7 @@ QT코드 단편
 
 */
 
-void Backend::loadIpAddress(){
+void XXX::loadIpAddress(){
 
     /*
      * 0 = Io
@@ -48,7 +48,7 @@ void Backend::loadIpAddress(){
     setIpAddress(device_name, ipv4_adr, mac_adr);
 }
 
-void Backend::setIpAddress(QString device, QString ip4, QString mc){
+void XXX::setIpAddress(QString device, QString ip4, QString mc){
     // ipv4 ipv6 gateway port mac
 
     QList<QObject *> aa = rootOb-> findChildren<QObject *> (); // 루트객체 리스트 불러옴
@@ -87,5 +87,22 @@ void Backend::setIpAddress(QString device, QString ip4, QString mc){
 
 
 }
+void XXX::restartApp(){ // 완벽하지않음 커맨드가 더러워짐 실행한 테스크 관리 필요
+    QProcess::startDetached(QApplication::applicationFilePath());
+    exit(12);
+}
 
+void XXX::reboot(QString mes){
+    //qDebug()<< "call cpp signal call by - " << mes;
+    system("reboot");
+}
 
+void XXX::shutdown(QString mes){
+    system("shutdown -h now");  
+    // or 
+    QProcess proc;
+    proc.setCommand("shutdown");
+    proc.addArgument("-h");
+    proc.addArgument("now");
+    proc.start(); 
+}
