@@ -25,9 +25,10 @@ swipeView - stackView - swipeView~1
 .qml // .ui.qml  
 ui의 부속품들은 qml로 만든다 --> 키보드같은거  
 화면은 ui.qml로 만든다  
-(x)는 미구현 (page)는 코드네임  
+
 ===================================  
 swipeview(stackview)  
+(X) 미구현 (이름) 네이밍 ( ~~~ X ) 변경하거나 생성할것
 클래스 이름
 - main.qml  
   - onoff(FuncForm)
