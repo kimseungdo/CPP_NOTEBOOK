@@ -62,7 +62,7 @@ id - ui ~~~ page_XXX
    - text ~~~ tx_XXX
    - label ~~~ la_XXX
    
-ex) 버튼 이미지면 ic_btn_XXX.png
+ex) 버튼 이미지면 ic_btn_XXX.png  
 ex) Setting의 calibration QC 세팅 페이지
     class name - Calibration & Qc day Setting (~~~ M_S_D_CnQcDaySettingForm)
           UI id - page_msd_cnqcdaysetting
