@@ -26,10 +26,10 @@ swipeView - stackView - swipeView~1
 ui의 부속품들은 qml로 만든다 --> 키보드같은거
 화면은 ui.qml로 만든다
 
-===================================
+===================================  
 swipeview(stackview)
 
-main.qml  
+*main.qml  
     MainButton{  
         QuickTest - page1  
             QuickText in Camsetting - page2
