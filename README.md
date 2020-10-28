@@ -28,32 +28,41 @@ ui의 부속품들은 qml로 만든다 --> 키보드같은거
 (x)는 미구현 (page)는 코드네임  
 ===================================  
 swipeview(stackview)  
-
+클래스 이름
 - main.qml  
   - onoff(FuncForm)
   - MainButton(ui.qml)  
     - QuickTest (page1 ~~~ M_QuickTestForm)
-    - QuickText in Camsetting (page2 ~~~ M_QuickTestCamSettingForm)
+    - QuickText in Camsetting (page2 ~~~ M_QuickTestCamSettingForm //임시화면)
     - Test (x ~~~ M_TestForm)  
     - QC (x ~~~ M_QcForm)
     - Calibration (x ~~~ M_CalibrationForm)  
     - List (x ~~~ M_ListForm)
     - Setting (page3 ~~~ M_SettingForm)  
-      - Account Manage 
-      - Detail Setting
-      - Load n Save
-      - Update
-      - info
+      - Account Manage (~~~ M_S_AccountManageForm)
+      - Detail Setting (~~~ M_S_DetailSettingForm)
+        - Printer Setting (~~~ M_S_D_PrintSettingForm)
+        - Calibration & Qc day Setting (~~~ M_S_D_CnQcDaySettingForm)
+        - General Setting (시간 언어 네트워크 볼륨 밝기 등등 ~~~ M_S_D_GeneralSettingForm)
+        - Unit setting (측정단위 설정 ~~~ M_S_D_UnitSettingForm)
+      - Load n Save (~~~ M_S_LoadSaveForm)
+      - Update (~~~ M_S_UpdateForm)
+      - info (~~~ M_S_InfoForm)
   - ipinfo (IpInfoForm)
   - Ui parts(qml)  
-    - pt_ScopeView
-    - pt_NumberpadLayout
+    - P_ScopeView
+    - P_NumberpadLayout
 
 #### Component
 icon ~~~ ic_XXX
+background ~~~ bg_XXX  
 
 id - ui ~~~ page_XXX  
    - button ~~~ btn_XXX
    - text ~~~ tx_XXX
    - label ~~~ la_XXX
    
+ex) 버튼 이미지면 ic_btn_XXX.png
+ex) Setting의 calibration QC 세팅 페이지
+    class name - Calibration & Qc day Setting (~~~ M_S_D_CnQcDaySettingForm)
+          UI id - page_msd_cnqcdaysetting
