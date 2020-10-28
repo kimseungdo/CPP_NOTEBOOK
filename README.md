@@ -30,19 +30,30 @@ ui의 부속품들은 qml로 만든다 --> 키보드같은거
 swipeview(stackview)  
 
 - main.qml  
+  - onoff(FuncForm)
   - MainButton(ui.qml)  
-    - QuickTest - page1  
-    - QuickText in Camsetting - page2
-    - Test(x)  
-    - QC(x)
-    - Calibration(x)  
-    - List(x)
-    - Setting - page3  
-      - AM
+    - QuickTest (page1 ~~~ M_QuickTestForm)
+    - QuickText in Camsetting (page2 ~~~ M_QuickTestCamSettingForm)
+    - Test (x ~~~ M_TestForm)  
+    - QC (x ~~~ M_QcForm)
+    - Calibration (x ~~~ M_CalibrationForm)  
+    - List (x ~~~ M_ListForm)
+    - Setting (page3 ~~~ M_SettingForm)  
+      - Account Manage 
       - Detail Setting
       - Load n Save
       - Update
-      - 
+      - info
+  - ipinfo (IpInfoForm)
   - Ui parts(qml)  
     - pt_ScopeView
     - pt_NumberpadLayout
+
+#### Component
+icon ~~~ ic_XXX
+
+id - ui ~~~ page_XXX  
+   - button ~~~ btn_XXX
+   - text ~~~ tx_XXX
+   - label ~~~ la_XXX
+   
