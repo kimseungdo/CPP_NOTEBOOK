@@ -18,3 +18,29 @@ GPU : GT 630M
 
 **[compiler]**
 x86_64-8.1.0-posix-seh-rt_v6-rev0
+  
+  # Coding Rule
+
+swipeView - stackView - swipeView~1  
+.qml // .ui.qml  
+ui의 부속품들은 qml로 만든다 --> 키보드같은거
+화면은 ui.qml로 만든다
+
+===================================
+swipeview(stackview)
+
+main.qml  
+    MainButton{  
+        QuickTest - page1  
+            QuickText in Camsetting - page2
+        Test(x)  
+        QC(x)
+        Calibration(x)  
+        List(x)
+        Setting - page3
+
+
+
+
+
+
