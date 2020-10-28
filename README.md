@@ -30,7 +30,7 @@ ui의 부속품들은 qml로 만든다 --> 키보드같은거
 swipeview(stackview)
 
 - main.qml  
-  - MainButton  
+  - MainButton(ui.qml)  
     - QuickTest - page1  
     - QuickText in Camsetting - page2
     - Test(x)  
@@ -38,3 +38,6 @@ swipeview(stackview)
     - Calibration(x)  
     - List(x)
     - Setting - page3
+  - Ui parts(qml)  
+    - pt_ScopeView
+    - pt_NumberpadLayout
