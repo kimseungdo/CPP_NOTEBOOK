@@ -23,11 +23,11 @@ x86_64-8.1.0-posix-seh-rt_v6-rev0
 작명 규칙  
 swipeView - stackView - swipeView~1  
 .qml // .ui.qml  
-ui의 부속품들은 qml로 만든다 --> 키보드같은거
-화면은 ui.qml로 만든다
-
+ui의 부속품들은 qml로 만든다 --> 키보드같은거  
+화면은 ui.qml로 만든다  
+(x)는 미구현 (page)는 코드네임  
 ===================================  
-swipeview(stackview)
+swipeview(stackview)  
 
 - main.qml  
   - MainButton(ui.qml)  
@@ -37,7 +37,12 @@ swipeview(stackview)
     - QC(x)
     - Calibration(x)  
     - List(x)
-    - Setting - page3
+    - Setting - page3  
+      - AM
+      - Detail Setting
+      - Load n Save
+      - Update
+      - 
   - Ui parts(qml)  
     - pt_ScopeView
     - pt_NumberpadLayout
