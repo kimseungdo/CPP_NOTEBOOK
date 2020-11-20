@@ -16,15 +16,6 @@ Window {
 
     title: qsTr("Hello World")
 
-    Image {
-        id: image
-        x: 73
-        y: 67
-        width: 479
-        height: 360
-        source: "qrc:/qtquickplugin/images/template_image.png"
-        fillMode: Image.PreserveAspectFit
-    }
 
     SwipeView {
         id: swipeView
@@ -79,7 +70,26 @@ Window {
                 value: 0.5
             }
         }
-
+        
+    }
+    
+    Image {
+        id: image
+        x: 73
+        y: 67
+        width: 479
+        height: 360
+        source: "qrc:/qtquickplugin/images/template_image.png"
+        fillMode: Image.PreserveAspectFit
+    }
+    
+    Rectangle {
+        id: rectangle2
+        x: 694
+        y: 67
+        width: 479
+        height: 360
+        color: "#cc6262"
     }
 }
 
