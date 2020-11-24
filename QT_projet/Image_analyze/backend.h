@@ -9,10 +9,15 @@ class Backend : public QObject {
         Q_OBJECT
 
     public:
-        explicit Backend(QQmlApplicationEngine *engineViewer, QObject *parent = nullptr);
+        explicit Backend(QObject *parent = nullptr);
+        void moveObject(QObject *ob);
+        void moveEngineViewer(QQmlApplicationEngine *engineView);
 
     signals:
 
+
+    private:
+        QObject *rootOb;
 };
 
 #endif // BACKEND_H

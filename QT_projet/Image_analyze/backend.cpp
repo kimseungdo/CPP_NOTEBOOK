@@ -6,6 +6,18 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-Backend::Backend(QQmlApplicationEngine *engineViewer, QObject *parent) : QObject(parent){
-    qDebug()<< "call init" ;
+Backend::Backend(QObject *parent) : QObject(parent){
+    qDebug()<< "call init" << parent;
+}
+
+void Backend:: moveObject(QObject *ob){
+    rootOb = ob;
+
+    QObject *item = rootOb->findChild<QObject*>("testLabel");
+    item->setProperty("text", "dddd");
+
+}
+
+void Backend::moveEngineViewer(QQmlApplicationEngine *engineView){
+
 }

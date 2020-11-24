@@ -19,4 +19,20 @@ Page {
         text: "SET CBT"
         font.pointSize: 18
     }
+
+    Label {
+        id: label
+        objectName: "testLabel"
+        x: 538
+        y: 342
+        text: qsTr("Label")
+        font.pointSize: 54
+
+    }
 }
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.25}
+}
+##^##*/
