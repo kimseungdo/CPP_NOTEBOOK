@@ -1,90 +1,64 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
+import QtQuick.Layouts 1.3
 import QtQuick.Window 2.12
-import QtCharts 2.3
 
 // ==================
 
-Window {
-
-    property int slid_wid : 400
-
-
+ApplicationWindow {
     width: 1280
     height: 960
     visible: true
 
     title: qsTr("Hello World")
 
-    Image {
-        id: image
-        x: 73
-        y: 67
-        width: 479
-        height: 360
-        source: "qrc:/qtquickplugin/images/template_image.png"
-        fillMode: Image.PreserveAspectFit
+    maximumHeight: height
+    maximumWidth: width
+
+    minimumHeight: height
+    minimumWidth: width
+
+    header: Rectangle{
+        width: parent.width
+        TabBar{
+        id: main_bar
+        width: parent.width
+            Repeater{
+                id: repeater
+                model: ["CBT Setting", "Image Analyze", "AVG"]
+                TabButton{
+                    text: modelData
+                    font.pointSize: 25
+                    width: Math.max(100, main_bar.width / 3)
+                }
+
+            }
+        }//end tabbar
     }
 
-    SwipeView {
-        id: swipeView
-        x: 73
-        y: 490
-        width: 479
-        height: 360
-    }
 
-    TabBar {
-        id: tabBar
-        x: 73
-        y: 850
-        width: 479
-        height: 86
-    }
+    StackLayout{
+        anchors.fill: parent
+        anchors.topMargin: 45
+        anchors.bottomMargin: 0
+        currentIndex: main_bar.currentIndex
 
-    Rectangle {
-        id: rectangle
-        x: 694
-        y: 490
-        width: 479
-        height: 360
-        color: "#ffffff"
+        Item{
+            CBT_SettingForm{ }
+        }
 
-        Column {
-            id: row
-            width: parent.width
-            height: parent.height
-            spacing: 40
-            anchors.horizontalCenter: parent.horizontalCenter
+        Item{
+            IMG_AnalyzeForm{ }
+        }
 
-
-            Slider {
-                width: slid_wid
-                value: 0.5
-            }
-            Slider {
-                width: slid_wid
-                value: 0.5
-            }
-            Slider {
-                width: slid_wid
-                value: 0.5
-            }
-            Slider {
-                width: slid_wid
-                value: 0.5
-            }
-            Slider {
-                width: slid_wid
-                value: 0.5
-            }
+        Item{
+            RES_AvgForm{ }
         }
 
     }
+
 }
 
-/*##^##
-Designer {
-    D{i:0;formeditorZoom:0.6600000262260437}
-}
-##^##*/
+
+
+
