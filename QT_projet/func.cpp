@@ -1,12 +1,14 @@
 /*
 QT코드 단편
-
-
-
 */
+#if defined (PC_DEBUGMODE)
+    #define PC_DEBUG 1
+#else
+    #define PC_DEBUG 0
+#endif
+
 
 void XXX::loadIpAddress(){
-
     /*
      * 0 = Io
      * 1 = eth0
@@ -84,8 +86,6 @@ void XXX::setIpAddress(QString device, QString ip4, QString mc){
     if(item)
         item->setProperty("text", mc);
     */
-
-
 }
 void XXX::restartApp(){ // 완벽하지않음 커맨드가 더러워짐 실행한 테스크 관리 필요
     QProcess::startDetached(QApplication::applicationFilePath());
@@ -105,4 +105,23 @@ void XXX::shutdown(QString mes){
     proc.addArgument("-h");
     proc.addArgument("now");
     proc.start(); 
+}
+
+void XXX::filecheck(){
+    #include <QDir>
+    #include <QCoreApplication>
+
+    QString InputPath = "/root/~~~";
+    QString app_path = QCoreApplication::applicationDirPath(); //현재경로
+
+    QDir _dir(InputPath);
+	if (!_dir.exists()) // 파일확인
+		_dir.mkpath(".");
+
+	if (!QFile::exists(InputPath))
+		return FALSE;
+
+    QDir CurrDir = QDir::current();
+    CurrDir.cdUp(); // 상위폴더 이동
+    auto path = CurrDir.path();
 }
