@@ -13,6 +13,9 @@ class Backend : public QObject {
         void moveObject(QObject *ob);
         void moveEngineViewer(QQmlApplicationEngine *engineView);
 
+        void checkFile();
+        void readCBT_configFile();
+        void setCBT();
     signals:
 
 

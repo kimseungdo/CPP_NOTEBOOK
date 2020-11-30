@@ -7,7 +7,7 @@
 #include <QQmlApplicationEngine>
 
 Backend::Backend(QObject *parent) : QObject(parent){
-    qDebug()<< "call init" << parent;
+    qDebug()<< "call Backend Init" << parent;
 }
 
 void Backend:: moveObject(QObject *ob){
@@ -21,3 +21,4 @@ void Backend:: moveObject(QObject *ob){
 void Backend::moveEngineViewer(QQmlApplicationEngine *engineView){
 
 }
+
