@@ -10,10 +10,25 @@ Page {
     height: 915
     visible: true
 
-
+    property string fileurl
     property int slid_wid : 400
 
-/*
+    FileDialog{
+        id: filedialog
+        title: "Choose a Strip Image"
+        folder: shortcuts.desktop
+        onAccepted: {
+            //console.log("select url "+ filedialog.fileUrls)
+            fileurl = filedialog.fileUrls
+            strip_image.source = filedialog.fileUrl
+
+        }
+        onRejected: {
+            console.log("Filedialog is closed")
+        }
+
+        nameFilters: [ "Image files (*.jpg *.png)", "All files (*)" ]
+    }
 
     Image {
         id: strip_image
@@ -21,10 +36,9 @@ Page {
         y: 48
         width: 530
         height: 400
-        source: "strip_image/20200921/131532_capture-0.png"
+        source: ""
         fillMode: Image.PreserveAspectFit
-        }
-*/
+    }
 
     Rectangle {
         id: rect_chart
@@ -52,8 +66,7 @@ Page {
                 text : "이미지 불러오기"
                 font.pointSize: 18
                 onClicked: {
-
-
+                    filedialog.visible = true
                 }
             }
             Button{
@@ -72,6 +85,7 @@ Page {
                 height : 80
                 text : "분석"
                 font.pointSize: 18
+
             }
 
             Button{

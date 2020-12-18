@@ -20,10 +20,22 @@ Page {
         font.pointSize: 18
     }
 
+
+    Image {
+        id: cbt_strip_image
+        x: 73
+        y: 48
+        width: 530
+        height: 400
+        source: "strip_image/20200921/131532_capture-0.png"
+        fillMode: Image.PreserveAspectFit
+    }
+
+
     Label {
         id: label
         objectName: "testLabel"
-        x: 538
+        x: 798
         y: 342
         text: qsTr("Label")
         font.pointSize: 54

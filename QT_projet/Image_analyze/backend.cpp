@@ -1,6 +1,5 @@
 #include "backend.h"
 
-
 #include <QDebug>
 #include <QObject>
 #include <QGuiApplication>
@@ -8,6 +7,7 @@
 
 Backend::Backend(QObject *parent) : QObject(parent){
     qDebug()<< "call Backend Init" << parent;
+
 }
 
 void Backend:: moveObject(QObject *ob){
@@ -18,7 +18,7 @@ void Backend:: moveObject(QObject *ob){
 
 }
 
-void Backend::moveEngineViewer(QQmlApplicationEngine *engineView){
+void Backend::CBT_init(){
+
 
 }
-

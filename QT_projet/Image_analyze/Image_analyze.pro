@@ -1,4 +1,4 @@
-QT += quick charts core gui qml svg
+QT += quick quickcontrols2 charts core gui qml svg
 CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -7,6 +7,7 @@ CONFIG += c++11
 
 SOURCES += \
         backend.cpp \
+        fileout.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -23,4 +24,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    backend.h
+    backend.h \
+    fileout.h

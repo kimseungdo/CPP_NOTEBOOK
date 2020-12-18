@@ -5,13 +5,16 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#include "fileout.h"
+
 class Backend : public QObject {
         Q_OBJECT
 
     public:
         explicit Backend(QObject *parent = nullptr);
         void moveObject(QObject *ob);
-        void moveEngineViewer(QQmlApplicationEngine *engineView);
+        //void moveEngineViewer(QQmlApplicationEngine *engineView);
+        void CBT_init();
 
         void checkFile();
         void readCBT_configFile();
@@ -21,6 +24,11 @@ class Backend : public QObject {
 
     private:
         QObject *rootOb;
+        fileout mfileout;
+        int control_s;  int control_e;  double control_sum = 0;
+        int test_s;     int test_e;     double test_sum = 0;
+        int back_s;     int back_e;     double back_sum = 0;
+
 };
 
 #endif // BACKEND_H
