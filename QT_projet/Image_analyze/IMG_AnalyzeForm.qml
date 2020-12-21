@@ -85,7 +85,6 @@ Page {
                 height : 80
                 text : "분석"
                 font.pointSize: 18
-
             }
 
             Button{

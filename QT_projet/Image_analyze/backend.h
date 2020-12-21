@@ -1,6 +1,7 @@
 #ifndef BACKEND_H
 #define BACKEND_H
 
+
 #include <QObject>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -23,6 +24,10 @@ class Backend : public QObject {
 
 
     private:
+        QString configFile(void);
+        void makeconfigfile(void);
+        void loadconfigfile(void);
+
         QObject *rootOb;
         fileout mfileout;
         int control_s;  int control_e;  double control_sum = 0;
