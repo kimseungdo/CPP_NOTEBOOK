@@ -20,16 +20,20 @@ class Backend : public QObject {
         void checkFile();
         void readCBT_configFile();
         void setCBT();
-    signals:
+
+    public slots:
+        void set_Cbt(QString);
 
 
     private:
         QString configFile(void);
         void makeconfigfile(void);
         void loadconfigfile(void);
+        void connectObject();
 
         QObject *rootOb;
         fileout mfileout;
+
         int control_s;  int control_e;  double control_sum = 0;
         int test_s;     int test_e;     double test_sum = 0;
         int back_s;     int back_e;     double back_sum = 0;

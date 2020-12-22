@@ -8,6 +8,7 @@ CONFIG += c++11
 SOURCES += \
         backend.cpp \
         backend_imageanalyze.cpp \
+        backend_slots.cpp \
         fileout.cpp \
         main.cpp
 

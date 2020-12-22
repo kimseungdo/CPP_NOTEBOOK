@@ -44,19 +44,28 @@ ApplicationWindow {
         currentIndex: main_bar.currentIndex
 
         Item{
-            CBT_SettingForm{ }
+            CBT_SettingForm{
+                id: page_cbt_setting
+            }
         }
 
         Item{
-            IMG_AnalyzeForm{ }
+            IMG_AnalyzeForm{
+                id: page_img_analyze
+            }
         }
 
         Item{
-            RES_AvgForm{ }
+            RES_AvgForm{
+                id: page_res
+            }
         }
-
     }
 
+    function updateValCombo(cs, ce, ts, te, bs, be){
+        page_cbt_setting.updateCBT(cs, ce, ts, te, bs, be)
+        return "on"
+    }
 }
 
 

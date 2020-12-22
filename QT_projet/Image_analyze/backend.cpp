@@ -13,15 +13,11 @@ Backend::Backend(QObject *parent) : QObject(parent){
     qDebug()<< "call Backend Init" << parent;
 
     makeconfigfile();
-    //loadconfigfile();
+    loadconfigfile();
 }
 
 void Backend:: moveObject(QObject *ob){
     rootOb = ob;
-/*
-    QObject *item = rootOb->findChild<QObject*>("testLabel");
-    item->setProperty("text", "dddd");
-*/
 }
 
 QString Backend::configFile(){
@@ -38,7 +34,7 @@ QString Backend::configFile(){
     #endif
 
         retn = configBasePath + "/config.ini";
-        qDebug()<< retn;
+        //qDebug()<< "ini file path : " << retn;
         return retn;
 }
 void Backend::makeconfigfile(){
@@ -56,9 +52,51 @@ void Backend::makeconfigfile(){
     settings.setValue("cbt/te", 490);
     settings.setValue("cbt/bs", 510);
     settings.setValue("cbt/be", 610);
+}
+
+void Backend::loadconfigfile(){
+    if(!QFile::exists(configFile())) return;
+    qDebug()<< "loadconfigFile";
+
+    QSettings settings(configFile(), QSettings::IniFormat);
+    control_s = settings.value("cbt/cs").toInt();
+    control_e = settings.value("cbt/ce").toInt();
+    test_s = settings.value("cbt/ts").toInt();
+    test_e = settings.value("cbt/te").toInt();
+    back_s = settings.value("cbt/bs").toInt();
+    back_e = settings.value("cbt/be").toInt();
+
+    qDebug()<< "control_s : " << control_s << " control_e : " << control_e;
+    qDebug()<< "test_s : " << test_s << " test_e : " << test_e;
+    qDebug()<< "back_s : " << back_s << " back_e : " << back_e;
+
 
 }
 void Backend::CBT_init(){
 
+    QObject *item = rootOb->findChild<QObject *>("cbt_btn");
+    if(!item) return;
+    else{
+        connect(item, SIGNAL(setClicked(QString)), this, SLOT(set_Cbt(QString)));
+    }
+
+    QVariant  retVal;
+
+    if(!rootOb->findChild<QObject *>("updateValCombo")){
+        qDebug()<< "updateValCombo is not exists";
+    }
+    QMetaObject::invokeMethod(rootOb, "updateValCombo", Qt::DirectConnection,
+            Q_RETURN_ARG(QVariant , retVal),
+            Q_ARG(QVariant, control_s),
+            Q_ARG(QVariant, control_e),
+            Q_ARG(QVariant, test_s),
+            Q_ARG(QVariant, test_e),
+            Q_ARG(QVariant, back_s),
+            Q_ARG(QVariant, back_e));
+
+
+}
+
+void Backend::connectObject(){
 
 }
