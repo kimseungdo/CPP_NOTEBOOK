@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-        <file>CBT_SettingForm.qml</file>
-        <file>IMG_AnalyzeForm.qml</file>
-        <file>RES_AvgForm.qml</file>
-        <file>strip_image/20200921/131532_capture-0.png</file>
-    </qresource>
-</RCC>
