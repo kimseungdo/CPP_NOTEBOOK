@@ -11,9 +11,12 @@ CPP/cpp_primer_pluse/cmake_install.cmake
 CPP/cpp_primer_pluse/CMakeCache.txt
 CPP/cpp_primer_pluse/CMakeFiles/
 
-QT_projet/build-Image_analyze-Desktop_Qt_5_15_0_MinGW_64_bit-Debug
+QT_projet/build-csv_analy-Desktop_Qt_5_15_2_MinGW_64_bit-Debug
 QT_projet/build-Image_analyze-Desktop_Qt_5_15_0_MinGW_64_bit-Release
 QT_projet/Image_analyze/strip_image
+
+QT_projet/build-copyman-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug
+QT_projet/build-copyman-Desktop_Qt_5_15_2_MSVC2019_64bit-Release
 
 QT_projet/build-output_projet-Desktop_Qt_5_15_0_MinGW_64_bit-Debug
 QT_projet/build-output_projet-Desktop_Qt_5_15_0_MinGW_64_bit-Release

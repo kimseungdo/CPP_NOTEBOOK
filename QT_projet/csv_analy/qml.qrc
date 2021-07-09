@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>IndexForm.qml</file>
     </qresource>
 </RCC>
